@@ -30,9 +30,7 @@ public final class Boid_Maths
         Y = calculate_opposite(vector.getAngle_rad(), vector.getMagnitude());
         return new cartesian_point(X,Y);
     }
-    /*
-    git commit test...
-     */
+
 
     /*
     These methods use x and y components and return a vector
@@ -192,4 +190,6 @@ public final class Boid_Maths
         distance_between_points = calculate_magnitude(xdistance,ydistance);
         return distance_between_points;
     }
+
+
 }

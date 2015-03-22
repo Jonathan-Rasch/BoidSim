@@ -52,6 +52,8 @@ public class GUI extends JFrame implements Runnable
 
     }
 
+
+
     @Override //never gets called, since its overwritten when gui object is created
     public void run() {
 
