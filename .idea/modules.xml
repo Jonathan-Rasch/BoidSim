@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/Boid Simulator.iml" filepath="$PROJECT_DIR$/Boid Simulator.iml" />
       <module fileurl="file://$PROJECT_DIR$/BoidSim.iml" filepath="$PROJECT_DIR$/BoidSim.iml" />
     </modules>
   </component>
