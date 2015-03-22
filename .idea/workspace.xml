@@ -2,12 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="eb6d6b00-8b60-4cbe-9c50-7c6cd21b4eda" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Drawable.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Simulation_Panel.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Boid.java" afterPath="$PROJECT_DIR$/src/Boid.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/GUI.java" afterPath="$PROJECT_DIR$/src/GUI.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/simulation_manager.java" afterPath="$PROJECT_DIR$/src/simulation_manager.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Boid Simulator.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -77,26 +73,31 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="simulation_manager.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="simulation_manager.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/simulation_manager.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="663">
-              <caret line="15" column="42" selection-start-line="15" selection-start-column="42" selection-end-line="15" selection-end-column="42" />
+            <state vertical-scroll-proportion="0.54124457" vertical-offset="0" max-vertical-offset="986">
+              <caret line="22" column="27" selection-start-line="22" selection-start-column="27" selection-end-line="22" selection-end-column="27" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#343#349#0" expanded="true" />
-                <element signature="e#406#416#0" expanded="true" />
-                <element signature="e#538#539#0" expanded="true" />
+                <element signature="e#344#350#0" expanded="true" />
+                <element signature="e#407#417#0" expanded="true" />
+                <element signature="e#545#546#0" expanded="true" />
+                <element signature="e#579#580#0" expanded="true" />
+                <element signature="e#623#624#0" expanded="true" />
+                <element signature="e#655#656#0" expanded="true" />
+                <element signature="e#1013#1014#0" expanded="true" />
+                <element signature="e#1064#1065#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GUI.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="GUI.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/GUI.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.44283646" vertical-offset="306" max-vertical-offset="1054">
-              <caret line="41" column="0" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="116" max-vertical-offset="1105">
+              <caret line="30" column="0" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -166,9 +167,9 @@
         <option value="$PROJECT_DIR$/src/Boid_Maths.java" />
         <option value="$PROJECT_DIR$/src/Drawable.java" />
         <option value="$PROJECT_DIR$/src/Boid.java" />
-        <option value="$PROJECT_DIR$/src/simulation_manager.java" />
         <option value="$PROJECT_DIR$/src/Simulation_Panel.java" />
         <option value="$PROJECT_DIR$/src/GUI.java" />
+        <option value="$PROJECT_DIR$/src/simulation_manager.java" />
       </list>
     </option>
   </component>
@@ -498,7 +499,7 @@
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.114349775" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.38452914" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="true" content_ui="tabs" />
@@ -588,9 +589,14 @@
           <caret line="11" column="42" selection-start-line="11" selection-start-column="42" selection-end-line="11" selection-end-column="42" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#343#349#0" expanded="true" />
-            <element signature="e#406#416#0" expanded="true" />
-            <element signature="e#538#539#0" expanded="true" />
+            <element signature="e#344#350#0" expanded="true" />
+            <element signature="e#407#417#0" expanded="true" />
+            <element signature="e#545#546#0" expanded="true" />
+            <element signature="e#579#580#0" expanded="true" />
+            <element signature="e#623#624#0" expanded="true" />
+            <element signature="e#655#656#0" expanded="true" />
+            <element signature="e#1013#1014#0" expanded="true" />
+            <element signature="e#1064#1065#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -674,9 +680,14 @@
           <caret line="11" column="42" selection-start-line="11" selection-start-column="42" selection-end-line="11" selection-end-column="42" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#343#349#0" expanded="true" />
-            <element signature="e#406#416#0" expanded="true" />
-            <element signature="e#538#539#0" expanded="true" />
+            <element signature="e#344#350#0" expanded="true" />
+            <element signature="e#407#417#0" expanded="true" />
+            <element signature="e#545#546#0" expanded="true" />
+            <element signature="e#579#580#0" expanded="true" />
+            <element signature="e#623#624#0" expanded="true" />
+            <element signature="e#655#656#0" expanded="true" />
+            <element signature="e#1013#1014#0" expanded="true" />
+            <element signature="e#1064#1065#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -974,22 +985,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Boid_Maths.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1602" max-vertical-offset="2465">
-          <caret line="172" column="9" selection-start-line="172" selection-start-column="9" selection-end-line="172" selection-end-column="9" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#Boid_Maths#0;class#Boid_Maths#0" expanded="false" />
-            <element signature="docComment;method#find_anticlockwise_angle#0;class#Boid_Maths#0" expanded="false" />
-            <element signature="method#find_anticlockwise_angle#0;class#Boid_Maths#0" expanded="false" />
-            <element signature="method#vector_addition#0;class#Boid_Maths#0" expanded="false" />
-            <element signature="method#vector_addition#1;class#Boid_Maths#0" expanded="false" />
-            <element signature="method#Distance_between_points#0;class#Boid_Maths#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/polar_vector.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="665" max-vertical-offset="1377">
@@ -998,14 +993,6 @@
             <element signature="e#609#610#0" expanded="true" />
             <element signature="e#642#643#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Drawable.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="255">
-          <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1034,25 +1021,54 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/simulation_manager.java">
+    <entry file="file://$PROJECT_DIR$/src/Boid_Maths.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="663">
-          <caret line="15" column="42" selection-start-line="15" selection-start-column="42" selection-end-line="15" selection-end-column="42" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="1602" max-vertical-offset="2465">
+          <caret line="172" column="9" selection-start-line="172" selection-start-column="9" selection-end-line="172" selection-end-column="9" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#343#349#0" expanded="true" />
-            <element signature="e#406#416#0" expanded="true" />
-            <element signature="e#538#539#0" expanded="true" />
+            <element signature="method#Boid_Maths#0;class#Boid_Maths#0" expanded="false" />
+            <element signature="docComment;method#find_anticlockwise_angle#0;class#Boid_Maths#0" expanded="false" />
+            <element signature="method#find_anticlockwise_angle#0;class#Boid_Maths#0" expanded="false" />
+            <element signature="method#vector_addition#0;class#Boid_Maths#0" expanded="false" />
+            <element signature="method#vector_addition#1;class#Boid_Maths#0" expanded="false" />
+            <element signature="method#Distance_between_points#0;class#Boid_Maths#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Drawable.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="255">
+          <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/GUI.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.44283646" vertical-offset="306" max-vertical-offset="1054">
-          <caret line="41" column="0" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="116" max-vertical-offset="1105">
+          <caret line="30" column="0" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/simulation_manager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.54124457" vertical-offset="0" max-vertical-offset="986">
+          <caret line="22" column="27" selection-start-line="22" selection-start-column="27" selection-end-line="22" selection-end-column="27" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#344#350#0" expanded="true" />
+            <element signature="e#407#417#0" expanded="true" />
+            <element signature="e#545#546#0" expanded="true" />
+            <element signature="e#579#580#0" expanded="true" />
+            <element signature="e#623#624#0" expanded="true" />
+            <element signature="e#655#656#0" expanded="true" />
+            <element signature="e#1013#1014#0" expanded="true" />
+            <element signature="e#1064#1065#0" expanded="true" />
           </folding>
         </state>
       </provider>

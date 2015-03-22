@@ -14,15 +14,19 @@ public class GUI extends JFrame implements Runnable
     public static void main(String[] args)
     {
         final simulation_manager simmanager = new simulation_manager();
+        //starts the Gui on a separate thread
         SwingUtilities.invokeLater(new GUI()
         {
             @Override
             public void run()
             {
                 this.simM = simmanager;
+                //TODO subscribe simM to the event guicreated. this triggers the update loop in simM
                 CreateGUI();
             }
         });
+        //start the sim manager Update Loop
+        simmanager.UpdateLoop();
     }
 
     public void CreateGUI()
@@ -49,7 +53,6 @@ public class GUI extends JFrame implements Runnable
         Tabs.add(BoidOptionTab);
         Tabs.add(DrawOptionTab);
         this.add(Tabs,BorderLayout.EAST);
-
     }
 
 
