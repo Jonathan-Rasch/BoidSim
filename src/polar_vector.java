@@ -75,4 +75,15 @@ public class polar_vector<T extends Number,T2 extends Number>
 
         }
     }
+
+    //function which inverts this vector
+    public void Invert_Vector()
+    {
+        //inverting x and y
+        this.setXcomponent(-this.getXcomponent());
+        this.setYcomponent(-this.getYcomponent());
+        //recalculating magnitude and angle
+        this.magnitude = Boid_Maths.calculate_magnitude(this.getXcomponent(),this.getYcomponent());
+        this.angle_rad = Boid_Maths.calculate_Vector_angle(this.getXcomponent(),this.getYcomponent());
+    }
 }

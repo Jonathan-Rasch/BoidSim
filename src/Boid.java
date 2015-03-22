@@ -16,6 +16,8 @@ public class Boid {
     //the minimum desired seperation between the boids.
     private static double Desired_Seperation;//all boids share this value. it is set via settings in the gui or uses default values
     private static double Detection_distance;//the distance for which the boid detects other boids.
+    private static double Boid_radius; // the radius of the circle representing the boid.
+    //TODO write a function to update statics
 
     List<Boid> Boidnearby_List = new ArrayList<Boid>();
     //TODO obstacle list and functions.
@@ -37,7 +39,7 @@ public class Boid {
         //add vectors of all nearby boids
         for(Boid boid:Boidnearby_List)
         {
-            allignment_vector = Boid_Maths.vector_addition(boid.getBoid_vector(),temp_allignment_vector);
+            allignment_vector = Boid_Maths.vector_addition(boid.getBoid_vector(),allignment_vector);
         }
         //divide resultant vector by the number of boids to obtain the average vector
         //TODO make this a method in Boid_Maths
@@ -52,15 +54,45 @@ public class Boid {
     private void calculate_seperation()
     {
 
+        //calculating the numerator of the equation used to calculate the separation vector, same for all boids
+        seperation_vector = new polar_vector(0,0,true);//resetting separation vector
+        double numerator = 2*Boid_radius + Desired_Seperation;
+        for(Boid boid:Boidnearby_List)
+        {
+            //calculate separation between this boid and the current boid ( denominator of equation ):
+            double actual_separation = Boid_Maths.Distance_between_points(this.boid_position,boid.boid_position);
+            //TODO make this a Boid_Maths method (find angle between boids )
+            /*
+            to find the angle of boid relative to this boid i use this boid as a reference. I archive this by substracting the position of this.boid from boid.
+            this will give me the x and y difference between the boids. i can then use these to calculate the angle.the angle will be used later.
+             */
+            double angle_between_boids = Boid_Maths.find_anticlockwise_angle(boid.getBoid_position().Get_X_double() - this.getBoid_position().Get_X_double(),boid.getBoid_position().Get_Y_double() - this.getBoid_position().Get_Y_double());
+            //calculating the magnitude of the separation vector.
+            /*
+            numerator contains the desired seperation between boids. if actual separation < numerator , the fraction will be >> 1
+            this is further amplified by raising the fraction to the third power and taking the exponential of that.
+            this results in a larger magnitude the closer the boids get.
+             */
+            double seperation_magnitude = Math.exp(Math.pow(numerator/actual_separation,3));
+            //using the magnitude and angle to create a vector
+            polar_vector Temp_seperation_vector = new polar_vector(seperation_magnitude,angle_between_boids,true);
+            //at the moment the temp seperation vector is pointing towards the other boid, so i have to invert it,
+            Temp_seperation_vector.Invert_Vector();
+            //Now i can add it to the separation vector
+            seperation_vector = Boid_Maths.vector_addition(seperation_vector,Temp_seperation_vector);
+        }
     }
+
     private void calculate_cohesion()
     {
 
     }
+
     private void calculate_obstacle_vector()
     {
 
     }
+
     private void calculate_food_vector()
     {
 
