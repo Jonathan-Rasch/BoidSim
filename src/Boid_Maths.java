@@ -169,7 +169,7 @@ public final class Boid_Maths
         cartesian_point average_point = new cartesian_point(0,0);
         for (Boid boid:Boid_List)
         {
-            point_addition(boid.getBoid_position(),average_point);
+            average_point = point_addition(boid.getBoid_position(),average_point);
         }
         average_point.setX_coordinate(average_point.Get_X_double()/Boid_List.size());
         average_point.setY_coordinate(average_point.Get_Y_double()/Boid_List.size());

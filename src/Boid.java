@@ -61,7 +61,7 @@ public class Boid {
         {
             //calculate separation between this boid and the current boid ( denominator of equation ):
             double actual_separation = Boid_Maths.Distance_between_points(this.boid_position,boid.boid_position);
-            //TODO make this a Boid_Maths method (find angle between boids )
+            //TODO make this a Boid_Maths method (find angle between points )
             /*
             to find the angle of boid relative to this boid i use this boid as a reference. I archive this by substracting the position of this.boid from boid.
             this will give me the x and y difference between the boids. i can then use these to calculate the angle.the angle will be used later.
@@ -85,7 +85,15 @@ public class Boid {
 
     private void calculate_cohesion()
     {
-
+        cohesion_vector = new polar_vector(0,0,true);
+        //find the average position of nearby boids
+        cartesian_point average_position = Boid_Maths.Calculate_average_boid_position(Boidnearby_List);
+        //find the distance between this boid and the average position
+        double distance = Boid_Maths.Distance_between_points(this.boid_position,average_position);
+        //TODO (find angle between points )
+        double angle_between_points = Boid_Maths.find_anticlockwise_angle(average_position.Get_X_double() - this.boid_position.Get_X_double(),average_position.Get_Y_double()-this.boid_position.Get_Y_double());
+        //create vector
+        cohesion_vector = new polar_vector(distance,angle_between_points,true);
     }
 
     private void calculate_obstacle_vector()
