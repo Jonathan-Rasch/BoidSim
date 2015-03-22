@@ -1,7 +1,8 @@
+import java.awt.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Boid {
+public class Boid implements Drawable{
 
     private cartesian_point boid_position;
 
@@ -85,7 +86,7 @@ public class Boid {
 
     private void calculate_cohesion()
     {
-        cohesion_vector = new polar_vector(0,0,true);
+        cohesion_vector = new polar_vector(0,0,true);//reset  cohesion vector
         //find the average position of nearby boids
         cartesian_point average_position = Boid_Maths.Calculate_average_boid_position(Boidnearby_List);
         //find the distance between this boid and the average position
@@ -104,5 +105,10 @@ public class Boid {
     private void calculate_food_vector()
     {
 
+    }
+
+    @Override
+    public void Draw(Graphics2D g) {
+        g.drawOval(boid_position.Get_X_int(),boid_position.Get_Y_int(),(int)Boid_radius,(int)Boid_radius);
     }
 }

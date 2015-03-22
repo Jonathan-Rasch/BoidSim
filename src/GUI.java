@@ -34,7 +34,7 @@ public class GUI extends JFrame implements Runnable
         Tabs = new JTabbedPane();
         Tabs.setVisible(true);
 
-        SimulationPanel = new JPanel();
+        SimulationPanel = new Simulation_Panel(this.simM);
         SimulationPanel.setSize(800,600);
         SimulationPanel.setMinimumSize(new Dimension(600,800));
         SimulationPanel.setBackground(Color.black);

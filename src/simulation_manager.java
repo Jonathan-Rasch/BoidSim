@@ -1,12 +1,23 @@
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
+import java.util.List;
 
 public class simulation_manager implements ActionListener
 {
     private double last_nano_Time = 0;
     private double new_nano_time = 0;
 
-//TODO solve problem with getting first timestep
+    //list containing all boids
+    private List<Boid> Boid_List = new ArrayList<Boid>();
+
+    private List<Drawable> Draw_List = new ArrayList<Drawable>();//list of stuff that has the Draw() function
+
+    public List<Drawable> getDraw_List() {
+        return Draw_List;
+    }
+
+    //TODO solve problem with getting first timestep
     public double elapsedTime()
     {
         new_nano_time = System.nanoTime();
