@@ -15,11 +15,29 @@ public class simulation_manager implements ActionListener
 
     public simulation_manager()
     {
+        //TODO remove this test code
+        int i = 100;
+        while(i > 0)
+        {
+            i--;
+            Boid_List.add(new Boid(100,100));
+        }
 
     }
 
     public void UpdateLoop()
     {
+
+        Draw_List.addAll(Boid_List);
+        double deltaT = elapsedTimeStop();
+        for(Boid boid:Boid_List)
+        {
+            boid.Update(deltaT,Boid_List);
+        }
+        for(Boid boid:Boid_List)
+        {
+            boid.UpdateComplete();
+        }
         elapsedTimeStart();
     }
 

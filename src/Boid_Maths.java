@@ -1,5 +1,6 @@
 import java.lang.Math;
 import java.util.List;
+import java.util.Random;
 
 public final class Boid_Maths
 {
@@ -191,5 +192,20 @@ public final class Boid_Maths
         return distance_between_points;
     }
 
+    /*
+    returns a cartesian point with random x and y components.
+     */
+    public static cartesian_point RandomPosition(int maxX,int maxY)
+    {
+        Random R = new Random(System.nanoTime());
+        cartesian_point point = new cartesian_point(R.nextInt(maxX),R.nextInt(maxY));
+        return point;
+    }
 
+    public  static <T extends Number> polar_vector RandomVector(T Max_magnitude )
+    {
+        Random R = new Random(System.nanoTime());
+        polar_vector vector = new polar_vector(R.nextDouble()* Max_magnitude.doubleValue(),R.nextDouble()*2*Math.PI,true);
+        return vector;
+    }
 }

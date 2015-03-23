@@ -4,9 +4,16 @@ import java.util.List;
 
 public class Boid implements Drawable{
 
+    /*
+    the boid has a position and a vector which are used to determine the behaviour of the sourounding boids . the update functions use those.
+    after the update function is done the boid has a new position and a new vector which are used to alter the position of the boid in the next frame.
+     */
     private cartesian_point boid_position;
+    private cartesian_point new_position;//the next position of the boid after the update. this is so that all boids change position simultaneously
 
     private polar_vector boid_vector;
+    private polar_vector new_boid_vector;//used to find the new position.
+
     //TODO refactor "allignment" to "alignment" , spelling reasons
     private polar_vector allignment_vector;//the vector due to allignment
     private polar_vector seperation_vector;//the vector due to seperation
@@ -15,9 +22,9 @@ public class Boid implements Drawable{
     private polar_vector food_vector;//vector to stear towards food (optional)
 
     //the minimum desired seperation between the boids.
-    private static double Desired_Seperation;//all boids share this value. it is set via settings in the gui or uses default values
-    private static double Detection_distance;//the distance for which the boid detects other boids.
-    private static double Boid_radius; // the radius of the circle representing the boid.
+    private static double Desired_Seperation = 10;//all boids share this value. it is set via settings in the gui or uses default values
+    private static double Detection_distance = 10;//the distance for which the boid detects other boids.
+    private static double Boid_radius = 20 ; // the radius of the circle representing the boid.
     //TODO write a function to update statics
 
     List<Boid> Boidnearby_List = new ArrayList<Boid>();
@@ -110,5 +117,41 @@ public class Boid implements Drawable{
     @Override
     public void Draw(Graphics2D g) {
         g.drawOval(boid_position.Get_X_int(),boid_position.Get_Y_int(),(int)Boid_radius,(int)Boid_radius);
+    }
+
+    //update the boid
+    public void Update(double deltaT , List<Boid> Boid_list)
+    {
+       for(Boid boid:Boid_list)
+       {
+           //check which boids are in the detection distance
+           if(Boid_Maths.Distance_between_points(this.boid_position,boid.getBoid_position()) <= Detection_distance);
+           {
+               Boidnearby_List.add(boid);
+           }
+       }
+        //do vector calculations
+        calculate_allignment();
+        calculate_seperation();
+        calculate_cohesion();
+        //find the new boid vector
+        new_boid_vector = Boid_Maths.vector_addition(seperation_vector,cohesion_vector,allignment_vector);
+        //find the new boid position
+        double new_X = new_boid_vector.getXcomponent()*deltaT + this.boid_position.Get_X_double();
+        double new_Y = new_boid_vector.getYcomponent()*deltaT + this.boid_position.Get_Y_double();
+        new_position = new cartesian_point(new_X,new_Y);
+    }
+    //once every boid has ran through update, the boids assume their new positions and vectors
+    public void UpdateComplete()
+    {
+        this.boid_position = this.new_position;
+        this.boid_vector = this.new_boid_vector;
+    }
+
+    //constructor creating boid with random position and vector
+    public Boid(int maxVector_magnitude,int detection_distance)
+    {
+        boid_position = Boid_Maths.RandomPosition(1280,720);
+        boid_vector = Boid_Maths.RandomVector(maxVector_magnitude);
     }
 }

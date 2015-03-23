@@ -17,13 +17,14 @@ public class Simulation_Panel extends JPanel
     /*
     every object that is supposed to be drawn in the sim panel implements the Drawable interface and hence has the Draw() function
      */
-    public void paintComponents(Graphics g)
+    public void paint(Graphics g)//paintcomponent does not seem to work, paint however does
     {
-        super.paintComponents(g);
+        super.paintComponent(g);
         Graphics2D g2 = (Graphics2D)g;
         for(Drawable D:SimManager.getDraw_List())
         {
             D.Draw(g2);
         }
+        System.out.println("drew " + SimManager.getDraw_List().size());
     }
 }

@@ -31,7 +31,7 @@ public class GUI extends JFrame implements Runnable
 
     public void CreateGUI()
     {
-        this.setSize(1280,720);
+        this.setSize(1280,720);//TODO get universal settings working to save this stuff
         this.setVisible(true);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setLayout(new BorderLayout());
@@ -53,7 +53,10 @@ public class GUI extends JFrame implements Runnable
         Tabs.add(BoidOptionTab);
         Tabs.add(DrawOptionTab);
         this.add(Tabs,BorderLayout.EAST);
+
     }
+
+
 
 
 
