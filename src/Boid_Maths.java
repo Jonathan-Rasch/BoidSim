@@ -100,26 +100,46 @@ public final class Boid_Maths
      */
     public static <T extends Number,T2 extends Number> double find_anticlockwise_angle(T x,T y )
     {
-        if(x.doubleValue() > 0 && y.doubleValue() > 0)
+        double X = x.doubleValue();
+        double Y = y.doubleValue();
+        double angle; //= Math.atan(Y/X);
+        if(X == 0 && Y  == 0)
         {
-            return Math.atan(y.doubleValue()/x.doubleValue());
+            angle = 0;
         }
-        else if (x.doubleValue() < 0 && y.doubleValue() > 0)
+        else if(X > 0 && Y  > 0)
         {
-            return Math.PI - Math.atan(y.doubleValue()/x.doubleValue());
+            angle = Math.atan(Y/X);
         }
-        else if (x.doubleValue() > 0 && y.doubleValue() < 0)
+        else if(X == 0 && Y  > 0)
         {
-            return 2*Math.PI - Math.atan(y.doubleValue()/x.doubleValue());
+            angle = Math.PI/2;
         }
-        else if (x.doubleValue() < 0 && y.doubleValue() < 0)
+        else if(X < 0 && Y  > 0)
         {
-            return Math.PI - Math.atan(y.doubleValue()/x.doubleValue());//atan will result in negative, hence double negative to add to PI.
+            angle = Math.PI + Math.atan(Y/X);
+        }
+        else if(X < 0 && Y  == 0)
+        {
+            angle = Math.PI;
+        }
+        else if(X < 0 && Y  < 0)
+        {
+            angle =Math.PI + Math.atan(Y/X);
+        }
+        else if(X == 0 && Y  < 0)
+        {
+            angle = (3*Math.PI)/2;
+        }
+        else if(X > 0 && Y  < 0)
+        {
+            angle =2*Math.PI + Math.atan(Y/X);
         }
         else // either x or y or both are 0 , so angle is also 0
         {
             return 0;
         }
+        return angle;
     }
 
     /*

@@ -2,16 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="eb6d6b00-8b60-4cbe-9c50-7c6cd21b4eda" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/BoidSim/Boid.class" afterPath="$PROJECT_DIR$/out/production/BoidSim/Boid.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/BoidSim/Boid_Maths.class" afterPath="$PROJECT_DIR$/out/production/BoidSim/Boid_Maths.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/BoidSim/GUI.class" afterPath="$PROJECT_DIR$/out/production/BoidSim/GUI.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/BoidSim/Simulation_Panel.class" afterPath="$PROJECT_DIR$/out/production/BoidSim/Simulation_Panel.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/BoidSim/simulation_manager.class" afterPath="$PROJECT_DIR$/out/production/BoidSim/simulation_manager.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Boid.java" afterPath="$PROJECT_DIR$/src/Boid.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Boid_Maths_method_tests.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Boid_Maths.java" afterPath="$PROJECT_DIR$/src/Boid_Maths.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/GUI.java" afterPath="$PROJECT_DIR$/src/GUI.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Simulation_Panel.java" afterPath="$PROJECT_DIR$/src/Simulation_Panel.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/simulation_manager.java" afterPath="$PROJECT_DIR$/src/simulation_manager.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Boid Simulator.iws" />
@@ -37,17 +30,35 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="Boid_Maths.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Boid_Maths.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Boid_Maths.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.33333334" vertical-offset="1416" max-vertical-offset="3383">
-              <caret line="102" column="0" selection-start-line="102" selection-start-column="0" selection-end-line="102" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="1088" max-vertical-offset="3196">
+              <caret line="121" column="29" selection-start-line="121" selection-start-column="29" selection-end-line="121" selection-end-column="29" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="docComment;method#Boid_Maths#0;class#Boid_Maths#0" expanded="false" />
                 <element signature="method#Boid_Maths#0;class#Boid_Maths#0" expanded="false" />
+                <element signature="method#Vector_Polar_to_Cartesian#0;class#Boid_Maths#0" expanded="false" />
+                <element signature="method#Vector_Polar_to_Cartesian#1;class#Boid_Maths#0" expanded="false" />
+                <element signature="docComment;method#calculate_opposite#0;class#Boid_Maths#0" expanded="false" />
+                <element signature="method#calculate_opposite#0;class#Boid_Maths#0" expanded="false" />
+                <element signature="method#calculate_adjacent#0;class#Boid_Maths#0" expanded="false" />
+                <element signature="method#calculate_magnitude#0;class#Boid_Maths#0" expanded="false" />
+                <element signature="method#calculate_magnitude#1;class#Boid_Maths#0" expanded="false" />
                 <element signature="docComment;method#find_anticlockwise_angle#0;class#Boid_Maths#0" expanded="false" />
                 <element signature="method#vector_addition#1;class#Boid_Maths#0" expanded="false" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Boid_Maths_method_tests.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/Boid_Maths_method_tests.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.67670363" vertical-offset="610" max-vertical-offset="1241">
+              <caret line="61" column="90" selection-start-line="61" selection-start-column="90" selection-end-line="61" selection-end-column="90" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -113,18 +124,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Simulation_Panel.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Simulation_Panel.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="612">
-              <caret line="27" column="69" selection-start-line="27" selection-start-column="69" selection-end-line="27" selection-end-column="69" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="polar_vector.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/polar_vector.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -165,11 +164,14 @@
         <option value="$PROJECT_DIR$/src/cartesian_point.java" />
         <option value="$PROJECT_DIR$/src/polar_vector.java" />
         <option value="$PROJECT_DIR$/src/Drawable.java" />
-        <option value="$PROJECT_DIR$/src/Boid_Maths.java" />
         <option value="$PROJECT_DIR$/src/GUI.java" />
         <option value="$PROJECT_DIR$/src/Simulation_Panel.java" />
         <option value="$PROJECT_DIR$/src/simulation_manager.java" />
         <option value="$PROJECT_DIR$/src/Boid.java" />
+        <option value="$PROJECT_DIR$/Boid_Maths debuggin and testing/src/Boid_Maths_method_tests.java" />
+        <option value="$PROJECT_DIR$/Boid_Maths debuggin and testing/src/Boid_Maths.java" />
+        <option value="$PROJECT_DIR$/src/Boid_Maths.java" />
+        <option value="$PROJECT_DIR$/src/Boid_Maths_method_tests.java" />
       </list>
     </option>
   </component>
@@ -190,7 +192,7 @@
     <ConfirmationsSetting value="0" id="Remove" />
   </component>
   <component name="ProjectView">
-    <navigator currentView="PackagesPane" proportions="" version="1">
+    <navigator currentView="ProjectPane" proportions="" version="1">
       <flattenPackages />
       <showMembers />
       <showModules />
@@ -214,6 +216,16 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewModuleNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BoidSim" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Boid_Maths debuggin and testing" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewModuleNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
       <pane id="Scope" />
@@ -221,31 +233,49 @@
         <subPane>
           <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Boid Simulator" />
+              <option name="myItemId" value="BoidSim" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Boid Simulator" />
+              <option name="myItemId" value="BoidSim" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Boid Simulator" />
+              <option name="myItemId" value="BoidSim" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Boid Simulator" />
+              <option name="myItemId" value="BoidSim" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Boid Simulator" />
+              <option name="myItemId" value="BoidSim" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BoidSim" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BoidSim" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="out" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="production" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -274,8 +304,14 @@
     <key name="CreateClassDialog.RecentsKey">
       <recent name="" />
     </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\pc\Documents\GitHub\BoidSim\Boid_Maths debuggin and testing\src" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="" />
+    </key>
   </component>
-  <component name="RunManager" selected="Application.GUI">
+  <component name="RunManager" selected="Application.Boid_Maths_method_tests">
     <configuration default="false" name="GUI" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <option name="MAIN_CLASS_NAME" value="GUI" />
@@ -284,6 +320,29 @@
       <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" value="" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="BoidSim" />
+      <envs />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="" />
+        <option name="TRANSPORT" value="0" />
+        <option name="LOCAL" value="true" />
+      </RunnerSettings>
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Debug" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method />
+    </configuration>
+    <configuration default="false" name="Boid_Maths_method_tests" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="MAIN_CLASS_NAME" value="Boid_Maths_method_tests" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
       <option name="ENABLE_SWING_INSPECTOR" value="false" />
       <option name="ENV_VARIABLES" />
       <option name="PASS_PARENT_ENVS" value="true" />
@@ -452,12 +511,14 @@
       <listeners />
       <method />
     </configuration>
-    <list size="1">
+    <list size="2">
       <item index="0" class="java.lang.String" itemvalue="Application.GUI" />
+      <item index="1" class="java.lang.String" itemvalue="Application.Boid_Maths_method_tests" />
     </list>
     <recent_temporary>
-      <list size="1">
-        <item index="0" class="java.lang.String" itemvalue="Application.GUI" />
+      <list size="2">
+        <item index="0" class="java.lang.String" itemvalue="Application.Boid_Maths_method_tests" />
+        <item index="1" class="java.lang.String" itemvalue="Application.GUI" />
       </list>
     </recent_temporary>
   </component>
@@ -522,20 +583,20 @@
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.38452914" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.26121077" sideWeight="0.5" order="11" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.19394618" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.26121077" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.13203125" sideWeight="0.4993046" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.228125" sideWeight="0.4993046" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1125" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.1125" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.13203125" sideWeight="0.5006954" order="3" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.39910313" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39910313" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -570,8 +631,20 @@
           <properties />
           <option name="timeStamp" value="14" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Boid_Maths_method_tests.java</url>
+          <line>62</line>
+          <properties />
+          <option name="timeStamp" value="21" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Boid_Maths.java</url>
+          <line>131</line>
+          <properties />
+          <option name="timeStamp" value="26" />
+        </line-breakpoint>
       </breakpoints>
-      <option name="time" value="15" />
+      <option name="time" value="27" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -586,7 +659,15 @@
           <caret line="153" column="65" selection-start-line="153" selection-start-column="65" selection-end-line="153" selection-end-column="65" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="docComment;method#Boid_Maths#0;class#Boid_Maths#0" expanded="false" />
             <element signature="method#Boid_Maths#0;class#Boid_Maths#0" expanded="false" />
+            <element signature="method#Vector_Polar_to_Cartesian#0;class#Boid_Maths#0" expanded="false" />
+            <element signature="method#Vector_Polar_to_Cartesian#1;class#Boid_Maths#0" expanded="false" />
+            <element signature="docComment;method#calculate_opposite#0;class#Boid_Maths#0" expanded="false" />
+            <element signature="method#calculate_opposite#0;class#Boid_Maths#0" expanded="false" />
+            <element signature="method#calculate_adjacent#0;class#Boid_Maths#0" expanded="false" />
+            <element signature="method#calculate_magnitude#0;class#Boid_Maths#0" expanded="false" />
+            <element signature="method#calculate_magnitude#1;class#Boid_Maths#0" expanded="false" />
             <element signature="docComment;method#find_anticlockwise_angle#0;class#Boid_Maths#0" expanded="false" />
             <element signature="method#vector_addition#1;class#Boid_Maths#0" expanded="false" />
           </folding>
@@ -668,7 +749,15 @@
           <caret line="153" column="65" selection-start-line="153" selection-start-column="65" selection-end-line="153" selection-end-column="65" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="docComment;method#Boid_Maths#0;class#Boid_Maths#0" expanded="false" />
             <element signature="method#Boid_Maths#0;class#Boid_Maths#0" expanded="false" />
+            <element signature="method#Vector_Polar_to_Cartesian#0;class#Boid_Maths#0" expanded="false" />
+            <element signature="method#Vector_Polar_to_Cartesian#1;class#Boid_Maths#0" expanded="false" />
+            <element signature="docComment;method#calculate_opposite#0;class#Boid_Maths#0" expanded="false" />
+            <element signature="method#calculate_opposite#0;class#Boid_Maths#0" expanded="false" />
+            <element signature="method#calculate_adjacent#0;class#Boid_Maths#0" expanded="false" />
+            <element signature="method#calculate_magnitude#0;class#Boid_Maths#0" expanded="false" />
+            <element signature="method#calculate_magnitude#1;class#Boid_Maths#0" expanded="false" />
             <element signature="docComment;method#find_anticlockwise_angle#0;class#Boid_Maths#0" expanded="false" />
             <element signature="method#vector_addition#1;class#Boid_Maths#0" expanded="false" />
           </folding>
@@ -750,7 +839,15 @@
           <caret line="192" column="0" selection-start-line="192" selection-start-column="0" selection-end-line="192" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="docComment;method#Boid_Maths#0;class#Boid_Maths#0" expanded="false" />
             <element signature="method#Boid_Maths#0;class#Boid_Maths#0" expanded="false" />
+            <element signature="method#Vector_Polar_to_Cartesian#0;class#Boid_Maths#0" expanded="false" />
+            <element signature="method#Vector_Polar_to_Cartesian#1;class#Boid_Maths#0" expanded="false" />
+            <element signature="docComment;method#calculate_opposite#0;class#Boid_Maths#0" expanded="false" />
+            <element signature="method#calculate_opposite#0;class#Boid_Maths#0" expanded="false" />
+            <element signature="method#calculate_adjacent#0;class#Boid_Maths#0" expanded="false" />
+            <element signature="method#calculate_magnitude#0;class#Boid_Maths#0" expanded="false" />
+            <element signature="method#calculate_magnitude#1;class#Boid_Maths#0" expanded="false" />
             <element signature="docComment;method#find_anticlockwise_angle#0;class#Boid_Maths#0" expanded="false" />
             <element signature="method#vector_addition#1;class#Boid_Maths#0" expanded="false" />
           </folding>
@@ -806,7 +903,15 @@
           <caret line="50" column="43" selection-start-line="50" selection-start-column="43" selection-end-line="50" selection-end-column="43" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="docComment;method#Boid_Maths#0;class#Boid_Maths#0" expanded="false" />
             <element signature="method#Boid_Maths#0;class#Boid_Maths#0" expanded="false" />
+            <element signature="method#Vector_Polar_to_Cartesian#0;class#Boid_Maths#0" expanded="false" />
+            <element signature="method#Vector_Polar_to_Cartesian#1;class#Boid_Maths#0" expanded="false" />
+            <element signature="docComment;method#calculate_opposite#0;class#Boid_Maths#0" expanded="false" />
+            <element signature="method#calculate_opposite#0;class#Boid_Maths#0" expanded="false" />
+            <element signature="method#calculate_adjacent#0;class#Boid_Maths#0" expanded="false" />
+            <element signature="method#calculate_magnitude#0;class#Boid_Maths#0" expanded="false" />
+            <element signature="method#calculate_magnitude#1;class#Boid_Maths#0" expanded="false" />
             <element signature="docComment;method#find_anticlockwise_angle#0;class#Boid_Maths#0" expanded="false" />
             <element signature="method#vector_addition#1;class#Boid_Maths#0" expanded="false" />
           </folding>
@@ -843,7 +948,15 @@
           <caret line="2" column="1" selection-start-line="2" selection-start-column="1" selection-end-line="2" selection-end-column="1" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="docComment;method#Boid_Maths#0;class#Boid_Maths#0" expanded="false" />
             <element signature="method#Boid_Maths#0;class#Boid_Maths#0" expanded="false" />
+            <element signature="method#Vector_Polar_to_Cartesian#0;class#Boid_Maths#0" expanded="false" />
+            <element signature="method#Vector_Polar_to_Cartesian#1;class#Boid_Maths#0" expanded="false" />
+            <element signature="docComment;method#calculate_opposite#0;class#Boid_Maths#0" expanded="false" />
+            <element signature="method#calculate_opposite#0;class#Boid_Maths#0" expanded="false" />
+            <element signature="method#calculate_adjacent#0;class#Boid_Maths#0" expanded="false" />
+            <element signature="method#calculate_magnitude#0;class#Boid_Maths#0" expanded="false" />
+            <element signature="method#calculate_magnitude#1;class#Boid_Maths#0" expanded="false" />
             <element signature="docComment;method#find_anticlockwise_angle#0;class#Boid_Maths#0" expanded="false" />
             <element signature="method#vector_addition#1;class#Boid_Maths#0" expanded="false" />
           </folding>
@@ -880,7 +993,15 @@
           <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="docComment;method#Boid_Maths#0;class#Boid_Maths#0" expanded="false" />
             <element signature="method#Boid_Maths#0;class#Boid_Maths#0" expanded="false" />
+            <element signature="method#Vector_Polar_to_Cartesian#0;class#Boid_Maths#0" expanded="false" />
+            <element signature="method#Vector_Polar_to_Cartesian#1;class#Boid_Maths#0" expanded="false" />
+            <element signature="docComment;method#calculate_opposite#0;class#Boid_Maths#0" expanded="false" />
+            <element signature="method#calculate_opposite#0;class#Boid_Maths#0" expanded="false" />
+            <element signature="method#calculate_adjacent#0;class#Boid_Maths#0" expanded="false" />
+            <element signature="method#calculate_magnitude#0;class#Boid_Maths#0" expanded="false" />
+            <element signature="method#calculate_magnitude#1;class#Boid_Maths#0" expanded="false" />
             <element signature="docComment;method#find_anticlockwise_angle#0;class#Boid_Maths#0" expanded="false" />
             <element signature="method#vector_addition#1;class#Boid_Maths#0" expanded="false" />
           </folding>
@@ -917,7 +1038,15 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="docComment;method#Boid_Maths#0;class#Boid_Maths#0" expanded="false" />
             <element signature="method#Boid_Maths#0;class#Boid_Maths#0" expanded="false" />
+            <element signature="method#Vector_Polar_to_Cartesian#0;class#Boid_Maths#0" expanded="false" />
+            <element signature="method#Vector_Polar_to_Cartesian#1;class#Boid_Maths#0" expanded="false" />
+            <element signature="docComment;method#calculate_opposite#0;class#Boid_Maths#0" expanded="false" />
+            <element signature="method#calculate_opposite#0;class#Boid_Maths#0" expanded="false" />
+            <element signature="method#calculate_adjacent#0;class#Boid_Maths#0" expanded="false" />
+            <element signature="method#calculate_magnitude#0;class#Boid_Maths#0" expanded="false" />
+            <element signature="method#calculate_magnitude#1;class#Boid_Maths#0" expanded="false" />
             <element signature="docComment;method#find_anticlockwise_angle#0;class#Boid_Maths#0" expanded="false" />
             <element signature="method#vector_addition#1;class#Boid_Maths#0" expanded="false" />
           </folding>
@@ -1020,14 +1149,30 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Boid_Maths.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33333334" vertical-offset="1416" max-vertical-offset="3383">
-          <caret line="102" column="0" selection-start-line="102" selection-start-column="0" selection-end-line="102" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="1088" max-vertical-offset="3196">
+          <caret line="121" column="29" selection-start-line="121" selection-start-column="29" selection-end-line="121" selection-end-column="29" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="docComment;method#Boid_Maths#0;class#Boid_Maths#0" expanded="false" />
             <element signature="method#Boid_Maths#0;class#Boid_Maths#0" expanded="false" />
+            <element signature="method#Vector_Polar_to_Cartesian#0;class#Boid_Maths#0" expanded="false" />
+            <element signature="method#Vector_Polar_to_Cartesian#1;class#Boid_Maths#0" expanded="false" />
+            <element signature="docComment;method#calculate_opposite#0;class#Boid_Maths#0" expanded="false" />
+            <element signature="method#calculate_opposite#0;class#Boid_Maths#0" expanded="false" />
+            <element signature="method#calculate_adjacent#0;class#Boid_Maths#0" expanded="false" />
+            <element signature="method#calculate_magnitude#0;class#Boid_Maths#0" expanded="false" />
+            <element signature="method#calculate_magnitude#1;class#Boid_Maths#0" expanded="false" />
             <element signature="docComment;method#find_anticlockwise_angle#0;class#Boid_Maths#0" expanded="false" />
             <element signature="method#vector_addition#1;class#Boid_Maths#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Boid_Maths_method_tests.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.67670363" vertical-offset="610" max-vertical-offset="1241">
+          <caret line="61" column="90" selection-start-line="61" selection-start-column="90" selection-end-line="61" selection-end-column="90" />
+          <folding />
         </state>
       </provider>
     </entry>
