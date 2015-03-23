@@ -132,5 +132,34 @@ public class Boid_Maths_method_tests {
         System.out.println("Max magnitude 0.5: magnitude=" + v.getMagnitude() + " angle=" + v.getAngle_rad() );
         System.out.println("\n");
 
+        /*
+        testing point_addition method
+         */
+        System.out.println("testing point_addition method");
+        p = new cartesian_point(1,1);
+        cartesian_point p2 = new cartesian_point(1,1);
+        //simple 2 point test
+        cartesian_point result = Boid_Maths.point_addition(p,p2);
+        System.out.println("expected 2,2 : " +result.Get_X_double() + "," + result.Get_Y_double());
+        //testing with negatives
+        p = new cartesian_point(-1,-1);
+        p2 = new cartesian_point(1,1);
+        result = Boid_Maths.point_addition(p,p2);
+        System.out.println("expected 0,0 : " +result.Get_X_double() + "," + result.Get_Y_double());
+        p = new cartesian_point(-1,1);
+        p2 = new cartesian_point(-1,1);
+        result = Boid_Maths.point_addition(p,p2);
+        System.out.println("expected -2,2 : " +result.Get_X_double() + "," + result.Get_Y_double());
+        //testing with multiple points
+        p = new cartesian_point(1,1);
+        p2 = new cartesian_point(1,1);
+        result = Boid_Maths.point_addition(p,p2,p,p,p2);
+        System.out.println("expected 5,5 : " +result.Get_X_double() + "," + result.Get_Y_double());
+
+        /*
+        testing vector_addition method
+         */
+
+
     }
 }

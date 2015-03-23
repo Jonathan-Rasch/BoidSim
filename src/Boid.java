@@ -23,7 +23,7 @@ public class Boid implements Drawable{
 
     //the minimum desired seperation between the boids.
     private static double Desired_Seperation = 10;//all boids share this value. it is set via settings in the gui or uses default values
-    private static double Detection_distance = 10;//the distance for which the boid detects other boids.
+    private static double Detection_distance = 0;//the distance for which the boid detects other boids.
     private static double Boid_radius = 20 ; // the radius of the circle representing the boid.
     //TODO write a function to update statics
 
@@ -122,12 +122,15 @@ public class Boid implements Drawable{
     //update the boid
     public void Update(double deltaT , List<Boid> Boid_list)
     {
-       for(Boid boid:Boid_list)
+       for(Boid boid1:Boid_list)
        {
            //check which boids are in the detection distance
-           if(Boid_Maths.Distance_between_points(this.boid_position,boid.getBoid_position()) <= Detection_distance);
+           //DEBUG
+           double i = Boid_Maths.Distance_between_points(this.boid_position,boid1.getBoid_position());
+           //END DEBUG
+           if(i <= Detection_distance);
            {
-               Boidnearby_List.add(boid);
+               Boidnearby_List.add(boid1);
            }
        }
         //do vector calculations
