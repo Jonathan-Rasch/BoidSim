@@ -156,6 +156,7 @@ public final class Boid_Maths
         }
         return  resultant_vector;
     }
+
     public static polar_vector vector_addition(List<polar_vector> VectorList)
     {
         polar_vector resultant_vector = new polar_vector(0,0,false);
@@ -217,9 +218,13 @@ public final class Boid_Maths
      */
     public static cartesian_point RandomPosition(int maxX,int maxY)
     {
-        Random R = new Random(System.nanoTime());
-        cartesian_point point = new cartesian_point(R.nextInt(maxX),R.nextInt(maxY));
-        return point;
+        try {
+            Random R = new Random(System.nanoTime());
+            cartesian_point point = new cartesian_point(R.nextInt(maxX),R.nextInt(maxY));
+            return point;
+        } catch (Exception e) {
+            return new cartesian_point(0,0);
+        }
     }
 
     public  static <T extends Number> polar_vector RandomVector(T Max_magnitude )

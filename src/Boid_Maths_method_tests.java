@@ -54,13 +54,82 @@ public class Boid_Maths_method_tests {
          */
         System.out.println("testing the find_anticlockwise_angle method");
         System.out.println("[expected 0.00]" + Boid_Maths.find_anticlockwise_angle(0,0));
-        System.out.println("[expected 0.78]" + Boid_Maths.find_anticlockwise_angle(1,1));
+        System.out.println("[expected 0.78]" + Boid_Maths.find_anticlockwise_angle(0.1,0.1));
         System.out.println("[expected 1.57]" + Boid_Maths.find_anticlockwise_angle(0,1));
-        System.out.println("[expected 2.35]" + Boid_Maths.find_anticlockwise_angle(-1,1));
+        System.out.println("[expected 2.35]" + Boid_Maths.find_anticlockwise_angle(-100,100));
         System.out.println("[expected 3.14]" + Boid_Maths.find_anticlockwise_angle(-1,0));
-        System.out.println("[expected 3.92]" + Boid_Maths.find_anticlockwise_angle(-1,-1));
+        System.out.println("[expected 3.92]" + Boid_Maths.find_anticlockwise_angle(-1.000,-1));
         System.out.println("[expected 4.71]" + Boid_Maths.find_anticlockwise_angle(0,-1));
         System.out.println("[expected 5.49]" + Boid_Maths.find_anticlockwise_angle(1,-1));
+        System.out.println("\n");
+
+        /*
+        Distance_between_points method test
+         */
+
+        System.out.println("testing the Distance_between_points method");
+        //first doing some general tests, testing the distance between various points and (0,0)
+        System.out.println("expected 1.41: " + Boid_Maths.Distance_between_points(new cartesian_point(0,0),new cartesian_point(1,1)));
+        System.out.println("expected 1.41: " + Boid_Maths.Distance_between_points(new cartesian_point(1,1),new cartesian_point(0,0)));//reversed
+        System.out.println("expected 1.41: " + Boid_Maths.Distance_between_points(new cartesian_point(0,0),new cartesian_point(-1,1)));
+        System.out.println("expected 1.41: " + Boid_Maths.Distance_between_points(new cartesian_point(0,0),new cartesian_point(-1,-1)));
+        System.out.println("expected 1.41: " + Boid_Maths.Distance_between_points(new cartesian_point(0,0),new cartesian_point(1,-1)));
+        //see what happens when distance is 0
+        System.out.println("expected 0.00: " + Boid_Maths.Distance_between_points(new cartesian_point(1,1),new cartesian_point(1,1)));
+        //test if it works with doubles
+        System.out.println("expected 1.41: " + Boid_Maths.Distance_between_points(new cartesian_point(0.23,0.23),new cartesian_point(1.23,-0.77)));
+        System.out.println("\n");
+
+        /*
+        testing the randomPosition method
+        */
+        System.out.println("testing the RandomPosition method. all the following number should be different and below the max");
+        cartesian_point p = Boid_Maths.RandomPosition(1,1);
+        System.out.println("Max 1,1 : " + p.Get_X_double() + "," + p.Get_Y_double());
+        p = Boid_Maths.RandomPosition(10,10);
+        System.out.println("Max 10,10 : " + p.Get_X_double() + "," + p.Get_Y_double());
+        p = Boid_Maths.RandomPosition(100,100);
+        System.out.println("Max 10,10 : " + p.Get_X_double() + "," + p.Get_Y_double());
+        //trying to supply wrong values
+        p = Boid_Maths.RandomPosition(-10,-10);//if not catched this will cause runtime error
+        System.out.println("expected 0,0 : " + p.Get_X_double() + "," + p.Get_Y_double());
+        //testing randomness;
+        System.out.println("        testing randomness , all values should be different");
+        p = Boid_Maths.RandomPosition(100,100);
+        System.out.println("Max 100,100 : " + p.Get_X_double() + "," + p.Get_Y_double());
+        p = Boid_Maths.RandomPosition(100,100);
+        System.out.println("Max 100,100 : " + p.Get_X_double() + "," + p.Get_Y_double());
+        p = Boid_Maths.RandomPosition(100,100);
+        System.out.println("Max 100,100 : " + p.Get_X_double() + "," + p.Get_Y_double());
+        p = Boid_Maths.RandomPosition(100,100);
+        System.out.println("Max 100,100 : " + p.Get_X_double() + "," + p.Get_Y_double());
+        System.out.println("\n");
+
+        /*
+        testing the RandomVector method
+        */
+        System.out.println("testing the RandomVector method. magnitude should be below max and angle < 2*PI");
+        polar_vector v = Boid_Maths.RandomVector(100);
+        System.out.println("Max magnitude 100: magnitude=" + v.getMagnitude() + " angle=" + v.getAngle_rad() );
+        v = Boid_Maths.RandomVector(100);
+        System.out.println("Max magnitude 100: magnitude=" + v.getMagnitude() + " angle=" + v.getAngle_rad() );
+        v = Boid_Maths.RandomVector(100);
+        System.out.println("Max magnitude 100: magnitude=" + v.getMagnitude() + " angle=" + v.getAngle_rad() );
+        v = Boid_Maths.RandomVector(100);
+        System.out.println("Max magnitude 100: magnitude=" + v.getMagnitude() + " angle=" + v.getAngle_rad() );
+        v = Boid_Maths.RandomVector(100);
+        System.out.println("Max magnitude 100: magnitude=" + v.getMagnitude() + " angle=" + v.getAngle_rad() );
+        //giving negative input
+        v = Boid_Maths.RandomVector(-100);
+        System.out.println("Max magnitude -100: magnitude=" + v.getMagnitude() + " angle=" + v.getAngle_rad() );
+        v = Boid_Maths.RandomVector(-100);
+        System.out.println("Max magnitude -100: magnitude=" + v.getMagnitude() + " angle=" + v.getAngle_rad() );
+        v = Boid_Maths.RandomVector(-100);
+        System.out.println("Max magnitude -100: magnitude=" + v.getMagnitude() + " angle=" + v.getAngle_rad() );
+        v = Boid_Maths.RandomVector(0);
+        System.out.println("Max magnitude 0: magnitude=" + v.getMagnitude() + " angle=" + v.getAngle_rad() );
+        v = Boid_Maths.RandomVector(0.5);
+        System.out.println("Max magnitude 0.5: magnitude=" + v.getMagnitude() + " angle=" + v.getAngle_rad() );
         System.out.println("\n");
 
     }
