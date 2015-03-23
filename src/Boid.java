@@ -23,7 +23,7 @@ public class Boid implements Drawable{
 
     //the minimum desired seperation between the boids.
     private static double Desired_Seperation = 10;//all boids share this value. it is set via settings in the gui or uses default values
-    private static double Detection_distance = 0;//the distance for which the boid detects other boids.
+    private static double Detection_distance = 100;//the distance for which the boid detects other boids.
     private static double Boid_radius = 20 ; // the radius of the circle representing the boid.
     //TODO write a function to update statics
 
@@ -128,7 +128,7 @@ public class Boid implements Drawable{
            //DEBUG
            double i = Boid_Maths.Distance_between_points(this.boid_position,boid1.getBoid_position());
            //END DEBUG
-           if(i <= Detection_distance);
+           if(i < this.Detection_distance)//i < this.Detection_distance
            {
                Boidnearby_List.add(boid1);
            }
@@ -143,6 +143,7 @@ public class Boid implements Drawable{
         double new_X = new_boid_vector.getXcomponent()*deltaT + this.boid_position.Get_X_double();
         double new_Y = new_boid_vector.getYcomponent()*deltaT + this.boid_position.Get_Y_double();
         new_position = new cartesian_point(new_X,new_Y);
+        
     }
     //once every boid has ran through update, the boids assume their new positions and vectors
     public void UpdateComplete()
