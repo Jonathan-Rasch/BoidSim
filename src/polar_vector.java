@@ -16,6 +16,7 @@ public class polar_vector<T extends Number,T2 extends Number>
 
     public void setMagnitude(double magnitude) {
         this.magnitude = magnitude;
+        Update_cartesian_data();
     }
 
     public double getAngle_rad() {
@@ -24,6 +25,7 @@ public class polar_vector<T extends Number,T2 extends Number>
 
     public void setAngle_rad(double angle_rad) {
         this.angle_rad = angle_rad;
+        Update_cartesian_data();
     }
 
     public double getYcomponent() {
@@ -32,6 +34,7 @@ public class polar_vector<T extends Number,T2 extends Number>
 
     public void setYcomponent(double ycomponent) {
         Ycomponent = ycomponent;
+        Update_polar_data();
     }
 
     public double getXcomponent() {
@@ -40,7 +43,64 @@ public class polar_vector<T extends Number,T2 extends Number>
 
     public void setXcomponent(double xcomponent) {
         Xcomponent = xcomponent;
+        Update_polar_data();
     }
+
+    /*
+    calculates a new magnitude and angle depending on the new x and or y data
+     */
+    private void Update_polar_data()
+    {
+        magnitude = Boid_Maths.calculate_magnitude(Xcomponent,Ycomponent);
+        angle_rad = Boid_Maths.find_anticlockwise_angle(Xcomponent,Ycomponent);
+        //error checking
+        check_for_errors();
+    }
+
+    //makes sure the vector has values that are within the allowed limits
+    private void check_for_errors() {
+        boolean Xfinite = Double.isFinite(Xcomponent);
+        boolean Yfinite = Double.isFinite(Ycomponent);
+        boolean XNaN = Double.isNaN(Xcomponent);
+        boolean YNaN = Double.isNaN(Ycomponent);
+        if(!Xfinite || XNaN)//if X is infinite or NaN reset X
+        {
+            Xcomponent = 0;
+            Update_polar_data();
+        }
+        if(!Yfinite || YNaN)//if Y is infinite or NaN reset Y
+        {
+            Ycomponent = 0;
+            Update_polar_data();
+        }
+        //adjust angle so that it is not bigger than 2PI or smaller than 0PI
+        if (angle_rad > 2*Math.PI || angle_rad < 0)
+        {
+            while(angle_rad > 2*Math.PI)
+            {
+                angle_rad -= 2*Math.PI;
+            }
+            while(angle_rad < 0)
+            {
+                angle_rad += 2*Math.PI;
+            }
+            Update_cartesian_data();
+        }
+        //adjust so that maximum speed is not broken
+        if(magnitude > 200)
+        {
+            magnitude = 200;
+            Update_cartesian_data();
+        }
+    }
+
+    private void Update_cartesian_data()
+    {
+        Xcomponent = Boid_Maths.calculate_adjacent(angle_rad,magnitude);
+        Ycomponent = Boid_Maths.calculate_opposite(angle_rad,magnitude);
+        check_for_errors();
+    }
+
 
     /**
      * this is the constructor of the polar_Vector class. this class allows you to create a Boid_Vector object by either
@@ -59,7 +119,7 @@ public class polar_vector<T extends Number,T2 extends Number>
                 magnitude = magnitude_or_Xcomponent.doubleValue();
                 angle_rad = angleRad_or_Ycomponent.doubleValue();
                 Xcomponent = Boid_Maths.calculate_adjacent(angleRad_or_Ycomponent,magnitude_or_Xcomponent);
-                Ycomponent = Boid_Maths.calculate_opposite(angleRad_or_Ycomponent,magnitude_or_Xcomponent);//TODO check if this works
+                Ycomponent = Boid_Maths.calculate_opposite(angleRad_or_Ycomponent,magnitude_or_Xcomponent);
             }
             else//input is in cartesian form.
             {
@@ -68,11 +128,10 @@ public class polar_vector<T extends Number,T2 extends Number>
                 magnitude = Boid_Maths.calculate_magnitude(magnitude_or_Xcomponent,angleRad_or_Ycomponent);
                 angle_rad = Boid_Maths.calculate_Vector_angle(magnitude_or_Xcomponent,angleRad_or_Ycomponent);
             }
+            check_for_errors();
         } catch (Exception e) {
             e.printStackTrace();
-            //TODO call random vector constructor
-            //TODO print error to log file
-
+            check_for_errors();
         }
     }
 

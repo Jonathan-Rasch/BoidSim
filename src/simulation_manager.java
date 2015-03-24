@@ -1,3 +1,4 @@
+import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
@@ -5,8 +6,9 @@ import java.util.List;
 
 public class simulation_manager implements ActionListener
 {
-    private double start_nano_Time = 0;
-    private double new_nano_time = 0;
+    private double deltaT = 0;
+
+
 
     //list containing all boids
     private List<Boid> Boid_List = new ArrayList<Boid>();
@@ -20,16 +22,15 @@ public class simulation_manager implements ActionListener
         while(i > 0)
         {
             i--;
-            Boid_List.add(new Boid(100,100));
+            Boid_List.add(new Boid(0));
         }
 
     }
 
-    public void UpdateLoop()
+    public void Update(double Time_in_s)
     {
-
+        Draw_List.clear();
         Draw_List.addAll(Boid_List);
-        double deltaT = elapsedTimeStop();
         for(Boid boid:Boid_List)
         {
             boid.Update(deltaT,Boid_List);
@@ -38,33 +39,17 @@ public class simulation_manager implements ActionListener
         {
             boid.UpdateComplete();
         }
-        elapsedTimeStart();
+
     }
 
     public List<Drawable> getDraw_List() {
         return Draw_List;
     }
 
-    //TODO solve problem with getting first timestep
-
-    /**
-     * the elapsedTimeStart() and elapsedTimeStop() enable me to tell the time that has passed between the elapsedTimeStart() and
-     * the elapsedTimeStop() call. it is important that timestart is called before stop to ensure correct results.
-     */
-    private void elapsedTimeStart()
-    {
-        start_nano_Time = System.nanoTime();
-    }
-    private double elapsedTimeStop()
-    {
-        new_nano_time = System.nanoTime();
-        double elapsed_time = new_nano_time - start_nano_Time;
-        return elapsed_time * 0.000000001;//multiply by 1*10pow(-9) to return time in seconds
-    }
-
-
     @Override
     public void actionPerformed(ActionEvent e) {
-
+        //getting the time that has passed. from ms to s
+        deltaT = 0.001*(double)Integer.parseInt(e.getActionCommand());
+        Update(deltaT);
     }
 }

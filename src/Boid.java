@@ -1,4 +1,5 @@
 import java.awt.*;
+import java.awt.geom.Ellipse2D;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -23,8 +24,9 @@ public class Boid implements Drawable{
 
     //the minimum desired seperation between the boids.
     private static double Desired_Seperation = 10;//all boids share this value. it is set via settings in the gui or uses default values
-    private static double Detection_distance = 100;//the distance for which the boid detects other boids.
-    private static double Boid_radius = 20 ; // the radius of the circle representing the boid.
+    private static double Detection_distance = 50;//the distance for which the boid detects other boids.
+    private static double Boid_radius = 5 ; // the radius of the circle representing the boid.
+
     //TODO write a function to update statics
 
     List<Boid> Boidnearby_List = new ArrayList<Boid>();
@@ -63,9 +65,9 @@ public class Boid implements Drawable{
     {
 
         //calculating the numerator of the equation used to calculate the separation vector, same for all boids
-        seperation_vector = new polar_vector(0,0,true);//resetting separation vector
+        this.seperation_vector = new polar_vector(0,0,true);//resetting separation vector
         double numerator = 2*Boid_radius + Desired_Seperation;
-        for(Boid boid:Boidnearby_List)
+        for(Boid boid:this.Boidnearby_List)
         {
             //calculate separation between this boid and the current boid ( denominator of equation ):
             double actual_separation = Boid_Maths.Distance_between_points(this.boid_position,boid.boid_position);
@@ -74,20 +76,22 @@ public class Boid implements Drawable{
             to find the angle of boid relative to this boid i use this boid as a reference. I archive this by substracting the position of this.boid from boid.
             this will give me the x and y difference between the boids. i can then use these to calculate the angle.the angle will be used later.
              */
-            double angle_between_boids = Boid_Maths.find_anticlockwise_angle(boid.getBoid_position().Get_X_double() - this.getBoid_position().Get_X_double(),boid.getBoid_position().Get_Y_double() - this.getBoid_position().Get_Y_double());
+            double boidXseparation = boid.getBoid_position().Get_X_double() - this.getBoid_position().Get_X_double();
+            double boidYseparation = boid.getBoid_position().Get_Y_double() - this.getBoid_position().Get_Y_double();
+            double angle_between_boids = Boid_Maths.find_anticlockwise_angle(boidXseparation,boidYseparation);
             //calculating the magnitude of the separation vector.
             /*
             numerator contains the desired seperation between boids. if actual separation < numerator , the fraction will be >> 1
             this is further amplified by raising the fraction to the third power and taking the exponential of that.
             this results in a larger magnitude the closer the boids get.
              */
-            double seperation_magnitude = Math.exp(Math.pow(numerator/actual_separation,3));
+            double seperation_magnitude = Math.pow(numerator / actual_separation, 5);//Math.exp()
             //using the magnitude and angle to create a vector
             polar_vector Temp_seperation_vector = new polar_vector(seperation_magnitude,angle_between_boids,true);
             //at the moment the temp seperation vector is pointing towards the other boid, so i have to invert it,
             Temp_seperation_vector.Invert_Vector();
             //Now i can add it to the separation vector
-            seperation_vector = Boid_Maths.vector_addition(seperation_vector,Temp_seperation_vector);
+            this.seperation_vector = Boid_Maths.vector_addition(seperation_vector,Temp_seperation_vector);
         }
     }
 
@@ -116,35 +120,110 @@ public class Boid implements Drawable{
 
     @Override
     public void Draw(Graphics2D g) {
-        g.drawOval(boid_position.Get_X_int(),boid_position.Get_Y_int(),(int)Boid_radius,(int)Boid_radius);
+        int Xpos = this.getBoid_position().Get_X_int();
+        int Ypos = this.getBoid_position().Get_Y_int();
+        //boid vector end point pos
+        int bvecX = Xpos + (int)this.getBoid_vector().getXcomponent();
+        int bvecY = Ypos + (int)this.getBoid_vector().getYcomponent();
+        //boid cohesion vector end point pos;
+        int CvecX = Xpos + (int)this.cohesion_vector.getXcomponent();
+        int CvecY = Ypos + (int)this.cohesion_vector.getYcomponent();
+        //boid allignment vector end point pos
+        int AvecX = Xpos + (int)this.allignment_vector.getXcomponent();
+        int AvecY = Ypos + (int)this.allignment_vector.getYcomponent();
+        //boid sparation vector end point pos
+        int SvecX = Xpos + (int)this.seperation_vector.getXcomponent();
+        int SvecY = Ypos + (int)this.seperation_vector.getYcomponent();
+        g.setColor(Color.red);
+        /*
+        this draws an oval which fits into a rectangle starting at pos x,y with side lengths width and heigh.
+        this means some adjustment has to be made so it is centred on the boid position
+         */
+        //from https://stackoverflow.com/questions/2509561/how-to-draw-a-filled-circle-in-java //TODO
+        Ellipse2D.Double circle = new Ellipse2D.Double(boid_position.Get_X_int() - (int)Boid_radius,boid_position.Get_Y_int()- (int)Boid_radius,2*(int)Boid_radius,2*(int)Boid_radius);
+        Ellipse2D.Double Detection_circle = new Ellipse2D.Double(boid_position.Get_X_int() - this.Detection_distance,boid_position.Get_Y_int()- this.Detection_distance,2*this.Detection_distance,2*this.Detection_distance);
+        g.setColor(Color.black);
+        g.draw(Detection_circle);
+        g.setColor(Color.red);
+        g.fill(circle);
+
+        //drawing the boid vector
+        g.setColor(Color.red);
+        g.drawLine(Xpos,Ypos,bvecX,bvecY);
+        //draw cohesion vector
+        g.setColor(Color.blue);
+        g.drawLine(Xpos,Ypos,CvecX,CvecY);
+        //draw allignment vector
+        g.setColor(Color.green);
+        g.drawLine(Xpos,Ypos,AvecX,AvecY);
+        //draw Separation vector
+        g.setColor(Color.black);
+        g.drawLine(Xpos,Ypos,SvecX,SvecY);
     }
 
     //update the boid
     public void Update(double deltaT , List<Boid> Boid_list)
     {
+        this.Boidnearby_List.clear();
        for(Boid boid1:Boid_list)
        {
            //check which boids are in the detection distance
-           //DEBUG
-           double i = Boid_Maths.Distance_between_points(this.boid_position,boid1.getBoid_position());
-           //END DEBUG
-           if(i < this.Detection_distance)//i < this.Detection_distance
+           double distance_between_boids = Boid_Maths.Distance_between_points(this.boid_position,boid1.getBoid_position());
+           if(distance_between_boids < this.Detection_distance)
            {
-               Boidnearby_List.add(boid1);
+               //preventing the boid adding itself to the boid_nearby list
+               if(boid1 != this)
+               {
+                   //TODO make math function BROKEN
+                   double Xdistance = this.getBoid_position().Get_X_double() - boid1.getBoid_position().Get_X_double();
+                   double Ydistance = this.getBoid_position().Get_Y_double() - boid1.getBoid_position().Get_Y_double();
+                   polar_vector vector_between_points = new polar_vector(Xdistance,Ydistance,false);
+                   double angle_between_boids = Math.abs(this.boid_vector.getAngle_rad() - vector_between_points.getAngle_rad() );
+                   if(angle_between_boids <= Math.PI)
+                   {
+                       Boidnearby_List.add(boid1);
+                   }
+
+               }
            }
        }
         //do vector calculations
         calculate_allignment();
         calculate_seperation();
         calculate_cohesion();
+        //debuff vectors;
+        cohesion_vector = new polar_vector(cohesion_vector.getXcomponent()/1,cohesion_vector.getYcomponent()/1,false);
+        allignment_vector = new polar_vector(allignment_vector.getXcomponent()/1,allignment_vector.getYcomponent()/1,false);
         //find the new boid vector
-        new_boid_vector = Boid_Maths.vector_addition(seperation_vector,cohesion_vector,allignment_vector);
+        polar_vector TempVec = new polar_vector(boid_vector.getXcomponent()/1,boid_vector.getYcomponent()/1,false);
+        new_boid_vector = Boid_Maths.vector_addition(TempVec,seperation_vector,cohesion_vector,allignment_vector);
         //find the new boid position
         double new_X = new_boid_vector.getXcomponent()*deltaT + this.boid_position.Get_X_double();
+        //TODO settings class neded
+        if (new_X > 1280)
+        {
+            new_X = new_X - 1280;
+        }
+        else if (new_X < 0)
+        {
+            new_X = 1280 + new_X;
+        }
+
         double new_Y = new_boid_vector.getYcomponent()*deltaT + this.boid_position.Get_Y_double();
+        if (new_Y > 720)
+        {
+            new_Y = new_Y - 720;
+        }
+        else if (new_Y < 0)
+        {
+            new_Y = 720 + new_Y;
+        }
+
         new_position = new cartesian_point(new_X,new_Y);
-        
+
+
     }
+
     //once every boid has ran through update, the boids assume their new positions and vectors
     public void UpdateComplete()
     {
@@ -153,7 +232,7 @@ public class Boid implements Drawable{
     }
 
     //constructor creating boid with random position and vector
-    public Boid(int maxVector_magnitude,int detection_distance)
+    public Boid(int maxVector_magnitude)
     {
         boid_position = Boid_Maths.RandomPosition(1280,720);
         boid_vector = Boid_Maths.RandomVector(maxVector_magnitude);
