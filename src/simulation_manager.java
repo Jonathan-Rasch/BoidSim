@@ -7,7 +7,7 @@ import java.util.List;
 public class simulation_manager implements ActionListener
 {
     private double deltaT = 0;
-
+    Settings SimSettings;
 
 
     //list containing all boids
@@ -15,14 +15,15 @@ public class simulation_manager implements ActionListener
 
     private List<Drawable> Draw_List = new ArrayList<Drawable>();//list of stuff that has the Draw() function
 
-    public simulation_manager()
+    public simulation_manager(Settings setting)
     {
+        SimSettings = setting;
         //TODO remove this test code
         int i = 100;
         while(i > 0)
         {
             i--;
-            Boid_List.add(new Boid(0));
+            Boid_List.add(new Boid(0,this.SimSettings));
         }
 
     }

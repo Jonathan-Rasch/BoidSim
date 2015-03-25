@@ -2,10 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="eb6d6b00-8b60-4cbe-9c50-7c6cd21b4eda" name="Default" comment="yay !!!!">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Settings.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/BoidSim/Boid.class" afterPath="$PROJECT_DIR$/out/production/BoidSim/Boid.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/BoidSim/GUI$1.class" afterPath="$PROJECT_DIR$/out/production/BoidSim/GUI$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/BoidSim/GUI.class" afterPath="$PROJECT_DIR$/out/production/BoidSim/GUI.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/BoidSim/Simulation_Panel$1.class" afterPath="$PROJECT_DIR$/out/production/BoidSim/Simulation_Panel$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/BoidSim/Simulation_Panel.class" afterPath="$PROJECT_DIR$/out/production/BoidSim/Simulation_Panel.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/BoidSim/simulation_manager.class" afterPath="$PROJECT_DIR$/out/production/BoidSim/simulation_manager.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Boid.java" afterPath="$PROJECT_DIR$/src/Boid.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/GUI.java" afterPath="$PROJECT_DIR$/src/GUI.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Simulation_Panel.java" afterPath="$PROJECT_DIR$/src/Simulation_Panel.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/polar_vector.java" afterPath="$PROJECT_DIR$/src/polar_vector.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/simulation_manager.java" afterPath="$PROJECT_DIR$/src/simulation_manager.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -35,10 +42,9 @@
       <file leaf-file-name="Boid_Maths.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Boid_Maths.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="1654" max-vertical-offset="3213">
-              <caret line="131" column="0" selection-start-line="131" selection-start-column="0" selection-end-line="131" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="693" max-vertical-offset="3213">
+              <caret line="123" column="28" selection-start-line="123" selection-start-column="28" selection-end-line="123" selection-end-column="28" />
               <folding>
-                <element signature="imports" expanded="true" />
                 <element signature="docComment;method#calculate_opposite#0;class#Boid_Maths#0" expanded="false" />
                 <element signature="method#calculate_opposite#0;class#Boid_Maths#0" expanded="false" />
                 <element signature="method#calculate_adjacent#0;class#Boid_Maths#0" expanded="false" />
@@ -55,14 +61,14 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Boid.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Boid.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Boid.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.6080114" vertical-offset="0" max-vertical-offset="3825">
-              <caret line="25" column="48" selection-start-line="25" selection-start-column="48" selection-end-line="25" selection-end-column="48" />
+            <state vertical-scroll-proportion="-6.5172415" vertical-offset="2752" max-vertical-offset="3995">
+              <caret line="194" column="29" selection-start-line="194" selection-start-column="29" selection-end-line="194" selection-end-column="29" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#1678#1684#0" expanded="true" />
+                <element signature="e#1719#1725#0" expanded="true" />
                 <element signature="method#calculate_allignment#0;class#Boid#0" expanded="false" />
                 <element signature="method#calculate_obstacle_vector#0;class#Boid#0" expanded="false" />
                 <element signature="method#calculate_food_vector#0;class#Boid#0" expanded="false" />
@@ -74,26 +80,38 @@
       <file leaf-file-name="simulation_manager.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/simulation_manager.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="7" max-vertical-offset="1003">
-              <caret line="20" column="19" selection-start-line="20" selection-start-column="19" selection-end-line="20" selection-end-column="19" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1020">
+              <caret line="9" column="4" selection-start-line="9" selection-start-column="4" selection-end-line="9" selection-end-column="25" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#321#327#0" expanded="true" />
-                <element signature="e#384#394#0" expanded="true" />
+                <element signature="e#346#352#0" expanded="true" />
+                <element signature="e#409#419#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GUI.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="GUI.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/GUI.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="449" max-vertical-offset="1547">
-              <caret line="10" column="32" selection-start-line="10" selection-start-column="32" selection-end-line="10" selection-end-column="32" />
+            <state vertical-scroll-proportion="0.3228022" vertical-offset="1193" max-vertical-offset="2346">
+              <caret line="84" column="41" selection-start-line="84" selection-start-column="41" selection-end-line="84" selection-end-column="41" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#962#1140#0" expanded="true" />
-                <element signature="e#1139#1140#0" expanded="true" />
+                <element signature="e#1122#1310#0" expanded="true" />
+                <element signature="e#1309#1310#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Settings.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Settings.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="137" max-vertical-offset="1377">
+              <caret line="34" column="37" selection-start-line="34" selection-start-column="37" selection-end-line="34" selection-end-column="37" />
+              <folding>
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -102,15 +120,11 @@
       <file leaf-file-name="Simulation_Panel.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Simulation_Panel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="833">
-              <caret line="20" column="13" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="13" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="850">
+              <caret line="19" column="13" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
               <folding>
-                <element signature="e#202#729#0" expanded="true" />
-                <element signature="e#728#729#0" expanded="true" />
-                <element signature="e#765#766#0" expanded="true" />
-                <element signature="e#793#794#0" expanded="true" />
-                <element signature="e#1091#1092#0" expanded="true" />
-                <element signature="e#1121#1122#0" expanded="true" />
+                <element signature="imports" expanded="false" />
+                <marker date="1427289329339" expanded="true" signature="202:476" placeholder="paint(g) → {" />
               </folding>
             </state>
           </provider>
@@ -122,6 +136,14 @@
             <state vertical-scroll-proportion="0.0" vertical-offset="1122" max-vertical-offset="2363">
               <caret line="91" column="25" selection-start-line="91" selection-start-column="25" selection-end-line="91" selection-end-column="25" />
               <folding>
+                <element signature="e#288#289#0" expanded="false" />
+                <element signature="e#320#321#0" expanded="false" />
+                <element signature="e#481#482#0" expanded="false" />
+                <element signature="e#513#514#0" expanded="false" />
+                <element signature="e#675#676#0" expanded="false" />
+                <element signature="e#708#709#0" expanded="false" />
+                <element signature="e#865#866#0" expanded="false" />
+                <element signature="e#898#899#0" expanded="false" />
                 <element signature="method#setXcomponent#0;class#polar_vector#0" expanded="false" />
                 <element signature="method#Update_cartesian_data#0;class#polar_vector#0" expanded="false" />
               </folding>
@@ -132,16 +154,13 @@
       <file leaf-file-name="cartesian_point.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/cartesian_point.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="5" max-vertical-offset="731">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="731">
               <caret line="30" column="0" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
               <folding>
-                <element signature="e#352#353#0" expanded="true" />
-                <element signature="e#400#401#0" expanded="true" />
-                <element signature="e#439#440#0" expanded="true" />
-                <element signature="e#479#480#0" expanded="true" />
-                <element signature="e#512#513#0" expanded="true" />
-                <element signature="e#560#561#0" expanded="true" />
-                <element signature="e#639#640#0" expanded="true" />
+                <element signature="e#695#696#0" expanded="false" />
+                <element signature="e#738#739#0" expanded="false" />
+                <element signature="e#794#795#0" expanded="false" />
+                <element signature="e#837#838#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -162,11 +181,12 @@
         <option value="$PROJECT_DIR$/Boid_Maths debuggin and testing/src/Boid_Maths.java" />
         <option value="$PROJECT_DIR$/src/Boid_Maths.java" />
         <option value="$PROJECT_DIR$/src/Boid_Maths_method_tests.java" />
-        <option value="$PROJECT_DIR$/src/Simulation_Panel.java" />
         <option value="$PROJECT_DIR$/src/polar_vector.java" />
-        <option value="$PROJECT_DIR$/src/GUI.java" />
         <option value="$PROJECT_DIR$/src/simulation_manager.java" />
+        <option value="$PROJECT_DIR$/src/Settings.java" />
+        <option value="$PROJECT_DIR$/src/Simulation_Panel.java" />
         <option value="$PROJECT_DIR$/src/Boid.java" />
+        <option value="$PROJECT_DIR$/src/GUI.java" />
       </list>
     </option>
   </component>
@@ -534,8 +554,8 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1296" height="1000" extended-state="7" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="1296" height="1000" extended-state="6" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -547,7 +567,7 @@
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.13789238" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.13789238" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.22734375" sideWeight="0.4993046" order="0" side_tool="false" content_ui="combo" />
@@ -595,12 +615,12 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/Boid.java</url>
-          <line>177</line>
+          <line>178</line>
           <properties />
           <option name="timeStamp" value="43" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="44" />
+      <option name="time" value="50" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -609,21 +629,13 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/Boid_Maths_method_tests.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="851" max-vertical-offset="2907">
-          <caret line="63" column="0" selection-start-line="63" selection-start-column="0" selection-end-line="63" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Boid.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2312">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1678#1684#0" expanded="true" />
+            <element signature="e#1719#1725#0" expanded="true" />
             <element signature="method#calculate_allignment#0;class#Boid#0" expanded="false" />
             <element signature="method#calculate_obstacle_vector#0;class#Boid#0" expanded="false" />
             <element signature="method#calculate_food_vector#0;class#Boid#0" expanded="false" />
@@ -645,8 +657,8 @@
           <caret line="59" column="41" selection-start-line="59" selection-start-column="24" selection-end-line="59" selection-end-column="41" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#321#327#0" expanded="true" />
-            <element signature="e#384#394#0" expanded="true" />
+            <element signature="e#346#352#0" expanded="true" />
+            <element signature="e#409#419#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -657,8 +669,8 @@
           <caret line="28" column="0" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#962#1140#0" expanded="true" />
-            <element signature="e#1139#1140#0" expanded="true" />
+            <element signature="e#1122#1310#0" expanded="true" />
+            <element signature="e#1309#1310#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -668,6 +680,14 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="277" max-vertical-offset="1411">
           <caret line="34" column="0" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
           <folding>
+            <element signature="e#288#289#0" expanded="false" />
+            <element signature="e#320#321#0" expanded="false" />
+            <element signature="e#481#482#0" expanded="false" />
+            <element signature="e#513#514#0" expanded="false" />
+            <element signature="e#675#676#0" expanded="false" />
+            <element signature="e#708#709#0" expanded="false" />
+            <element signature="e#865#866#0" expanded="false" />
+            <element signature="e#898#899#0" expanded="false" />
             <element signature="method#setXcomponent#0;class#polar_vector#0" expanded="false" />
             <element signature="method#Update_cartesian_data#0;class#polar_vector#0" expanded="false" />
           </folding>
@@ -679,13 +699,10 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="121" max-vertical-offset="629">
           <caret line="30" column="0" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
           <folding>
-            <element signature="e#352#353#0" expanded="true" />
-            <element signature="e#400#401#0" expanded="true" />
-            <element signature="e#439#440#0" expanded="true" />
-            <element signature="e#479#480#0" expanded="true" />
-            <element signature="e#512#513#0" expanded="true" />
-            <element signature="e#560#561#0" expanded="true" />
-            <element signature="e#639#640#0" expanded="true" />
+            <element signature="e#695#696#0" expanded="false" />
+            <element signature="e#738#739#0" expanded="false" />
+            <element signature="e#794#795#0" expanded="false" />
+            <element signature="e#837#838#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -695,7 +712,6 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="1702" max-vertical-offset="2210">
           <caret line="212" column="0" selection-start-line="212" selection-start-column="0" selection-end-line="212" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
             <element signature="docComment;method#calculate_opposite#0;class#Boid_Maths#0" expanded="false" />
             <element signature="method#calculate_opposite#0;class#Boid_Maths#0" expanded="false" />
             <element signature="method#calculate_adjacent#0;class#Boid_Maths#0" expanded="false" />
@@ -725,7 +741,7 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1678#1684#0" expanded="true" />
+            <element signature="e#1719#1725#0" expanded="true" />
             <element signature="method#calculate_allignment#0;class#Boid#0" expanded="false" />
             <element signature="method#calculate_obstacle_vector#0;class#Boid#0" expanded="false" />
             <element signature="method#calculate_food_vector#0;class#Boid#0" expanded="false" />
@@ -747,8 +763,8 @@
           <caret line="59" column="41" selection-start-line="59" selection-start-column="24" selection-end-line="59" selection-end-column="41" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#321#327#0" expanded="true" />
-            <element signature="e#384#394#0" expanded="true" />
+            <element signature="e#346#352#0" expanded="true" />
+            <element signature="e#409#419#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -759,8 +775,8 @@
           <caret line="28" column="0" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#962#1140#0" expanded="true" />
-            <element signature="e#1139#1140#0" expanded="true" />
+            <element signature="e#1122#1310#0" expanded="true" />
+            <element signature="e#1309#1310#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -770,6 +786,14 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="277" max-vertical-offset="1411">
           <caret line="34" column="0" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
           <folding>
+            <element signature="e#288#289#0" expanded="false" />
+            <element signature="e#320#321#0" expanded="false" />
+            <element signature="e#481#482#0" expanded="false" />
+            <element signature="e#513#514#0" expanded="false" />
+            <element signature="e#675#676#0" expanded="false" />
+            <element signature="e#708#709#0" expanded="false" />
+            <element signature="e#865#866#0" expanded="false" />
+            <element signature="e#898#899#0" expanded="false" />
             <element signature="method#setXcomponent#0;class#polar_vector#0" expanded="false" />
             <element signature="method#Update_cartesian_data#0;class#polar_vector#0" expanded="false" />
           </folding>
@@ -781,13 +805,10 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="121" max-vertical-offset="629">
           <caret line="30" column="0" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
           <folding>
-            <element signature="e#352#353#0" expanded="true" />
-            <element signature="e#400#401#0" expanded="true" />
-            <element signature="e#439#440#0" expanded="true" />
-            <element signature="e#479#480#0" expanded="true" />
-            <element signature="e#512#513#0" expanded="true" />
-            <element signature="e#560#561#0" expanded="true" />
-            <element signature="e#639#640#0" expanded="true" />
+            <element signature="e#695#696#0" expanded="false" />
+            <element signature="e#738#739#0" expanded="false" />
+            <element signature="e#794#795#0" expanded="false" />
+            <element signature="e#837#838#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -797,7 +818,6 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="459" max-vertical-offset="3213">
           <caret line="153" column="65" selection-start-line="153" selection-start-column="65" selection-end-line="153" selection-end-column="65" />
           <folding>
-            <element signature="imports" expanded="true" />
             <element signature="docComment;method#calculate_opposite#0;class#Boid_Maths#0" expanded="false" />
             <element signature="method#calculate_opposite#0;class#Boid_Maths#0" expanded="false" />
             <element signature="method#calculate_adjacent#0;class#Boid_Maths#0" expanded="false" />
@@ -819,7 +839,7 @@
           <caret line="7" column="25" selection-start-line="7" selection-start-column="25" selection-end-line="7" selection-end-column="25" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1678#1684#0" expanded="true" />
+            <element signature="e#1719#1725#0" expanded="true" />
             <element signature="method#calculate_allignment#0;class#Boid#0" expanded="false" />
             <element signature="method#calculate_obstacle_vector#0;class#Boid#0" expanded="false" />
             <element signature="method#calculate_food_vector#0;class#Boid#0" expanded="false" />
@@ -833,8 +853,8 @@
           <caret line="11" column="42" selection-start-line="11" selection-start-column="42" selection-end-line="11" selection-end-column="42" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#321#327#0" expanded="true" />
-            <element signature="e#384#394#0" expanded="true" />
+            <element signature="e#346#352#0" expanded="true" />
+            <element signature="e#409#419#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -845,8 +865,8 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#962#1140#0" expanded="true" />
-            <element signature="e#1139#1140#0" expanded="true" />
+            <element signature="e#1122#1310#0" expanded="true" />
+            <element signature="e#1309#1310#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -856,6 +876,14 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="340" max-vertical-offset="1156">
           <caret line="28" column="0" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
           <folding>
+            <element signature="e#288#289#0" expanded="false" />
+            <element signature="e#320#321#0" expanded="false" />
+            <element signature="e#481#482#0" expanded="false" />
+            <element signature="e#513#514#0" expanded="false" />
+            <element signature="e#675#676#0" expanded="false" />
+            <element signature="e#708#709#0" expanded="false" />
+            <element signature="e#865#866#0" expanded="false" />
+            <element signature="e#898#899#0" expanded="false" />
             <element signature="method#setXcomponent#0;class#polar_vector#0" expanded="false" />
             <element signature="method#Update_cartesian_data#0;class#polar_vector#0" expanded="false" />
           </folding>
@@ -867,13 +895,10 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="357" max-vertical-offset="527">
           <caret line="33" column="52" selection-start-line="33" selection-start-column="52" selection-end-line="33" selection-end-column="52" />
           <folding>
-            <element signature="e#352#353#0" expanded="true" />
-            <element signature="e#400#401#0" expanded="true" />
-            <element signature="e#439#440#0" expanded="true" />
-            <element signature="e#479#480#0" expanded="true" />
-            <element signature="e#512#513#0" expanded="true" />
-            <element signature="e#560#561#0" expanded="true" />
-            <element signature="e#639#640#0" expanded="true" />
+            <element signature="e#695#696#0" expanded="false" />
+            <element signature="e#738#739#0" expanded="false" />
+            <element signature="e#794#795#0" expanded="false" />
+            <element signature="e#837#838#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -883,7 +908,6 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="459" max-vertical-offset="3213">
           <caret line="153" column="65" selection-start-line="153" selection-start-column="65" selection-end-line="153" selection-end-column="65" />
           <folding>
-            <element signature="imports" expanded="true" />
             <element signature="docComment;method#calculate_opposite#0;class#Boid_Maths#0" expanded="false" />
             <element signature="method#calculate_opposite#0;class#Boid_Maths#0" expanded="false" />
             <element signature="method#calculate_adjacent#0;class#Boid_Maths#0" expanded="false" />
@@ -905,7 +929,7 @@
           <caret line="7" column="25" selection-start-line="7" selection-start-column="25" selection-end-line="7" selection-end-column="25" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1678#1684#0" expanded="true" />
+            <element signature="e#1719#1725#0" expanded="true" />
             <element signature="method#calculate_allignment#0;class#Boid#0" expanded="false" />
             <element signature="method#calculate_obstacle_vector#0;class#Boid#0" expanded="false" />
             <element signature="method#calculate_food_vector#0;class#Boid#0" expanded="false" />
@@ -919,8 +943,8 @@
           <caret line="11" column="42" selection-start-line="11" selection-start-column="42" selection-end-line="11" selection-end-column="42" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#321#327#0" expanded="true" />
-            <element signature="e#384#394#0" expanded="true" />
+            <element signature="e#346#352#0" expanded="true" />
+            <element signature="e#409#419#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -931,8 +955,8 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#962#1140#0" expanded="true" />
-            <element signature="e#1139#1140#0" expanded="true" />
+            <element signature="e#1122#1310#0" expanded="true" />
+            <element signature="e#1309#1310#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -942,6 +966,14 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="340" max-vertical-offset="1156">
           <caret line="28" column="0" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
           <folding>
+            <element signature="e#288#289#0" expanded="false" />
+            <element signature="e#320#321#0" expanded="false" />
+            <element signature="e#481#482#0" expanded="false" />
+            <element signature="e#513#514#0" expanded="false" />
+            <element signature="e#675#676#0" expanded="false" />
+            <element signature="e#708#709#0" expanded="false" />
+            <element signature="e#865#866#0" expanded="false" />
+            <element signature="e#898#899#0" expanded="false" />
             <element signature="method#setXcomponent#0;class#polar_vector#0" expanded="false" />
             <element signature="method#Update_cartesian_data#0;class#polar_vector#0" expanded="false" />
           </folding>
@@ -953,13 +985,10 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="357" max-vertical-offset="527">
           <caret line="33" column="52" selection-start-line="33" selection-start-column="52" selection-end-line="33" selection-end-column="52" />
           <folding>
-            <element signature="e#352#353#0" expanded="true" />
-            <element signature="e#400#401#0" expanded="true" />
-            <element signature="e#439#440#0" expanded="true" />
-            <element signature="e#479#480#0" expanded="true" />
-            <element signature="e#512#513#0" expanded="true" />
-            <element signature="e#560#561#0" expanded="true" />
-            <element signature="e#639#640#0" expanded="true" />
+            <element signature="e#695#696#0" expanded="false" />
+            <element signature="e#738#739#0" expanded="false" />
+            <element signature="e#794#795#0" expanded="false" />
+            <element signature="e#837#838#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -969,7 +998,6 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="2362" max-vertical-offset="3213">
           <caret line="192" column="0" selection-start-line="192" selection-start-column="0" selection-end-line="192" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
             <element signature="docComment;method#calculate_opposite#0;class#Boid_Maths#0" expanded="false" />
             <element signature="method#calculate_opposite#0;class#Boid_Maths#0" expanded="false" />
             <element signature="method#calculate_adjacent#0;class#Boid_Maths#0" expanded="false" />
@@ -991,7 +1019,7 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1678#1684#0" expanded="true" />
+            <element signature="e#1719#1725#0" expanded="true" />
             <element signature="method#calculate_allignment#0;class#Boid#0" expanded="false" />
             <element signature="method#calculate_obstacle_vector#0;class#Boid#0" expanded="false" />
             <element signature="method#calculate_food_vector#0;class#Boid#0" expanded="false" />
@@ -1004,6 +1032,14 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="16" max-vertical-offset="1156">
           <caret line="28" column="0" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
           <folding>
+            <element signature="e#288#289#0" expanded="false" />
+            <element signature="e#320#321#0" expanded="false" />
+            <element signature="e#481#482#0" expanded="false" />
+            <element signature="e#513#514#0" expanded="false" />
+            <element signature="e#675#676#0" expanded="false" />
+            <element signature="e#708#709#0" expanded="false" />
+            <element signature="e#865#866#0" expanded="false" />
+            <element signature="e#898#899#0" expanded="false" />
             <element signature="method#setXcomponent#0;class#polar_vector#0" expanded="false" />
             <element signature="method#Update_cartesian_data#0;class#polar_vector#0" expanded="false" />
           </folding>
@@ -1015,13 +1051,10 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="357" max-vertical-offset="527">
           <caret line="33" column="52" selection-start-line="33" selection-start-column="52" selection-end-line="33" selection-end-column="52" />
           <folding>
-            <element signature="e#352#353#0" expanded="true" />
-            <element signature="e#400#401#0" expanded="true" />
-            <element signature="e#439#440#0" expanded="true" />
-            <element signature="e#479#480#0" expanded="true" />
-            <element signature="e#512#513#0" expanded="true" />
-            <element signature="e#560#561#0" expanded="true" />
-            <element signature="e#639#640#0" expanded="true" />
+            <element signature="e#695#696#0" expanded="false" />
+            <element signature="e#738#739#0" expanded="false" />
+            <element signature="e#794#795#0" expanded="false" />
+            <element signature="e#837#838#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1031,7 +1064,6 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="561" max-vertical-offset="2057">
           <caret line="50" column="43" selection-start-line="50" selection-start-column="43" selection-end-line="50" selection-end-column="43" />
           <folding>
-            <element signature="imports" expanded="true" />
             <element signature="docComment;method#calculate_opposite#0;class#Boid_Maths#0" expanded="false" />
             <element signature="method#calculate_opposite#0;class#Boid_Maths#0" expanded="false" />
             <element signature="method#calculate_adjacent#0;class#Boid_Maths#0" expanded="false" />
@@ -1052,6 +1084,14 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1020">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
+            <element signature="e#288#289#0" expanded="false" />
+            <element signature="e#320#321#0" expanded="false" />
+            <element signature="e#481#482#0" expanded="false" />
+            <element signature="e#513#514#0" expanded="false" />
+            <element signature="e#675#676#0" expanded="false" />
+            <element signature="e#708#709#0" expanded="false" />
+            <element signature="e#865#866#0" expanded="false" />
+            <element signature="e#898#899#0" expanded="false" />
             <element signature="method#setXcomponent#0;class#polar_vector#0" expanded="false" />
             <element signature="method#Update_cartesian_data#0;class#polar_vector#0" expanded="false" />
           </folding>
@@ -1063,13 +1103,10 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="340" max-vertical-offset="476">
           <caret line="32" column="0" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
           <folding>
-            <element signature="e#352#353#0" expanded="true" />
-            <element signature="e#400#401#0" expanded="true" />
-            <element signature="e#439#440#0" expanded="true" />
-            <element signature="e#479#480#0" expanded="true" />
-            <element signature="e#512#513#0" expanded="true" />
-            <element signature="e#560#561#0" expanded="true" />
-            <element signature="e#639#640#0" expanded="true" />
+            <element signature="e#695#696#0" expanded="false" />
+            <element signature="e#738#739#0" expanded="false" />
+            <element signature="e#794#795#0" expanded="false" />
+            <element signature="e#837#838#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1079,7 +1116,6 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="816" max-vertical-offset="1700">
           <caret line="2" column="1" selection-start-line="2" selection-start-column="1" selection-end-line="2" selection-end-column="1" />
           <folding>
-            <element signature="imports" expanded="true" />
             <element signature="docComment;method#calculate_opposite#0;class#Boid_Maths#0" expanded="false" />
             <element signature="method#calculate_opposite#0;class#Boid_Maths#0" expanded="false" />
             <element signature="method#calculate_adjacent#0;class#Boid_Maths#0" expanded="false" />
@@ -1100,6 +1136,14 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="629">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
+            <element signature="e#288#289#0" expanded="false" />
+            <element signature="e#320#321#0" expanded="false" />
+            <element signature="e#481#482#0" expanded="false" />
+            <element signature="e#513#514#0" expanded="false" />
+            <element signature="e#675#676#0" expanded="false" />
+            <element signature="e#708#709#0" expanded="false" />
+            <element signature="e#865#866#0" expanded="false" />
+            <element signature="e#898#899#0" expanded="false" />
             <element signature="method#setXcomponent#0;class#polar_vector#0" expanded="false" />
             <element signature="method#Update_cartesian_data#0;class#polar_vector#0" expanded="false" />
           </folding>
@@ -1111,13 +1155,10 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="340" max-vertical-offset="476">
           <caret line="32" column="0" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
           <folding>
-            <element signature="e#352#353#0" expanded="true" />
-            <element signature="e#400#401#0" expanded="true" />
-            <element signature="e#439#440#0" expanded="true" />
-            <element signature="e#479#480#0" expanded="true" />
-            <element signature="e#512#513#0" expanded="true" />
-            <element signature="e#560#561#0" expanded="true" />
-            <element signature="e#639#640#0" expanded="true" />
+            <element signature="e#695#696#0" expanded="false" />
+            <element signature="e#738#739#0" expanded="false" />
+            <element signature="e#794#795#0" expanded="false" />
+            <element signature="e#837#838#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1127,7 +1168,6 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="272" max-vertical-offset="459">
           <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
             <element signature="docComment;method#calculate_opposite#0;class#Boid_Maths#0" expanded="false" />
             <element signature="method#calculate_opposite#0;class#Boid_Maths#0" expanded="false" />
             <element signature="method#calculate_adjacent#0;class#Boid_Maths#0" expanded="false" />
@@ -1148,6 +1188,14 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="272" max-vertical-offset="408">
           <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
           <folding>
+            <element signature="e#288#289#0" expanded="false" />
+            <element signature="e#320#321#0" expanded="false" />
+            <element signature="e#481#482#0" expanded="false" />
+            <element signature="e#513#514#0" expanded="false" />
+            <element signature="e#675#676#0" expanded="false" />
+            <element signature="e#708#709#0" expanded="false" />
+            <element signature="e#865#866#0" expanded="false" />
+            <element signature="e#898#899#0" expanded="false" />
             <element signature="method#setXcomponent#0;class#polar_vector#0" expanded="false" />
             <element signature="method#Update_cartesian_data#0;class#polar_vector#0" expanded="false" />
           </folding>
@@ -1159,13 +1207,10 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="544" max-vertical-offset="680">
           <caret line="32" column="0" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
           <folding>
-            <element signature="e#352#353#0" expanded="true" />
-            <element signature="e#400#401#0" expanded="true" />
-            <element signature="e#439#440#0" expanded="true" />
-            <element signature="e#479#480#0" expanded="true" />
-            <element signature="e#512#513#0" expanded="true" />
-            <element signature="e#560#561#0" expanded="true" />
-            <element signature="e#639#640#0" expanded="true" />
+            <element signature="e#695#696#0" expanded="false" />
+            <element signature="e#738#739#0" expanded="false" />
+            <element signature="e#794#795#0" expanded="false" />
+            <element signature="e#837#838#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1175,7 +1220,6 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="442">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
             <element signature="docComment;method#calculate_opposite#0;class#Boid_Maths#0" expanded="false" />
             <element signature="method#calculate_opposite#0;class#Boid_Maths#0" expanded="false" />
             <element signature="method#calculate_adjacent#0;class#Boid_Maths#0" expanded="false" />
@@ -1214,28 +1258,54 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/polar_vector.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="816" max-vertical-offset="2363">
+          <caret line="91" column="25" selection-start-line="91" selection-start-column="25" selection-end-line="91" selection-end-column="25" />
+          <folding>
+            <element signature="e#288#289#0" expanded="false" />
+            <element signature="e#320#321#0" expanded="false" />
+            <element signature="e#481#482#0" expanded="false" />
+            <element signature="e#513#514#0" expanded="false" />
+            <element signature="e#675#676#0" expanded="false" />
+            <element signature="e#708#709#0" expanded="false" />
+            <element signature="e#865#866#0" expanded="false" />
+            <element signature="e#898#899#0" expanded="false" />
+            <element signature="method#setXcomponent#0;class#polar_vector#0" expanded="false" />
+            <element signature="method#Update_cartesian_data#0;class#polar_vector#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Simulation_Panel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="850">
+          <caret line="19" column="13" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <marker date="1427289329339" expanded="true" signature="202:476" placeholder="paint(g) → {" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/cartesian_point.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="121" max-vertical-offset="629">
           <caret line="30" column="0" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
           <folding>
-            <element signature="e#352#353#0" expanded="true" />
-            <element signature="e#400#401#0" expanded="true" />
-            <element signature="e#439#440#0" expanded="true" />
-            <element signature="e#479#480#0" expanded="true" />
-            <element signature="e#512#513#0" expanded="true" />
-            <element signature="e#560#561#0" expanded="true" />
-            <element signature="e#639#640#0" expanded="true" />
+            <element signature="e#695#696#0" expanded="false" />
+            <element signature="e#738#739#0" expanded="false" />
+            <element signature="e#794#795#0" expanded="false" />
+            <element signature="e#837#838#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Boid_Maths.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1654" max-vertical-offset="3213">
-          <caret line="131" column="0" selection-start-line="131" selection-start-column="0" selection-end-line="131" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="693" max-vertical-offset="3213">
+          <caret line="123" column="28" selection-start-line="123" selection-start-column="28" selection-end-line="123" selection-end-column="28" />
           <folding>
-            <element signature="imports" expanded="true" />
             <element signature="docComment;method#calculate_opposite#0;class#Boid_Maths#0" expanded="false" />
             <element signature="method#calculate_opposite#0;class#Boid_Maths#0" expanded="false" />
             <element signature="method#calculate_adjacent#0;class#Boid_Maths#0" expanded="false" />
@@ -1251,66 +1321,50 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/polar_vector.java">
+    <entry file="file://$PROJECT_DIR$/src/Settings.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="816" max-vertical-offset="2363">
-          <caret line="91" column="25" selection-start-line="91" selection-start-column="25" selection-end-line="91" selection-end-column="25" />
-          <folding>
-            <element signature="method#setXcomponent#0;class#polar_vector#0" expanded="false" />
-            <element signature="method#Update_cartesian_data#0;class#polar_vector#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Simulation_Panel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="22" max-vertical-offset="833">
-          <caret line="20" column="13" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="13" />
-          <folding>
-            <element signature="e#202#729#0" expanded="true" />
-            <element signature="e#728#729#0" expanded="true" />
-            <element signature="e#765#766#0" expanded="true" />
-            <element signature="e#793#794#0" expanded="true" />
-            <element signature="e#1091#1092#0" expanded="true" />
-            <element signature="e#1121#1122#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/GUI.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="449" max-vertical-offset="1547">
-          <caret line="10" column="32" selection-start-line="10" selection-start-column="32" selection-end-line="10" selection-end-column="32" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="273" max-vertical-offset="1819">
+          <caret line="34" column="37" selection-start-line="34" selection-start-column="37" selection-end-line="34" selection-end-column="37" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#962#1140#0" expanded="true" />
-            <element signature="e#1139#1140#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/simulation_manager.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="7" max-vertical-offset="1003">
-          <caret line="20" column="19" selection-start-line="20" selection-start-column="19" selection-end-line="20" selection-end-column="19" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1020">
+          <caret line="9" column="4" selection-start-line="9" selection-start-column="4" selection-end-line="9" selection-end-column="25" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#321#327#0" expanded="true" />
-            <element signature="e#384#394#0" expanded="true" />
+            <element signature="e#346#352#0" expanded="true" />
+            <element signature="e#409#419#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Boid.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6080114" vertical-offset="0" max-vertical-offset="3825">
-          <caret line="25" column="48" selection-start-line="25" selection-start-column="48" selection-end-line="25" selection-end-column="48" />
+        <state vertical-scroll-proportion="-6.5172415" vertical-offset="2752" max-vertical-offset="3995">
+          <caret line="194" column="29" selection-start-line="194" selection-start-column="29" selection-end-line="194" selection-end-column="29" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1678#1684#0" expanded="true" />
+            <element signature="e#1719#1725#0" expanded="true" />
             <element signature="method#calculate_allignment#0;class#Boid#0" expanded="false" />
             <element signature="method#calculate_obstacle_vector#0;class#Boid#0" expanded="false" />
             <element signature="method#calculate_food_vector#0;class#Boid#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GUI.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3228022" vertical-offset="1193" max-vertical-offset="2346">
+          <caret line="84" column="41" selection-start-line="84" selection-start-column="41" selection-end-line="84" selection-end-column="41" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1122#1310#0" expanded="true" />
+            <element signature="e#1309#1310#0" expanded="true" />
           </folding>
         </state>
       </provider>

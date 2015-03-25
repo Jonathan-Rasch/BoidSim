@@ -26,6 +26,7 @@ public class Boid implements Drawable{
     private static double Desired_Seperation = 10;//all boids share this value. it is set via settings in the gui or uses default values
     private static double Detection_distance = 50;//the distance for which the boid detects other boids.
     private static double Boid_radius = 5 ; // the radius of the circle representing the boid.
+    private static Settings SimSettings;
 
     //TODO write a function to update statics
 
@@ -142,8 +143,8 @@ public class Boid implements Drawable{
         //from https://stackoverflow.com/questions/2509561/how-to-draw-a-filled-circle-in-java //TODO
         Ellipse2D.Double circle = new Ellipse2D.Double(boid_position.Get_X_int() - (int)Boid_radius,boid_position.Get_Y_int()- (int)Boid_radius,2*(int)Boid_radius,2*(int)Boid_radius);
         Ellipse2D.Double Detection_circle = new Ellipse2D.Double(boid_position.Get_X_int() - this.Detection_distance,boid_position.Get_Y_int()- this.Detection_distance,2*this.Detection_distance,2*this.Detection_distance);
-        g.setColor(Color.black);
-        g.draw(Detection_circle);
+        //g.setColor(Color.black);
+        //g.draw(Detection_circle);
         g.setColor(Color.red);
         g.fill(circle);
 
@@ -151,14 +152,14 @@ public class Boid implements Drawable{
         g.setColor(Color.red);
         g.drawLine(Xpos,Ypos,bvecX,bvecY);
         //draw cohesion vector
-        g.setColor(Color.blue);
-        g.drawLine(Xpos,Ypos,CvecX,CvecY);
+        //g.setColor(Color.blue);
+        //g.drawLine(Xpos,Ypos,CvecX,CvecY);
         //draw allignment vector
-        g.setColor(Color.green);
-        g.drawLine(Xpos,Ypos,AvecX,AvecY);
+        //g.setColor(Color.green);
+        //g.drawLine(Xpos,Ypos,AvecX,AvecY);
         //draw Separation vector
-        g.setColor(Color.black);
-        g.drawLine(Xpos,Ypos,SvecX,SvecY);
+        //g.setColor(Color.black);
+        //g.drawLine(Xpos,Ypos,SvecX,SvecY);
     }
 
     //update the boid
@@ -188,35 +189,43 @@ public class Boid implements Drawable{
            }
        }
         //do vector calculations
-        calculate_allignment();
+        if(!SimSettings.Flocking_Enabled)
+        {
+            cohesion_vector = new polar_vector(0,0,false);
+            allignment_vector = new polar_vector(0,0,false);
+        }
+        else
+        {
+            calculate_allignment();
+            calculate_cohesion();
+        }
         calculate_seperation();
-        calculate_cohesion();
         //debuff vectors;
-        cohesion_vector = new polar_vector(cohesion_vector.getXcomponent()/1,cohesion_vector.getYcomponent()/1,false);
-        allignment_vector = new polar_vector(allignment_vector.getXcomponent()/1,allignment_vector.getYcomponent()/1,false);
+        cohesion_vector = new polar_vector(cohesion_vector.getXcomponent()*SimSettings.getCohesion_multiplier()/this.Boidnearby_List.size(),cohesion_vector.getYcomponent()*SimSettings.getCohesion_multiplier()/this.Boidnearby_List.size(),false);
+        allignment_vector = new polar_vector(allignment_vector.getXcomponent()*SimSettings.getAlignment_multiplier(),allignment_vector.getYcomponent()*SimSettings.getAlignment_multiplier(),false);
         //find the new boid vector
-        polar_vector TempVec = new polar_vector(boid_vector.getXcomponent()/1,boid_vector.getYcomponent()/1,false);
+        polar_vector TempVec = new polar_vector(boid_vector.getXcomponent(),boid_vector.getYcomponent(),false);
         new_boid_vector = Boid_Maths.vector_addition(TempVec,seperation_vector,cohesion_vector,allignment_vector);
         //find the new boid position
         double new_X = new_boid_vector.getXcomponent()*deltaT + this.boid_position.Get_X_double();
         //TODO settings class neded
-        if (new_X > 1280)
+        if (new_X > this.SimSettings.getScreenDimension().width)
         {
-            new_X = new_X - 1280;
+            new_X = new_X - this.SimSettings.getScreenDimension().width;
         }
         else if (new_X < 0)
         {
-            new_X = 1280 + new_X;
+            new_X = this.SimSettings.getScreenDimension().width + new_X;
         }
 
         double new_Y = new_boid_vector.getYcomponent()*deltaT + this.boid_position.Get_Y_double();
-        if (new_Y > 720)
+        if (new_Y > this.SimSettings.getScreenDimension().height)
         {
-            new_Y = new_Y - 720;
+            new_Y = new_Y - this.SimSettings.getScreenDimension().height;
         }
         else if (new_Y < 0)
         {
-            new_Y = 720 + new_Y;
+            new_Y = this.SimSettings.getScreenDimension().height + new_Y;
         }
 
         new_position = new cartesian_point(new_X,new_Y);
@@ -232,9 +241,10 @@ public class Boid implements Drawable{
     }
 
     //constructor creating boid with random position and vector
-    public Boid(int maxVector_magnitude)
+    public Boid(int maxVector_magnitude,Settings SimSett)
     {
-        boid_position = Boid_Maths.RandomPosition(1280,720);
+        this.SimSettings = SimSett;
+        boid_position = Boid_Maths.RandomPosition(1280,720);//TODO dimensions
         boid_vector = Boid_Maths.RandomVector(maxVector_magnitude);
     }
 }
