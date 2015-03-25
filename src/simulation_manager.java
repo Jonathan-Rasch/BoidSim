@@ -19,7 +19,7 @@ public class simulation_manager implements ActionListener
     {
         SimSettings = setting;
         //TODO remove this test code
-        int i = 100;
+        int i = 200;
         while(i > 0)
         {
             i--;

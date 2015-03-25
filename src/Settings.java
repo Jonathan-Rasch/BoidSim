@@ -22,6 +22,12 @@ public class Settings implements ActionListener {
 
     public boolean Flocking_Enabled = false;
     public boolean Enforce_Minimum_Speed = true;
+    public boolean Show_Boid_vector = true;
+    public boolean Show_cohesion_vector = false;
+    public boolean Show_allignment_vector = false;
+    public boolean Show_seperation_vector = false;
+    public boolean Show_Boids_nearby = true ;
+    public boolean Show_Detection_circle = false;
 
     public Settings()
     {
