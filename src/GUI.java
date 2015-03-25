@@ -4,6 +4,7 @@ import javax.swing.event.ChangeListener;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.EventListener;
 
 public class GUI extends JFrame implements Runnable
 {
@@ -53,7 +54,7 @@ public class GUI extends JFrame implements Runnable
 
         SimPanel = new Simulation_Panel(this.simM);
         SimPanel.GetJPanel().setSize(SimSettings.getScreenDimension());
-        SimPanel.GetJPanel().setMinimumSize(new Dimension(600, 800));
+        SimPanel.GetJPanel().setMinimumSize(new Dimension(600, 800));//TODO the fuck did i do here ?
         SimPanel.GetJPanel().setBackground(Color.black);
         this.add(SimPanel.GetJPanel(), BorderLayout.CENTER);
 
@@ -76,7 +77,7 @@ public class GUI extends JFrame implements Runnable
         //</editor-fold>
     }
 
-    public class SimulationMenu 
+    public class SimulationMenu
     {
 
         //<editor-fold desc="variable instantiation">
@@ -90,8 +91,10 @@ public class GUI extends JFrame implements Runnable
         JButton ShowAlignmentVector_BoidOptions;
         JButton ShowDetectionCircle_BoidOptions;
         JButton ShowDetectedBoids_BoidOptions;
-
-
+        JSlider DetectionDistance_Slider_BoidOptions;
+        JLabel DetectionDistance_Slider_Label;
+        SimulationMenuActionListener Action_Listener = new SimulationMenuActionListener();
+        SimulationMenuChangeListener Change_Listener = new SimulationMenuChangeListener();
         //</editor-fold>
 
         public SimulationMenu()
@@ -100,59 +103,87 @@ public class GUI extends JFrame implements Runnable
             //<editor-fold desc="Setting Up Menu Frame and buttons etc">
             //the menu frame
             this.Frame = new JFrame();
+            this.Frame.setSize(250, 500);
+            this.Frame.setVisible(true);
             this.Frame.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
             this.Frame.setResizable(false);
             this.TabPane = new JTabbedPane();
             this.Frame.add(TabPane);
 
+            Dimension ButtonDimension = new Dimension(200,25);
             //<editor-fold desc="Boid Options Tab">
             this.BoidOptions = new JPanel();
             this.TabPane.add("Boid Options",BoidOptions);
             //enable flocking button
             this.EnableFlocking_BoidOptions = new JButton("Enable Flocking");
             this.BoidOptions.add(EnableFlocking_BoidOptions);
-            this.EnableFlocking_BoidOptions.addActionListener(this);
+            this.EnableFlocking_BoidOptions.addActionListener(Action_Listener);
             this.EnableFlocking_BoidOptions.setActionCommand("EnableFlocking_BoidOptions");
+            this.EnableFlocking_BoidOptions.setPreferredSize(ButtonDimension);
             //enable ShowBoidVector_BoidOptions button
             this.ShowBoidVector_BoidOptions = new JButton("Hide Boid Vector");
             this.BoidOptions.add(ShowBoidVector_BoidOptions);
-            this.ShowBoidVector_BoidOptions.addActionListener(this);
+            this.ShowBoidVector_BoidOptions.addActionListener(Action_Listener);
             this.ShowBoidVector_BoidOptions.setActionCommand("ShowBoidVector_BoidOptions");
+            this.ShowBoidVector_BoidOptions.setPreferredSize(ButtonDimension);
             //enable Show_cohesion_vector
             this.ShowCohesionVector_BoidOptions = new JButton("Show Cohesion Vector");
             this.BoidOptions.add(ShowCohesionVector_BoidOptions);
-            this.ShowCohesionVector_BoidOptions.addActionListener(this);
+            this.ShowCohesionVector_BoidOptions.addActionListener(Action_Listener);
             this.ShowCohesionVector_BoidOptions.setActionCommand("ShowCohesionVector_BoidOptions");
+            this.ShowCohesionVector_BoidOptions.setPreferredSize(ButtonDimension);
             //enable ShowSeparationVector_BoidOptions
             this.ShowSeparationVector_BoidOptions = new JButton("Show Separation Vector");
             this.BoidOptions.add(ShowSeparationVector_BoidOptions);
-            this.ShowSeparationVector_BoidOptions.addActionListener(this);
+            this.ShowSeparationVector_BoidOptions.addActionListener(Action_Listener);
             this.ShowSeparationVector_BoidOptions.setActionCommand("ShowSeparationVector_BoidOptions");
+            this.ShowSeparationVector_BoidOptions.setPreferredSize(ButtonDimension);
              //enable ShowAlignmentVector_BoidOptions
             this.ShowAlignmentVector_BoidOptions = new JButton("Show Alignment Vector");
             this.BoidOptions.add(ShowAlignmentVector_BoidOptions);
-            this.ShowAlignmentVector_BoidOptions.addActionListener(this);
+            this.ShowAlignmentVector_BoidOptions.addActionListener(Action_Listener);
             this.ShowAlignmentVector_BoidOptions.setActionCommand("ShowAlignmentVector_BoidOptions");
+            this.ShowAlignmentVector_BoidOptions.setPreferredSize(ButtonDimension);
+
+            //Adding label for this section:
+            JLabel DetectionRegionLabel = new JLabel();
+            DetectionRegionLabel.setFont(new Font(DetectionRegionLabel.getFont().toString(),Font.BOLD,14));//make label font bold
+            DetectionRegionLabel.setText("Boid Detection Settings:");
+            this.BoidOptions.add(DetectionRegionLabel);
             //enable ShowDetectionCircle_BoidOptions
             this.ShowDetectionCircle_BoidOptions = new JButton("Show Detection Circle");
             this.BoidOptions.add(ShowDetectionCircle_BoidOptions);
-            this.ShowDetectionCircle_BoidOptions.addActionListener(this);
+            this.ShowDetectionCircle_BoidOptions.addActionListener(Action_Listener);
             this.ShowDetectionCircle_BoidOptions.setActionCommand("ShowDetectionCircle_BoidOptions");
+            this.ShowDetectionCircle_BoidOptions.setPreferredSize(ButtonDimension);
+            //boid detection distance slider
+            DetectionDistance_Slider_Label = new JLabel("Detection Distance (in pixel): " + SimSettings.getDetection_Distance(),JLabel.LEFT);
+            this.BoidOptions.add(DetectionDistance_Slider_Label);
+            this.DetectionDistance_Slider_BoidOptions = new JSlider(JSlider.HORIZONTAL,0,200,SimSettings.getDetection_Distance());
+            this.DetectionDistance_Slider_BoidOptions.addChangeListener(Change_Listener);
+            this.DetectionDistance_Slider_BoidOptions.setName("DetectionDistanceSlider");
+            this.DetectionDistance_Slider_BoidOptions.setMajorTickSpacing(50);
+            this.DetectionDistance_Slider_BoidOptions.setMinorTickSpacing(10);
+            this.DetectionDistance_Slider_BoidOptions.setPaintTicks(true);
+            this.DetectionDistance_Slider_BoidOptions.setPaintLabels(true);
+            this.BoidOptions.add(DetectionDistance_Slider_BoidOptions);
+            //boid view angle slider
+
             //enable Show_Boids_nearby
             this.ShowDetectedBoids_BoidOptions = new JButton("Hide Detected Boids");
             this.BoidOptions.add(ShowDetectedBoids_BoidOptions);
-            this.ShowDetectedBoids_BoidOptions.addActionListener(this);
+            this.ShowDetectedBoids_BoidOptions.addActionListener(Action_Listener);
             this.ShowDetectedBoids_BoidOptions.setActionCommand("ShowDetectedBoids_BoidOptions");
+            this.ShowDetectedBoids_BoidOptions.setPreferredSize(ButtonDimension);
 
             //</editor-fold>
 
 
-            this.Frame.setSize(200, 500);
-            this.Frame.setVisible(true);
+
             //</editor-fold>
 
         }
-
+        //TODO enter defaults in switch statemetns
         public class SimulationMenuActionListener implements ActionListener
         {
             @Override
@@ -166,12 +197,12 @@ public class GUI extends JFrame implements Runnable
                             if(SimSettings.Show_Boids_nearby)
                             {
                                 SimSettings.Show_Boids_nearby = false;
-                                this.ShowDetectedBoids_BoidOptions.setText("Show Detected Boids");
+                                ShowDetectedBoids_BoidOptions.setText("Show Detected Boids");
                             }
                             else
                             {
                                 SimSettings.Show_Boids_nearby = true;
-                                this.ShowDetectedBoids_BoidOptions.setText("Hide Detected Boids");
+                                ShowDetectedBoids_BoidOptions.setText("Hide Detected Boids");
                             }
                             break;
                         }
@@ -179,12 +210,12 @@ public class GUI extends JFrame implements Runnable
                             if(SimSettings.Show_Detection_circle)
                             {
                                 SimSettings.Show_Detection_circle = false;
-                                this.ShowDetectionCircle_BoidOptions.setText("Show Detection Circle");
+                                ShowDetectionCircle_BoidOptions.setText("Show Detection Circle");
                             }
                             else
                             {
                                 SimSettings.Show_Detection_circle = true;
-                                this.ShowDetectionCircle_BoidOptions.setText("Hide Detection Circle");
+                                ShowDetectionCircle_BoidOptions.setText("Hide Detection Circle");
                             }
                             break;
                         }
@@ -192,12 +223,12 @@ public class GUI extends JFrame implements Runnable
                             if(SimSettings.Flocking_Enabled)
                             {
                                 SimSettings.Flocking_Enabled = false;
-                                this.EnableFlocking_BoidOptions.setText("Enable Flocking");
+                                EnableFlocking_BoidOptions.setText("Enable Flocking");
                             }
                             else
                             {
                                 SimSettings.Flocking_Enabled = true;
-                                this.EnableFlocking_BoidOptions.setText("Disable Flocking");
+                                EnableFlocking_BoidOptions.setText("Disable Flocking");
                             }
                             break;
                         }
@@ -205,12 +236,12 @@ public class GUI extends JFrame implements Runnable
                             if(SimSettings.Show_Boid_vector)
                             {
                                 SimSettings.Show_Boid_vector = false;
-                                this.ShowBoidVector_BoidOptions.setText("Show Boid Vector");
+                                ShowBoidVector_BoidOptions.setText("Show Boid Vector");
                             }
                             else
                             {
                                 SimSettings.Show_Boid_vector = true;
-                                this.ShowBoidVector_BoidOptions.setText("Hide Boid Vector");
+                                ShowBoidVector_BoidOptions.setText("Hide Boid Vector");
                             }
                             break;
                         }
@@ -219,12 +250,12 @@ public class GUI extends JFrame implements Runnable
                             if(SimSettings.Show_cohesion_vector)
                             {
                                 SimSettings.Show_cohesion_vector = false;
-                                this.ShowCohesionVector_BoidOptions.setText("Show Cohesion Vector");
+                                ShowCohesionVector_BoidOptions.setText("Show Cohesion Vector");
                             }
                             else
                             {
                                 SimSettings.Show_cohesion_vector = true;
-                                this.ShowCohesionVector_BoidOptions.setText("Hide Cohesion Vector");
+                                ShowCohesionVector_BoidOptions.setText("Hide Cohesion Vector");
                             }
                             break;
                         }
@@ -233,12 +264,12 @@ public class GUI extends JFrame implements Runnable
                             if(SimSettings.Show_seperation_vector)
                             {
                                 SimSettings.Show_seperation_vector = false;
-                                this.ShowSeparationVector_BoidOptions.setText("Show Separation Vector");
+                                ShowSeparationVector_BoidOptions.setText("Show Separation Vector");
                             }
                             else
                             {
                                 SimSettings.Show_seperation_vector = true;
-                                this.ShowSeparationVector_BoidOptions.setText("Hide Separation Vector");
+                                ShowSeparationVector_BoidOptions.setText("Hide Separation Vector");
                             }
                             break;
                         }
@@ -247,12 +278,12 @@ public class GUI extends JFrame implements Runnable
                             if(SimSettings.Show_allignment_vector)
                             {
                                 SimSettings.Show_allignment_vector = false;
-                                this.ShowAlignmentVector_BoidOptions.setText("Show Alignment Vector");
+                                ShowAlignmentVector_BoidOptions.setText("Show Alignment Vector");
                             }
                             else
                             {
                                 SimSettings.Show_allignment_vector = true;
-                                this.ShowAlignmentVector_BoidOptions.setText("Hide Alignment Vector");
+                                ShowAlignmentVector_BoidOptions.setText("Hide Alignment Vector");
                             }
                             break;
                         }
@@ -270,9 +301,23 @@ public class GUI extends JFrame implements Runnable
 
         public class SimulationMenuChangeListener implements ChangeListener
         {
+
             @Override
             public void stateChanged(ChangeEvent e) {
+                if(e.getSource() instanceof JSlider)
+                {
+                    JSlider source = (JSlider)e.getSource();
+                    switch (source.getName())
+                    {
+                        case "DetectionDistanceSlider":
+                        {
+                            DetectionDistance_Slider_Label.setText("Detection Distance (in pixel): " + SimSettings.getDetection_Distance());
+                            SimSettings.setDetection_Distance(source.getValue());
+                            break;
+                        }
 
+                    }
+                }
             }
         }
 

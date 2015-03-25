@@ -16,6 +16,15 @@ public class Settings implements ActionListener {
     private int Max_FPS = 30;//used to calculate draw delay ( draw_timestep = (1/Max_FPS )*1000
     private int Draw_timestep = 33;//delay between repaint calls
 
+    private int Detection_Distance = 50;
+    public int getDetection_Distance() {
+        return Detection_Distance;
+    }
+    public void setDetection_Distance(int detection_Distance) {
+        Detection_Distance = detection_Distance;
+    }
+
+
     private double cohesion_multiplier = 1;//by what value the cohesion vector is multiplied
     private double alignment_multiplier = 1;//by what value the alignment vector is multiplied
     private double separation_multiplier = 1;//by what value the alignment vector is multiplied

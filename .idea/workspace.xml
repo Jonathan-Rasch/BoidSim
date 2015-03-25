@@ -2,13 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="eb6d6b00-8b60-4cbe-9c50-7c6cd21b4eda" name="Default" comment="yay !!!!">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/BoidSim/GUI$SimulationMenu.class" afterPath="$PROJECT_DIR$/out/production/BoidSim/GUI$SimulationMenu.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/BoidSim/GUI.class" afterPath="$PROJECT_DIR$/out/production/BoidSim/GUI.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Boid.java" afterPath="$PROJECT_DIR$/src/Boid.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/GUI.java" afterPath="$PROJECT_DIR$/src/GUI.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Settings.java" afterPath="$PROJECT_DIR$/src/Settings.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/simulation_manager.java" afterPath="$PROJECT_DIR$/src/simulation_manager.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Boid Simulator.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -59,8 +55,8 @@
       <file leaf-file-name="Boid.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Boid.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-11.689655" vertical-offset="2058" max-vertical-offset="3230">
-              <caret line="170" column="40" selection-start-line="170" selection-start-column="23" selection-end-line="170" selection-end-column="40" />
+            <state vertical-scroll-proportion="-8.034483" vertical-offset="2521" max-vertical-offset="3281">
+              <caret line="191" column="70" selection-start-line="191" selection-start-column="70" selection-end-line="191" selection-end-column="70" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#1719#1725#0" expanded="true" />
@@ -68,9 +64,9 @@
                 <element signature="method#calculate_obstacle_vector#0;class#Boid#0" expanded="false" />
                 <element signature="method#calculate_food_vector#0;class#Boid#0" expanded="false" />
                 <element signature="e#6316#6360#0" expanded="false" />
-                <element signature="e#9350#9449#0" expanded="false" />
-                <element signature="e#10700#10742#0" expanded="false" />
-                <element signature="e#11896#11978#0" expanded="false" />
+                <element signature="e#9476#9575#0" expanded="false" />
+                <element signature="e#10826#10868#0" expanded="false" />
+                <element signature="e#12022#12104#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -93,12 +89,13 @@
       <file leaf-file-name="GUI.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/GUI.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.20604396" vertical-offset="1176" max-vertical-offset="4964">
-              <caret line="78" column="32" selection-start-line="78" selection-start-column="32" selection-end-line="78" selection-end-column="32" />
+            <state vertical-scroll-proportion="0.74725276" vertical-offset="2941" max-vertical-offset="3893">
+              <caret line="313" column="138" selection-start-line="313" selection-start-column="138" selection-end-line="313" selection-end-column="138" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#1272#1460#0" expanded="true" />
-                <element signature="e#1459#1460#0" expanded="true" />
+                <element signature="e#1304#1492#0" expanded="true" />
+                <element signature="e#1491#1492#0" expanded="true" />
+                <element signature="method#actionPerformed#0;class#SimulationMenuActionListener#0;class#SimulationMenu#0;class#GUI#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -107,10 +104,14 @@
       <file leaf-file-name="Settings.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Settings.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="612" max-vertical-offset="1479">
-              <caret line="30" column="0" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="204" max-vertical-offset="1632">
+              <caret line="26" column="0" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#685#686#0" expanded="true" />
+                <element signature="e#726#727#0" expanded="true" />
+                <element signature="e#790#791#0" expanded="true" />
+                <element signature="e#845#846#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -611,7 +612,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/Boid.java</url>
-          <line>202</line>
+          <line>205</line>
           <properties />
           <option name="timeStamp" value="43" />
         </line-breakpoint>
@@ -636,9 +637,9 @@
             <element signature="method#calculate_obstacle_vector#0;class#Boid#0" expanded="false" />
             <element signature="method#calculate_food_vector#0;class#Boid#0" expanded="false" />
             <element signature="e#6316#6360#0" expanded="false" />
-            <element signature="e#9350#9449#0" expanded="false" />
-            <element signature="e#10700#10742#0" expanded="false" />
-            <element signature="e#11896#11978#0" expanded="false" />
+            <element signature="e#9476#9575#0" expanded="false" />
+            <element signature="e#10826#10868#0" expanded="false" />
+            <element signature="e#12022#12104#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -669,8 +670,9 @@
           <caret line="28" column="0" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1272#1460#0" expanded="true" />
-            <element signature="e#1459#1460#0" expanded="true" />
+            <element signature="e#1304#1492#0" expanded="true" />
+            <element signature="e#1491#1492#0" expanded="true" />
+            <element signature="method#actionPerformed#0;class#SimulationMenuActionListener#0;class#SimulationMenu#0;class#GUI#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -747,9 +749,9 @@
             <element signature="method#calculate_obstacle_vector#0;class#Boid#0" expanded="false" />
             <element signature="method#calculate_food_vector#0;class#Boid#0" expanded="false" />
             <element signature="e#6316#6360#0" expanded="false" />
-            <element signature="e#9350#9449#0" expanded="false" />
-            <element signature="e#10700#10742#0" expanded="false" />
-            <element signature="e#11896#11978#0" expanded="false" />
+            <element signature="e#9476#9575#0" expanded="false" />
+            <element signature="e#10826#10868#0" expanded="false" />
+            <element signature="e#12022#12104#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -780,8 +782,9 @@
           <caret line="28" column="0" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1272#1460#0" expanded="true" />
-            <element signature="e#1459#1460#0" expanded="true" />
+            <element signature="e#1304#1492#0" expanded="true" />
+            <element signature="e#1491#1492#0" expanded="true" />
+            <element signature="method#actionPerformed#0;class#SimulationMenuActionListener#0;class#SimulationMenu#0;class#GUI#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -850,9 +853,9 @@
             <element signature="method#calculate_obstacle_vector#0;class#Boid#0" expanded="false" />
             <element signature="method#calculate_food_vector#0;class#Boid#0" expanded="false" />
             <element signature="e#6316#6360#0" expanded="false" />
-            <element signature="e#9350#9449#0" expanded="false" />
-            <element signature="e#10700#10742#0" expanded="false" />
-            <element signature="e#11896#11978#0" expanded="false" />
+            <element signature="e#9476#9575#0" expanded="false" />
+            <element signature="e#10826#10868#0" expanded="false" />
+            <element signature="e#12022#12104#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -875,8 +878,9 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1272#1460#0" expanded="true" />
-            <element signature="e#1459#1460#0" expanded="true" />
+            <element signature="e#1304#1492#0" expanded="true" />
+            <element signature="e#1491#1492#0" expanded="true" />
+            <element signature="method#actionPerformed#0;class#SimulationMenuActionListener#0;class#SimulationMenu#0;class#GUI#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -945,9 +949,9 @@
             <element signature="method#calculate_obstacle_vector#0;class#Boid#0" expanded="false" />
             <element signature="method#calculate_food_vector#0;class#Boid#0" expanded="false" />
             <element signature="e#6316#6360#0" expanded="false" />
-            <element signature="e#9350#9449#0" expanded="false" />
-            <element signature="e#10700#10742#0" expanded="false" />
-            <element signature="e#11896#11978#0" expanded="false" />
+            <element signature="e#9476#9575#0" expanded="false" />
+            <element signature="e#10826#10868#0" expanded="false" />
+            <element signature="e#12022#12104#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -970,8 +974,9 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1272#1460#0" expanded="true" />
-            <element signature="e#1459#1460#0" expanded="true" />
+            <element signature="e#1304#1492#0" expanded="true" />
+            <element signature="e#1491#1492#0" expanded="true" />
+            <element signature="method#actionPerformed#0;class#SimulationMenuActionListener#0;class#SimulationMenu#0;class#GUI#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1040,9 +1045,9 @@
             <element signature="method#calculate_obstacle_vector#0;class#Boid#0" expanded="false" />
             <element signature="method#calculate_food_vector#0;class#Boid#0" expanded="false" />
             <element signature="e#6316#6360#0" expanded="false" />
-            <element signature="e#9350#9449#0" expanded="false" />
-            <element signature="e#10700#10742#0" expanded="false" />
-            <element signature="e#11896#11978#0" expanded="false" />
+            <element signature="e#9476#9575#0" expanded="false" />
+            <element signature="e#10826#10868#0" expanded="false" />
+            <element signature="e#12022#12104#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1357,18 +1362,22 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Settings.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="714" max-vertical-offset="1479">
-          <caret line="30" column="0" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1632">
+          <caret line="26" column="0" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#685#686#0" expanded="true" />
+            <element signature="e#726#727#0" expanded="true" />
+            <element signature="e#790#791#0" expanded="true" />
+            <element signature="e#845#846#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Boid.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-11.689655" vertical-offset="2058" max-vertical-offset="3230">
-          <caret line="170" column="40" selection-start-line="170" selection-start-column="23" selection-end-line="170" selection-end-column="40" />
+        <state vertical-scroll-proportion="-8.034483" vertical-offset="2521" max-vertical-offset="3281">
+          <caret line="191" column="70" selection-start-line="191" selection-start-column="70" selection-end-line="191" selection-end-column="70" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#1719#1725#0" expanded="true" />
@@ -1376,21 +1385,22 @@
             <element signature="method#calculate_obstacle_vector#0;class#Boid#0" expanded="false" />
             <element signature="method#calculate_food_vector#0;class#Boid#0" expanded="false" />
             <element signature="e#6316#6360#0" expanded="false" />
-            <element signature="e#9350#9449#0" expanded="false" />
-            <element signature="e#10700#10742#0" expanded="false" />
-            <element signature="e#11896#11978#0" expanded="false" />
+            <element signature="e#9476#9575#0" expanded="false" />
+            <element signature="e#10826#10868#0" expanded="false" />
+            <element signature="e#12022#12104#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/GUI.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.20604396" vertical-offset="1176" max-vertical-offset="4964">
-          <caret line="78" column="32" selection-start-line="78" selection-start-column="32" selection-end-line="78" selection-end-column="32" />
+        <state vertical-scroll-proportion="0.74725276" vertical-offset="2941" max-vertical-offset="3893">
+          <caret line="313" column="138" selection-start-line="313" selection-start-column="138" selection-end-line="313" selection-end-column="138" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1272#1460#0" expanded="true" />
-            <element signature="e#1459#1460#0" expanded="true" />
+            <element signature="e#1304#1492#0" expanded="true" />
+            <element signature="e#1491#1492#0" expanded="true" />
+            <element signature="method#actionPerformed#0;class#SimulationMenuActionListener#0;class#SimulationMenu#0;class#GUI#0" expanded="false" />
           </folding>
         </state>
       </provider>

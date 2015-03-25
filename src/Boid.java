@@ -188,6 +188,9 @@ public class Boid implements Drawable{
     //update the boid
     public void Update(double deltaT , List<Boid> Boid_list) {
 
+        //Update Boid values: e.g. detection distance
+        this.Detection_distance = SimSettings.getDetection_Distance();
+
         //<editor-fold desc="Check which boids are in the detection region and ad them to Boidnearby_List">
         this.Boidnearby_List.clear();
         for(Boid boid1:Boid_list)
