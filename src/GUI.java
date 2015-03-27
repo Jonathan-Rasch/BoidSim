@@ -27,9 +27,8 @@ public class GUI extends JFrame implements Runnable
     public static void main(String[] args)
     {
         final Settings SimSetting = new Settings();
-        //TODO final keyword ??? why did i put it here ? important ???
         final simulation_manager simmanager = new simulation_manager(SimSetting);
-        //starts the Gui on a separate thread
+
         SwingUtilities.invokeLater(new GUI()
         {
             @Override
@@ -40,7 +39,7 @@ public class GUI extends JFrame implements Runnable
             }
         });
         //start the sim manager Update Loop
-
+        simmanager.Update();
     }
 
     public void CreateGUI(Settings sett)
@@ -52,7 +51,7 @@ public class GUI extends JFrame implements Runnable
         this.setLayout(new BorderLayout());
 
 
-        SimPanel = new Simulation_Panel(this.simM);
+        SimPanel = new Simulation_Panel(this.SimSettings);
         SimPanel.GetJPanel().setSize(SimSettings.getScreenDimension());
         SimPanel.GetJPanel().setMinimumSize(new Dimension(600, 800));//TODO the fuck did i do here ?
         SimPanel.GetJPanel().setBackground(Color.black);
@@ -64,15 +63,15 @@ public class GUI extends JFrame implements Runnable
         //<editor-fold desc="setting up timers">
         //initial timer setup
         Draw_Timer = new Timer(draw_deltaT,SimPanel);
-        Update_Timer = new Timer(simulation_deltaT,simM);
+
             //make timers repeat
         Draw_Timer.setRepeats(true);
-        Update_Timer.setRepeats(true);
+
             //start timers
         Draw_Timer.setActionCommand(""+draw_deltaT);
-        Update_Timer.setActionCommand("" + simulation_deltaT);
+
         Draw_Timer.start();
-        Update_Timer.start();
+
         //
         //</editor-fold>
     }

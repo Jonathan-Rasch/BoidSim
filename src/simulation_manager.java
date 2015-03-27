@@ -4,7 +4,7 @@ import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.util.List;
 
-public class simulation_manager implements ActionListener
+public class simulation_manager
 {
     private double deltaT = 0;
     Settings SimSettings;
@@ -28,32 +28,37 @@ public class simulation_manager implements ActionListener
 
     }
 
-    public void Update(double Time_in_s)
+    public void Update()
     {
-
-
-            Draw_List.clear();
+        while(true)
+        {
+            Draw_List = new ArrayList<Drawable>();
             Draw_List.addAll(Boid_List);
+            SimSettings.SetDrawList(Draw_List);
+
             for(Boid boid:Boid_List)
             {
-                boid.Update(deltaT,Boid_List);
+                boid.Update(10*Math.pow(10,-4),Boid_List);
             }
             for(Boid boid:Boid_List)
             {
                 boid.UpdateComplete();
             }
-
-
+            try {
+                Thread.sleep(0,1);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
     }
+
+
+
+
 
     public List<Drawable> getDraw_List() {
         return Draw_List;
     }
 
-    @Override
-    public void actionPerformed(ActionEvent e) {
-        //getting the time that has passed. from ms to s
-        deltaT = 0.001*(double)Integer.parseInt(e.getActionCommand());
-        Update(deltaT);
-    }
+
 }

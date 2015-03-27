@@ -2,6 +2,9 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.*;
+import java.util.List;
+import java.util.concurrent.CopyOnWriteArrayList;
 
 public class Settings implements ActionListener {
 
@@ -53,6 +56,18 @@ public class Settings implements ActionListener {
     public boolean Show_Boids_nearby = true ;
     public boolean Show_Detection_circle = false;
     public boolean Show_Boid = true;
+    public boolean SimulationRunning = true;
+
+    private List<Drawable> Draw_List = Collections.synchronizedList(new ArrayList<Drawable>());
+    public synchronized List<Drawable> GetDrawList(){
+        List<Drawable> returnList = new ArrayList<Drawable>();
+        returnList.addAll(Draw_List);
+        return returnList;
+    }
+    public synchronized void SetDrawList(List<Drawable> List){
+        this.Draw_List.clear();
+        this.Draw_List.addAll(List);
+    }
 
     public Settings()
     {

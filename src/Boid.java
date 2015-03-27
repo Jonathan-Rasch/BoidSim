@@ -1,6 +1,7 @@
 import java.awt.*;
 import java.awt.geom.Ellipse2D;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class Boid implements Drawable{
@@ -30,7 +31,7 @@ public class Boid implements Drawable{
 
     //TODO write a function to update statics
 
-    List<Boid> Detected_List = new ArrayList<Boid>();
+    List<Boid> Detected_List = Collections.synchronizedList(new ArrayList<Boid>());
     //TODO obstacle list and functions.
 
     public cartesian_point getBoid_position() {
@@ -181,9 +182,11 @@ public class Boid implements Drawable{
             int xposition = this.getBoid_position().Get_X_int();
             int yposition = this.getBoid_position().Get_Y_int();
             g.setColor(Color.orange);
-            for(Boid Boidnearby: Detected_List)
+            List<Boid> TempList = new ArrayList<Boid>();
+            TempList.addAll(Detected_List);
+            for(Boid Boidnearby: TempList)
             {
-                g.drawLine(xposition,yposition,Boidnearby.getBoid_position().Get_X_int(),Boidnearby.getBoid_position().Get_Y_int());
+               g.drawLine(xposition,yposition,Boidnearby.getBoid_position().Get_X_int(),Boidnearby.getBoid_position().Get_Y_int());
             }
         }
         if(SimSettings.Show_Detection_circle){
