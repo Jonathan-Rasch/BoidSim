@@ -16,11 +16,11 @@ public class Boid implements Drawable{
     private polar_vector new_boid_vector;//used to find the new position.
 
     //TODO refactor "allignment" to "alignment" , spelling reasons
-    private polar_vector allignment_vector;//the vector due to allignment
-    private polar_vector seperation_vector;//the vector due to seperation
-    private polar_vector cohesion_vector;//the vector due to cohesion
-    private polar_vector obstacle_vector;// vector to avoid obstacles
-    private polar_vector food_vector;//vector to stear towards food (optional)
+    private polar_vector allignment_vector = new polar_vector(0,0,true);//the vector due to allignment
+    private polar_vector seperation_vector = new polar_vector(0,0,true);//the vector due to seperation
+    private polar_vector cohesion_vector = new polar_vector(0,0,true);//the vector due to cohesion
+    private polar_vector obstacle_vector = new polar_vector(0,0,true);// vector to avoid obstacles and simulation borders
+    private polar_vector food_vector = new polar_vector(0,0,true);//vector to stear towards food (optional)
 
     //the minimum desired seperation between the boids.
     private static double Desired_Seperation = 10;//all boids share this value. it is set via settings in the gui or uses default values
@@ -30,7 +30,7 @@ public class Boid implements Drawable{
 
     //TODO write a function to update statics
 
-    List<Boid> Boidnearby_List = new ArrayList<Boid>();
+    List<Boid> Detected_List = new ArrayList<Boid>();
     //TODO obstacle list and functions.
 
     public cartesian_point getBoid_position() {
@@ -48,14 +48,14 @@ public class Boid implements Drawable{
         //reset alignment vector so that if boid list is empty, alignment has no effect.
         allignment_vector = new polar_vector(0,0,true);
         //add vectors of all nearby boids
-        for(Boid boid:Boidnearby_List)
+        for(Boid boid: Detected_List)
         {
             allignment_vector = Boid_Maths.vector_addition(boid.getBoid_vector(),allignment_vector);
         }
         //divide resultant vector by the number of boids to obtain the average vector
         //TODO make this a method in Boid_Maths
-        allignment_vector.setXcomponent(allignment_vector.getXcomponent()/Boidnearby_List.size());
-        allignment_vector.setYcomponent(allignment_vector.getYcomponent()/Boidnearby_List.size());
+        allignment_vector.setXcomponent(allignment_vector.getXcomponent() / Detected_List.size());
+        allignment_vector.setYcomponent(allignment_vector.getYcomponent()/ Detected_List.size());
         //add the resulting vector
     }
 
@@ -68,10 +68,11 @@ public class Boid implements Drawable{
         //calculating the numerator of the equation used to calculate the separation vector, same for all boids
         this.seperation_vector = new polar_vector(0,0,true);//resetting separation vector
         double numerator = 2*Boid_radius + Desired_Seperation;
-        for(Boid boid:this.Boidnearby_List)
+        for(Boid boid:this.Detected_List)
         {
             //calculate separation between this boid and the current boid ( denominator of equation ):
             double actual_separation = Boid_Maths.Distance_between_points(this.boid_position,boid.boid_position);
+
             //TODO make this a Boid_Maths method (find angle between points )
             /*
             to find the angle of boid relative to this boid i use this boid as a reference. I archive this by substracting the position of this.boid from boid.
@@ -86,7 +87,7 @@ public class Boid implements Drawable{
             this is further amplified by raising the fraction to the third power and taking the exponential of that.
             this results in a larger magnitude the closer the boids get.
              */
-            double seperation_magnitude = Math.pow(numerator / actual_separation, 5);//Math.exp()
+            double seperation_magnitude = Math.pow(numerator / actual_separation, 5);
             //using the magnitude and angle to create a vector
             polar_vector Temp_seperation_vector = new polar_vector(seperation_magnitude,angle_between_boids,true);
             //at the moment the temp seperation vector is pointing towards the other boid, so i have to invert it,
@@ -100,7 +101,7 @@ public class Boid implements Drawable{
     {
         cohesion_vector = new polar_vector(0,0,true);//reset  cohesion vector
         //find the average position of nearby boids
-        cartesian_point average_position = Boid_Maths.Calculate_average_boid_position(Boidnearby_List);
+        cartesian_point average_position = Boid_Maths.Calculate_average_boid_position(Detected_List);
         //find the distance between this boid and the average position
         double distance = Boid_Maths.Distance_between_points(this.boid_position,average_position);
         //TODO (find angle between points )
@@ -132,10 +133,18 @@ public class Boid implements Drawable{
         Ellipse2D.Double circle = new Ellipse2D.Double(boid_position.Get_X_int() - (int)Boid_radius,boid_position.Get_Y_int()- (int)Boid_radius,2*(int)Boid_radius,2*(int)Boid_radius);
         //</editor-fold>
 
-
-        g.setColor(Color.red);
-        g.fill(circle);
-
+        //<editor-fold desc="Drawing the boid and vectors">
+        //drawing the boid
+        if(SimSettings.Show_Boid)
+        {
+            if(this.Detected_List.size() == 0){
+                g.setColor(Color.red);
+            }
+            else{
+                g.setColor(Color.green);
+            }
+            g.fill(circle);
+        }
         //drawing the boid vector
         if(SimSettings.Show_Boid_vector) {
             //boid vector end point pos
@@ -172,7 +181,7 @@ public class Boid implements Drawable{
             int xposition = this.getBoid_position().Get_X_int();
             int yposition = this.getBoid_position().Get_Y_int();
             g.setColor(Color.orange);
-            for(Boid Boidnearby:Boidnearby_List)
+            for(Boid Boidnearby: Detected_List)
             {
                 g.drawLine(xposition,yposition,Boidnearby.getBoid_position().Get_X_int(),Boidnearby.getBoid_position().Get_Y_int());
             }
@@ -182,6 +191,7 @@ public class Boid implements Drawable{
             g.setColor(Color.black);
             g.draw(Detection_circle);
         }
+        //</editor-fold>
 
     }
 
@@ -191,14 +201,15 @@ public class Boid implements Drawable{
         //Update Boid values: e.g. detection distance
         this.Detection_distance = SimSettings.getDetection_Distance();
 
-        //<editor-fold desc="Check which boids are in the detection region and ad them to Boidnearby_List">
-        this.Boidnearby_List.clear();
+        //<editor-fold desc="Check which boids are in the detection region and ad them to Detected_List">
+        this.Detected_List.clear();
         for(Boid boid1:Boid_list)
         {
            //check which boids are in the detection distance
            double distance_between_boids = Boid_Maths.Distance_between_points(this.boid_position,boid1.getBoid_position());
            if(distance_between_boids < this.Detection_distance)
            {
+
                //preventing the boid adding itself to the boid_nearby list
                if(boid1 != this)
                {
@@ -206,10 +217,11 @@ public class Boid implements Drawable{
                    double Xdistance = this.getBoid_position().Get_X_double() - boid1.getBoid_position().Get_X_double();
                    double Ydistance = this.getBoid_position().Get_Y_double() - boid1.getBoid_position().Get_Y_double();
                    polar_vector vector_between_points = new polar_vector(Xdistance,Ydistance,false);
+                   vector_between_points.Invert_Vector();
                    double angle_between_boids = Math.abs(this.boid_vector.getAngle_rad() - vector_between_points.getAngle_rad() );
-                   if(angle_between_boids <= Math.PI/2)//TODO make view angle adjustable
+                   if(angle_between_boids <= 2*Math.PI*((double)SimSettings.getDetectionAngle()/100))//TODO something is wrong with angle between boids
                    {
-                       Boidnearby_List.add(boid1);
+                       Detected_List.add(boid1);
                    }
 
                }
@@ -219,6 +231,7 @@ public class Boid implements Drawable{
 
         //<editor-fold desc="Vector calculations">
         //do vector calculations
+
         if(!SimSettings.Flocking_Enabled)
         {
             cohesion_vector = new polar_vector(0,0,false);
@@ -231,14 +244,26 @@ public class Boid implements Drawable{
         }
         calculate_seperation();
         //debuff vectors;
-        cohesion_vector = new polar_vector(cohesion_vector.getXcomponent()*SimSettings.getCohesion_multiplier()/this.Boidnearby_List.size(),cohesion_vector.getYcomponent()*SimSettings.getCohesion_multiplier()/this.Boidnearby_List.size(),false);//TODO add /this.Boidnearby_List.size()
+        cohesion_vector = new polar_vector(cohesion_vector.getXcomponent()*SimSettings.getCohesion_multiplier()/this.Detected_List.size(),cohesion_vector.getYcomponent()*SimSettings.getCohesion_multiplier()/this.Detected_List.size(),false);//TODO add /this.Detected_List.size()
         allignment_vector = new polar_vector(allignment_vector.getXcomponent()*SimSettings.getAlignment_multiplier(),allignment_vector.getYcomponent()*SimSettings.getAlignment_multiplier(),false);
         //find the new boid vector
         polar_vector TempVec = new polar_vector(boid_vector.getXcomponent(),boid_vector.getYcomponent(),false);
-        new_boid_vector = Boid_Maths.vector_addition(TempVec,seperation_vector,cohesion_vector,allignment_vector);
+        new_boid_vector = Boid_Maths.vector_addition(TempVec,seperation_vector,cohesion_vector,allignment_vector,obstacle_vector);
+        //if the boid is not affected by other vectors it should maintain its velocity
+        if (new_boid_vector.getMagnitude() > 200){
+            new_boid_vector.setMagnitude(200);
+        }
+        //randomize heading
+        if (Detected_List.size() == 0 && Boid_Maths.RandomDouble()>0.51){
+            new_boid_vector.setAngle_rad(new_boid_vector.getAngle_rad()-0.01);
+        }
+        else if(Detected_List.size() == 0 && Boid_Maths.RandomDouble()<0.49){
+            new_boid_vector.setAngle_rad(new_boid_vector.getAngle_rad()+0.01);
+        }
         //</editor-fold>
 
         //<editor-fold desc="set new boid position and ensure its not outside the screen">
+
         double new_X = new_boid_vector.getXcomponent()*deltaT + this.boid_position.Get_X_double();
         if (new_X > this.SimSettings.getScreenDimension().width)
         {
@@ -262,6 +287,7 @@ public class Boid implements Drawable{
 
     }
 
+
     //once every boid has ran through update, the boids assume their new positions and vectors
     public void UpdateComplete()
     {
@@ -273,7 +299,7 @@ public class Boid implements Drawable{
     public Boid(int maxVector_magnitude,Settings SimSett)
     {
         this.SimSettings = SimSett;
-        boid_position = Boid_Maths.RandomPosition(1280,720);//TODO dimensions
+        boid_position = Boid_Maths.RandomPosition(SimSettings.getScreenDimension().width,SimSettings.getScreenDimension().height);//TODO dimensions
         boid_vector = Boid_Maths.RandomVector(maxVector_magnitude);
     }
 }

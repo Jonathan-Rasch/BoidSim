@@ -15,7 +15,7 @@ public class Simulation_Panel implements ActionListener
             super.paintComponent(g);
             Graphics2D g2 = (Graphics2D)g;
             g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING,RenderingHints.VALUE_ANTIALIAS_ON);
-            this.setBackground(Color.white);
+            this.setBackground(Color.black);//TODO make variable color
             for(Drawable D:SimManager.getDraw_List())
             {
                 D.Draw(g2);

@@ -86,12 +86,7 @@ public class polar_vector<T extends Number,T2 extends Number>
             }
             Update_cartesian_data();
         }
-        //adjust so that maximum speed is not broken
-        if(magnitude > 200)
-        {
-            magnitude = 200;
-            Update_cartesian_data();
-        }
+
     }
 
     private void Update_cartesian_data()

@@ -23,23 +23,26 @@ public class simulation_manager implements ActionListener
         while(i > 0)
         {
             i--;
-            Boid_List.add(new Boid(0,this.SimSettings));
+            Boid_List.add(new Boid(100,this.SimSettings));
         }
 
     }
 
     public void Update(double Time_in_s)
     {
-        Draw_List.clear();
-        Draw_List.addAll(Boid_List);
-        for(Boid boid:Boid_List)
-        {
-            boid.Update(deltaT,Boid_List);
-        }
-        for(Boid boid:Boid_List)
-        {
-            boid.UpdateComplete();
-        }
+
+
+            Draw_List.clear();
+            Draw_List.addAll(Boid_List);
+            for(Boid boid:Boid_List)
+            {
+                boid.Update(deltaT,Boid_List);
+            }
+            for(Boid boid:Boid_List)
+            {
+                boid.UpdateComplete();
+            }
+
 
     }
 

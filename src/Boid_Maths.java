@@ -233,4 +233,11 @@ public final class Boid_Maths
         polar_vector vector = new polar_vector(R.nextDouble()* Max_magnitude.doubleValue(),R.nextDouble()*2*Math.PI,true);
         return vector;
     }
+
+    public static double RandomDouble()
+    {
+        Random R = new Random(System.nanoTime());
+
+        return R.nextDouble();
+    }
 }

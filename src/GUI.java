@@ -91,7 +91,10 @@ public class GUI extends JFrame implements Runnable
         JButton ShowAlignmentVector_BoidOptions;
         JButton ShowDetectionCircle_BoidOptions;
         JButton ShowDetectedBoids_BoidOptions;
+        JButton ShowBoids_BoidOptions;
         JSlider DetectionDistance_Slider_BoidOptions;
+        JSlider DetectionAngle_Slider_BoidOptions;
+        JLabel DetectionAngle_Slider_Label;
         JLabel DetectionDistance_Slider_Label;
         SimulationMenuActionListener Action_Listener = new SimulationMenuActionListener();
         SimulationMenuChangeListener Change_Listener = new SimulationMenuChangeListener();
@@ -120,30 +123,42 @@ public class GUI extends JFrame implements Runnable
             this.EnableFlocking_BoidOptions.addActionListener(Action_Listener);
             this.EnableFlocking_BoidOptions.setActionCommand("EnableFlocking_BoidOptions");
             this.EnableFlocking_BoidOptions.setPreferredSize(ButtonDimension);
+            this.EnableFlocking_BoidOptions.setBackground(Color.red);
+            //draw ShowBoids_BoidOptions button
+            this.ShowBoids_BoidOptions = new JButton("Hide Boids");
+            this.BoidOptions.add(ShowBoids_BoidOptions);
+            this.ShowBoids_BoidOptions.addActionListener(Action_Listener);
+            this.ShowBoids_BoidOptions.setActionCommand("ShowBoids_BoidOptions");
+            this.ShowBoids_BoidOptions.setPreferredSize(ButtonDimension);
+            this.ShowBoids_BoidOptions.setBackground(Color.green);
             //enable ShowBoidVector_BoidOptions button
             this.ShowBoidVector_BoidOptions = new JButton("Hide Boid Vector");
             this.BoidOptions.add(ShowBoidVector_BoidOptions);
             this.ShowBoidVector_BoidOptions.addActionListener(Action_Listener);
             this.ShowBoidVector_BoidOptions.setActionCommand("ShowBoidVector_BoidOptions");
             this.ShowBoidVector_BoidOptions.setPreferredSize(ButtonDimension);
+            this.ShowBoidVector_BoidOptions.setBackground(Color.green);
             //enable Show_cohesion_vector
             this.ShowCohesionVector_BoidOptions = new JButton("Show Cohesion Vector");
             this.BoidOptions.add(ShowCohesionVector_BoidOptions);
             this.ShowCohesionVector_BoidOptions.addActionListener(Action_Listener);
             this.ShowCohesionVector_BoidOptions.setActionCommand("ShowCohesionVector_BoidOptions");
             this.ShowCohesionVector_BoidOptions.setPreferredSize(ButtonDimension);
+            this.ShowCohesionVector_BoidOptions.setBackground(Color.red);
             //enable ShowSeparationVector_BoidOptions
             this.ShowSeparationVector_BoidOptions = new JButton("Show Separation Vector");
             this.BoidOptions.add(ShowSeparationVector_BoidOptions);
             this.ShowSeparationVector_BoidOptions.addActionListener(Action_Listener);
             this.ShowSeparationVector_BoidOptions.setActionCommand("ShowSeparationVector_BoidOptions");
             this.ShowSeparationVector_BoidOptions.setPreferredSize(ButtonDimension);
+            this.ShowSeparationVector_BoidOptions.setBackground(Color.red);
              //enable ShowAlignmentVector_BoidOptions
             this.ShowAlignmentVector_BoidOptions = new JButton("Show Alignment Vector");
             this.BoidOptions.add(ShowAlignmentVector_BoidOptions);
             this.ShowAlignmentVector_BoidOptions.addActionListener(Action_Listener);
             this.ShowAlignmentVector_BoidOptions.setActionCommand("ShowAlignmentVector_BoidOptions");
             this.ShowAlignmentVector_BoidOptions.setPreferredSize(ButtonDimension);
+            this.ShowAlignmentVector_BoidOptions.setBackground(Color.red);
 
             //Adding label for this section:
             JLabel DetectionRegionLabel = new JLabel();
@@ -156,6 +171,7 @@ public class GUI extends JFrame implements Runnable
             this.ShowDetectionCircle_BoidOptions.addActionListener(Action_Listener);
             this.ShowDetectionCircle_BoidOptions.setActionCommand("ShowDetectionCircle_BoidOptions");
             this.ShowDetectionCircle_BoidOptions.setPreferredSize(ButtonDimension);
+            this.ShowDetectionCircle_BoidOptions.setBackground(Color.red);
             //boid detection distance slider
             DetectionDistance_Slider_Label = new JLabel("Detection Distance (in pixel): " + SimSettings.getDetection_Distance(),JLabel.LEFT);
             this.BoidOptions.add(DetectionDistance_Slider_Label);
@@ -167,7 +183,13 @@ public class GUI extends JFrame implements Runnable
             this.DetectionDistance_Slider_BoidOptions.setPaintTicks(true);
             this.DetectionDistance_Slider_BoidOptions.setPaintLabels(true);
             this.BoidOptions.add(DetectionDistance_Slider_BoidOptions);
-            //boid view angle slider
+            //boid DetectionAngle_Slider_BoidOptions
+            this.DetectionAngle_Slider_BoidOptions = new JSlider(JSlider.HORIZONTAL,0,100,SimSettings.getDetectionAngle());
+            DetectionAngle_Slider_Label = new JLabel("Detection Angle in rad: " + String.format("%.2f",(double)2*Math.PI*((double)SimSettings.getDetectionAngle()/100)),JLabel.LEFT);
+            this.BoidOptions.add(DetectionAngle_Slider_Label);
+            this.BoidOptions.add(DetectionAngle_Slider_BoidOptions);
+            this.DetectionAngle_Slider_BoidOptions.addChangeListener(Change_Listener);
+            this.DetectionAngle_Slider_BoidOptions.setName("DetectionAngleSlider");
 
             //enable Show_Boids_nearby
             this.ShowDetectedBoids_BoidOptions = new JButton("Hide Detected Boids");
@@ -175,6 +197,7 @@ public class GUI extends JFrame implements Runnable
             this.ShowDetectedBoids_BoidOptions.addActionListener(Action_Listener);
             this.ShowDetectedBoids_BoidOptions.setActionCommand("ShowDetectedBoids_BoidOptions");
             this.ShowDetectedBoids_BoidOptions.setPreferredSize(ButtonDimension);
+            this.ShowDetectedBoids_BoidOptions.setBackground(Color.green);
 
             //</editor-fold>
 
@@ -193,16 +216,34 @@ public class GUI extends JFrame implements Runnable
                     //<editor-fold desc="BoidOptions components switch">
                     switch (e.getActionCommand())
                     {
+                        case "ShowBoids_BoidOptions":
+                        {
+                            if(SimSettings.Show_Boid)
+                            {
+                                SimSettings.Show_Boid = false;
+                                ShowBoids_BoidOptions.setText("Show Boid");
+                                ShowBoids_BoidOptions.setBackground(Color.red);
+                            }
+                            else
+                            {
+                                SimSettings.Show_Boid = true;
+                                ShowBoids_BoidOptions.setText("Hide Boid");
+                                ShowBoids_BoidOptions.setBackground(Color.green);
+                            }
+                            break;
+                        }
                         case "ShowDetectedBoids_BoidOptions":{
                             if(SimSettings.Show_Boids_nearby)
                             {
                                 SimSettings.Show_Boids_nearby = false;
                                 ShowDetectedBoids_BoidOptions.setText("Show Detected Boids");
+                                ShowDetectedBoids_BoidOptions.setBackground(Color.red);
                             }
                             else
                             {
                                 SimSettings.Show_Boids_nearby = true;
                                 ShowDetectedBoids_BoidOptions.setText("Hide Detected Boids");
+                                ShowDetectedBoids_BoidOptions.setBackground(Color.green);
                             }
                             break;
                         }
@@ -211,11 +252,13 @@ public class GUI extends JFrame implements Runnable
                             {
                                 SimSettings.Show_Detection_circle = false;
                                 ShowDetectionCircle_BoidOptions.setText("Show Detection Circle");
+                                ShowDetectionCircle_BoidOptions.setBackground(Color.red);
                             }
                             else
                             {
                                 SimSettings.Show_Detection_circle = true;
                                 ShowDetectionCircle_BoidOptions.setText("Hide Detection Circle");
+                                ShowDetectionCircle_BoidOptions.setBackground(Color.green);
                             }
                             break;
                         }
@@ -224,11 +267,13 @@ public class GUI extends JFrame implements Runnable
                             {
                                 SimSettings.Flocking_Enabled = false;
                                 EnableFlocking_BoidOptions.setText("Enable Flocking");
+                                EnableFlocking_BoidOptions.setBackground(Color.red);
                             }
                             else
                             {
                                 SimSettings.Flocking_Enabled = true;
                                 EnableFlocking_BoidOptions.setText("Disable Flocking");
+                                EnableFlocking_BoidOptions.setBackground(Color.green);
                             }
                             break;
                         }
@@ -237,11 +282,13 @@ public class GUI extends JFrame implements Runnable
                             {
                                 SimSettings.Show_Boid_vector = false;
                                 ShowBoidVector_BoidOptions.setText("Show Boid Vector");
+                                ShowBoidVector_BoidOptions.setBackground(Color.red);
                             }
                             else
                             {
                                 SimSettings.Show_Boid_vector = true;
                                 ShowBoidVector_BoidOptions.setText("Hide Boid Vector");
+                                ShowBoidVector_BoidOptions.setBackground(Color.green);
                             }
                             break;
                         }
@@ -251,11 +298,13 @@ public class GUI extends JFrame implements Runnable
                             {
                                 SimSettings.Show_cohesion_vector = false;
                                 ShowCohesionVector_BoidOptions.setText("Show Cohesion Vector");
+                                ShowCohesionVector_BoidOptions.setBackground(Color.red);
                             }
                             else
                             {
                                 SimSettings.Show_cohesion_vector = true;
                                 ShowCohesionVector_BoidOptions.setText("Hide Cohesion Vector");
+                                ShowCohesionVector_BoidOptions.setBackground(Color.green);
                             }
                             break;
                         }
@@ -265,11 +314,13 @@ public class GUI extends JFrame implements Runnable
                             {
                                 SimSettings.Show_seperation_vector = false;
                                 ShowSeparationVector_BoidOptions.setText("Show Separation Vector");
+                                ShowSeparationVector_BoidOptions.setBackground(Color.red);
                             }
                             else
                             {
                                 SimSettings.Show_seperation_vector = true;
                                 ShowSeparationVector_BoidOptions.setText("Hide Separation Vector");
+                                ShowSeparationVector_BoidOptions.setBackground(Color.green);
                             }
                             break;
                         }
@@ -279,11 +330,13 @@ public class GUI extends JFrame implements Runnable
                             {
                                 SimSettings.Show_allignment_vector = false;
                                 ShowAlignmentVector_BoidOptions.setText("Show Alignment Vector");
+                                ShowAlignmentVector_BoidOptions.setBackground(Color.red);
                             }
                             else
                             {
                                 SimSettings.Show_allignment_vector = true;
                                 ShowAlignmentVector_BoidOptions.setText("Hide Alignment Vector");
+                                ShowAlignmentVector_BoidOptions.setBackground(Color.green);
                             }
                             break;
                         }
@@ -313,6 +366,12 @@ public class GUI extends JFrame implements Runnable
                         {
                             DetectionDistance_Slider_Label.setText("Detection Distance (in pixel): " + SimSettings.getDetection_Distance());
                             SimSettings.setDetection_Distance(source.getValue());
+                            break;
+                        }
+                        case "DetectionAngleSlider":
+                        {
+                            DetectionAngle_Slider_Label.setText("Detection Angle in rad: " + String.format("%.2f",(double)2*Math.PI*((double)SimSettings.getDetectionAngle()/100)));
+                            SimSettings.setDetectionAngle(source.getValue());
                             break;
                         }
 

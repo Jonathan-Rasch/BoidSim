@@ -155,11 +155,29 @@ public class Boid_Maths_method_tests {
         p2 = new cartesian_point(1,1);
         result = Boid_Maths.point_addition(p,p2,p,p,p2);
         System.out.println("expected 5,5 : " +result.Get_X_double() + "," + result.Get_Y_double());
-
+        System.out.println("\n");
         /*
         testing vector_addition method
          */
+        System.out.println("testing vector_addition method");
+        polar_vector vector0 = new polar_vector(1,0,true);
+        polar_vector vector45 = new polar_vector(1,Math.PI/4,true);
+        polar_vector vector90 = new polar_vector(1,Math.PI/2,true);
+        polar_vector vector135 = new polar_vector(1,3*Math.PI/4,true);
+        polar_vector vector180 = new polar_vector(1,Math.PI,true);
+        polar_vector vector225 = new polar_vector(1,5*Math.PI/4,true);
+        polar_vector vecotr270 = new polar_vector(1,3*Math.PI/2,true);
+        polar_vector vector315 = new polar_vector(1,7*Math.PI/4,true);
+        polar_vector vector360 = new polar_vector(1,2*Math.PI,true);
 
+        polar_vector resultant_vector = Boid_Maths.vector_addition(vector0, vector45);
+        System.out.println("expected 1.85,0.39  magnitude = " + resultant_vector.getMagnitude() + " angle = " + resultant_vector.getAngle_rad() );
 
+        resultant_vector = Boid_Maths.vector_addition(vector0, vector90);
+        System.out.println("expected 1.41,0.78  magnitude = " + resultant_vector.getMagnitude() + " angle = " + resultant_vector.getAngle_rad() );
+
+        //testing the bounce of top
+        resultant_vector = Boid_Maths.vector_addition(vector90, vecotr270);
+        System.out.println("expected 0,0  magnitude = " + resultant_vector.getMagnitude() + " angle = " + resultant_vector.getAngle_rad() );
     }
 }

@@ -8,7 +8,12 @@ public class Settings implements ActionListener {
     //setting values with default values
     private Dimension ScreenDimension;
 
+
+
+
+
     public Dimension getScreenDimension() {
+        ScreenDimension = Toolkit.getDefaultToolkit().getScreenSize();
         return ScreenDimension;
     }
 
@@ -29,6 +34,16 @@ public class Settings implements ActionListener {
     private double alignment_multiplier = 1;//by what value the alignment vector is multiplied
     private double separation_multiplier = 1;//by what value the alignment vector is multiplied
 
+    private int DetectionAngle = 50;//percentage of 2PI : 2PI*1/DetectionAngle
+    public int getDetectionAngle() {
+        return DetectionAngle;
+    }
+
+    public void setDetectionAngle(int detectionAngle) {
+        DetectionAngle = detectionAngle;
+    }
+
+    public boolean Boid_Avoid_Simulation_Border = true;
     public boolean Flocking_Enabled = false;
     public boolean Enforce_Minimum_Speed = true;
     public boolean Show_Boid_vector = true;
@@ -37,6 +52,7 @@ public class Settings implements ActionListener {
     public boolean Show_seperation_vector = false;
     public boolean Show_Boids_nearby = true ;
     public boolean Show_Detection_circle = false;
+    public boolean Show_Boid = true;
 
     public Settings()
     {
