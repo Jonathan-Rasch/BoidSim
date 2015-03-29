@@ -48,8 +48,8 @@ public class Settings implements ActionListener {
         return Angle;
     }
 
-    public boolean BorderedSimulation = true;
-    public boolean Flocking_Enabled = true;
+    public boolean BorderedSimulation = false;
+    public boolean Flocking_Enabled = false;
     public boolean Enforce_Minimum_Speed = true;
     public boolean Show_Boid_vector = true;
     public boolean Show_cohesion_vector = false;

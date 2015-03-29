@@ -19,7 +19,7 @@ public class simulation_manager
     {
         SimSettings = setting;
         //TODO remove this test code
-        int i = 500;
+        int i = 200;
         while(i > 0)
         {
             i--;

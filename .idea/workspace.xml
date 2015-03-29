@@ -2,12 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="eb6d6b00-8b60-4cbe-9c50-7c6cd21b4eda" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/BoidSim/GUI$1.class" afterPath="$PROJECT_DIR$/out/production/BoidSim/GUI$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/BoidSim/GUI$SimulationMenu$SimulationMenuActionListener.class" afterPath="$PROJECT_DIR$/out/production/BoidSim/GUI$SimulationMenu$SimulationMenuActionListener.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/BoidSim/GUI$SimulationMenu$SimulationMenuChangeListener.class" afterPath="$PROJECT_DIR$/out/production/BoidSim/GUI$SimulationMenu$SimulationMenuChangeListener.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/BoidSim/GUI$SimulationMenu.class" afterPath="$PROJECT_DIR$/out/production/BoidSim/GUI$SimulationMenu.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/BoidSim/GUI.class" afterPath="$PROJECT_DIR$/out/production/BoidSim/GUI.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/BetterBoid.java" afterPath="$PROJECT_DIR$/src/BetterBoid.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Settings.java" afterPath="$PROJECT_DIR$/src/Settings.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/simulation_manager.java" afterPath="$PROJECT_DIR$/src/simulation_manager.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Boid Simulator.iws" />
@@ -57,8 +54,8 @@
       <file leaf-file-name="simulation_manager.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/simulation_manager.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="299" max-vertical-offset="1241">
-              <caret line="21" column="18" selection-start-line="21" selection-start-column="18" selection-end-line="21" selection-end-column="18" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1241">
+              <caret line="21" column="17" selection-start-line="21" selection-start-column="17" selection-end-line="21" selection-end-column="17" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#385#395#0" expanded="true" />
@@ -84,11 +81,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Settings.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Settings.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Settings.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-14.068966" vertical-offset="204" max-vertical-offset="2465">
-              <caret line="46" column="82" selection-start-line="46" selection-start-column="82" selection-end-line="46" selection-end-column="82" />
+            <state vertical-scroll-proportion="0.4455645" vertical-offset="459" max-vertical-offset="2465">
+              <caret line="50" column="45" selection-start-line="50" selection-start-column="45" selection-end-line="50" selection-end-column="45" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="n#!!doc;n#ScreenDimension#0;n#Settings#0" expanded="false" />
@@ -98,33 +95,33 @@
                 <element signature="e#1215#1216#0" expanded="true" />
                 <element signature="e#1657#1658#0" expanded="true" />
                 <element signature="e#1705#1706#0" expanded="true" />
-                <element signature="e#2721#2731#0" expanded="true" />
-                <element signature="e#2867#2868#0" expanded="true" />
-                <element signature="e#2926#2927#0" expanded="true" />
-                <element signature="e#3427#3428#0" expanded="true" />
-                <element signature="e#3469#3470#0" expanded="true" />
-                <element signature="e#3539#3540#0" expanded="true" />
-                <element signature="e#3601#3602#0" expanded="true" />
-                <element signature="e#3648#3649#0" expanded="true" />
-                <element signature="e#3691#3692#0" expanded="true" />
-                <element signature="e#3875#3876#0" expanded="true" />
-                <element signature="e#3919#3920#0" expanded="true" />
-                <element signature="e#4096#4097#0" expanded="true" />
-                <element signature="e#4132#4133#0" expanded="true" />
-                <element signature="e#4187#4188#0" expanded="true" />
-                <element signature="e#4232#4233#0" expanded="true" />
-                <element signature="e#4263#4264#0" expanded="true" />
-                <element signature="e#4293#4294#0" expanded="true" />
-                <element signature="e#4336#4337#0" expanded="true" />
-                <element signature="e#4369#4370#0" expanded="true" />
-                <element signature="e#4412#4413#0" expanded="true" />
-                <element signature="e#4454#4455#0" expanded="true" />
-                <element signature="e#4521#4522#0" expanded="true" />
-                <element signature="e#4578#4579#0" expanded="true" />
-                <element signature="e#4621#4622#0" expanded="true" />
-                <element signature="e#4660#4661#0" expanded="true" />
-                <element signature="e#4725#4726#0" expanded="true" />
-                <element signature="e#4776#4777#0" expanded="true" />
+                <element signature="e#2723#2733#0" expanded="true" />
+                <element signature="e#2869#2870#0" expanded="true" />
+                <element signature="e#2928#2929#0" expanded="true" />
+                <element signature="e#3429#3430#0" expanded="true" />
+                <element signature="e#3471#3472#0" expanded="true" />
+                <element signature="e#3541#3542#0" expanded="true" />
+                <element signature="e#3603#3604#0" expanded="true" />
+                <element signature="e#3650#3651#0" expanded="true" />
+                <element signature="e#3693#3694#0" expanded="true" />
+                <element signature="e#3877#3878#0" expanded="true" />
+                <element signature="e#3921#3922#0" expanded="true" />
+                <element signature="e#4098#4099#0" expanded="true" />
+                <element signature="e#4134#4135#0" expanded="true" />
+                <element signature="e#4189#4190#0" expanded="true" />
+                <element signature="e#4234#4235#0" expanded="true" />
+                <element signature="e#4265#4266#0" expanded="true" />
+                <element signature="e#4295#4296#0" expanded="true" />
+                <element signature="e#4338#4339#0" expanded="true" />
+                <element signature="e#4371#4372#0" expanded="true" />
+                <element signature="e#4414#4415#0" expanded="true" />
+                <element signature="e#4456#4457#0" expanded="true" />
+                <element signature="e#4523#4524#0" expanded="true" />
+                <element signature="e#4580#4581#0" expanded="true" />
+                <element signature="e#4623#4624#0" expanded="true" />
+                <element signature="e#4662#4663#0" expanded="true" />
+                <element signature="e#4727#4728#0" expanded="true" />
+                <element signature="e#4778#4779#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -133,7 +130,7 @@
       <file leaf-file-name="Simulation_Panel.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Simulation_Panel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="318" max-vertical-offset="1071">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1071">
               <caret line="39" column="0" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
               <folding>
                 <element signature="e#601#1362#0" expanded="true" />
@@ -172,11 +169,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="BetterBoid.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="BetterBoid.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/BetterBoid.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5191919" vertical-offset="3245" max-vertical-offset="3740">
-              <caret line="382" column="0" selection-start-line="382" selection-start-column="0" selection-end-line="382" selection-end-column="0" />
+            <state vertical-scroll-proportion="-11.379311" vertical-offset="503" max-vertical-offset="3995">
+              <caret line="156" column="5" selection-start-line="156" selection-start-column="5" selection-end-line="156" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="n#!!doc;n#boid_position#0;n#BetterBoid#0" expanded="false" />
@@ -192,32 +189,34 @@
                 <element signature="n#!!doc;n#boid_cohesion_Vector#0;n#BetterBoid#0" expanded="false" />
                 <element signature="e#2126#2127#0" expanded="true" />
                 <element signature="e#2188#2189#0" expanded="true" />
+                <element signature="n#!!doc;n#boid_alignment_Vector#0;n#BetterBoid#0" expanded="false" />
+                <element signature="e#2587#2588#0" expanded="true" />
+                <element signature="e#2650#2651#0" expanded="true" />
                 <element signature="n#!!doc;n#boid_separation_Vector#0;n#BetterBoid#0" expanded="false" />
-                <element signature="e#2590#2591#0" expanded="true" />
-                <element signature="e#2654#2655#0" expanded="true" />
+                <element signature="e#3046#3047#0" expanded="true" />
+                <element signature="e#3110#3111#0" expanded="true" />
                 <element signature="n#!!doc;n#BoidList#0;n#BetterBoid#0" expanded="false" />
-                <element signature="e#4124#4125#0" expanded="true" />
-                <element signature="e#4164#4165#0" expanded="true" />
-                <element signature="e#4233#4234#0" expanded="true" />
-                <element signature="e#4297#4298#0" expanded="true" />
-                <element signature="e#4337#4338#0" expanded="true" />
-                <element signature="e#4374#4375#0" expanded="true" />
-                <element signature="e#4433#4434#0" expanded="true" />
-                <element signature="e#4485#4486#0" expanded="true" />
-                <element signature="e#4533#4534#0" expanded="true" />
-                <element signature="e#4574#4575#0" expanded="true" />
-                <element signature="e#4751#4752#0" expanded="true" />
+                <element signature="n#!!doc;n#detectionDistance#0;n#BetterBoid#0" expanded="false" />
                 <element signature="e#4784#4785#0" expanded="true" />
-                <element signature="e#4839#4840#0" expanded="true" />
-                <element signature="e#4889#4890#0" expanded="true" />
+                <element signature="e#4824#4825#0" expanded="true" />
+                <element signature="e#4893#4894#0" expanded="true" />
+                <element signature="e#4957#4958#0" expanded="true" />
+                <element signature="e#4997#4998#0" expanded="true" />
+                <element signature="e#5034#5035#0" expanded="true" />
+                <element signature="e#5093#5094#0" expanded="true" />
+                <element signature="e#5145#5146#0" expanded="true" />
+                <element signature="e#5193#5194#0" expanded="true" />
+                <element signature="e#5234#5235#0" expanded="true" />
+                <element signature="e#5411#5412#0" expanded="true" />
+                <element signature="e#5444#5445#0" expanded="true" />
+                <element signature="e#5499#5500#0" expanded="true" />
+                <element signature="e#5549#5550#0" expanded="true" />
                 <element signature="n#!!doc;n#SimSettings#0;n#BetterBoid#0" expanded="false" />
-                <element signature="e#5370#5412#0" expanded="false" />
-                <element signature="method#calculateCohesionVector#0;class#BetterBoid#0" expanded="false" />
                 <element signature="method#UpdatePositionAndVector#0;class#BetterBoid#0" expanded="false" />
-                <element signature="method#calculateFlocking#0;class#BetterBoid#0" expanded="false" />
+                <element signature="method#updateLists#0;class#BetterBoid#0" expanded="false" />
+                <element signature="docComment;method#calculateFlocking#0;class#BetterBoid#0" expanded="false" />
                 <element signature="method#worldWrapAround#0;class#BetterBoid#0" expanded="false" />
                 <element signature="method#calculateNew_Boid_Position#0;class#BetterBoid#0" expanded="false" />
-                <element signature="method#calculateCollision#0;class#BetterBoid#0" expanded="false" />
                 <element signature="method#CalculateNearestBorderPoints#0;class#BetterBoid#0" expanded="false" />
               </folding>
             </state>
@@ -227,10 +226,12 @@
       <file leaf-file-name="Boid.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Boid.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="2255" max-vertical-offset="3791">
-              <caret line="155" column="46" selection-start-line="151" selection-start-column="12" selection-end-line="155" selection-end-column="46" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="570" max-vertical-offset="1989">
+              <caret line="60" column="34" selection-start-line="49" selection-start-column="8" selection-end-line="60" selection-end-column="34" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="method#calculate_seperation#0;class#Boid#0" expanded="false" />
+                <element signature="method#Draw#0;class#Boid#0" expanded="false" />
                 <element signature="e#9195#9201#0" expanded="true" />
                 <element signature="method#Update#0;class#Boid#0" expanded="false" />
               </folding>
@@ -257,10 +258,10 @@
         <option value="$PROJECT_DIR$/src/Boid.java" />
         <option value="$PROJECT_DIR$/Boid.java" />
         <option value="$PROJECT_DIR$/src/Simulation_Panel.java" />
-        <option value="$PROJECT_DIR$/src/simulation_manager.java" />
         <option value="$PROJECT_DIR$/src/GUI.java" />
-        <option value="$PROJECT_DIR$/src/Settings.java" />
         <option value="$PROJECT_DIR$/src/BetterBoid.java" />
+        <option value="$PROJECT_DIR$/src/simulation_manager.java" />
+        <option value="$PROJECT_DIR$/src/Settings.java" />
       </list>
     </option>
   </component>
@@ -642,7 +643,13 @@
       <option name="project" value="LOCAL" />
       <updated>1427588058199</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="about to change boid lists to synchronized lists">
+      <created>1427622206387</created>
+      <option name="number" value="00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1427622206387</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -666,20 +673,20 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="1272" y="-8" width="1296" height="1000" extended-state="6" />
-    <editor active="false" />
+    <frame x="1272" y="-8" width="1296" height="1000" extended-state="7" />
+    <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3295964" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.38412017" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.38340807" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.38519314" sideWeight="0.5" order="11" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.36547086" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" x="338" y="200" width="872" height="772" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.36547086" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" x="338" y="200" width="872" height="772" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.14921875" sideWeight="0.4993046" order="0" side_tool="false" content_ui="combo" x="-31" y="88" width="291" height="769" />
@@ -688,7 +695,7 @@
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.13203125" sideWeight="0.5006954" order="3" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.39910313" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" x="5" y="19" width="1268" height="974" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39910313" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" x="5" y="19" width="1268" height="974" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -717,7 +724,8 @@
     <MESSAGE value="redo some classes ?" />
     <MESSAGE value="Threaded simmanager with improved update function" />
     <MESSAGE value="MANAGED TO MAKE THE SIMMANAGER ON A SEPARATE THREAD !!!!!!! YES FUCKING YES ! ( also did other stuff )" />
-    <option name="LAST_COMMIT_MESSAGE" value="MANAGED TO MAKE THE SIMMANAGER ON A SEPARATE THREAD !!!!!!! YES FUCKING YES ! ( also did other stuff )" />
+    <MESSAGE value="about to change boid lists to synchronized lists" />
+    <option name="LAST_COMMIT_MESSAGE" value="about to change boid lists to synchronized lists" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -736,15 +744,15 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/BetterBoid.java</url>
-          <line>382</line>
+          <line>270</line>
           <properties />
-          <option name="timeStamp" value="88" />
+          <option name="timeStamp" value="89" />
         </line-breakpoint>
       </breakpoints>
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="89" />
+      <option name="time" value="90" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -809,6 +817,8 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="method#calculate_seperation#0;class#Boid#0" expanded="false" />
+            <element signature="method#Draw#0;class#Boid#0" expanded="false" />
             <element signature="e#9195#9201#0" expanded="true" />
             <element signature="method#Update#0;class#Boid#0" expanded="false" />
           </folding>
@@ -896,6 +906,8 @@
           <caret line="7" column="25" selection-start-line="7" selection-start-column="25" selection-end-line="7" selection-end-column="25" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="method#calculate_seperation#0;class#Boid#0" expanded="false" />
+            <element signature="method#Draw#0;class#Boid#0" expanded="false" />
             <element signature="e#9195#9201#0" expanded="true" />
             <element signature="method#Update#0;class#Boid#0" expanded="false" />
           </folding>
@@ -976,6 +988,8 @@
           <caret line="7" column="25" selection-start-line="7" selection-start-column="25" selection-end-line="7" selection-end-column="25" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="method#calculate_seperation#0;class#Boid#0" expanded="false" />
+            <element signature="method#Draw#0;class#Boid#0" expanded="false" />
             <element signature="e#9195#9201#0" expanded="true" />
             <element signature="method#Update#0;class#Boid#0" expanded="false" />
           </folding>
@@ -1056,6 +1070,8 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="method#calculate_seperation#0;class#Boid#0" expanded="false" />
+            <element signature="method#Draw#0;class#Boid#0" expanded="false" />
             <element signature="e#9195#9201#0" expanded="true" />
             <element signature="method#Update#0;class#Boid#0" expanded="false" />
           </folding>
@@ -1331,75 +1347,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Settings.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-14.068966" vertical-offset="204" max-vertical-offset="2465">
-          <caret line="46" column="82" selection-start-line="46" selection-start-column="82" selection-end-line="46" selection-end-column="82" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="n#!!doc;n#ScreenDimension#0;n#Settings#0" expanded="false" />
-            <element signature="e#1055#1056#0" expanded="true" />
-            <element signature="e#1096#1097#0" expanded="true" />
-            <element signature="e#1160#1161#0" expanded="true" />
-            <element signature="e#1215#1216#0" expanded="true" />
-            <element signature="e#1657#1658#0" expanded="true" />
-            <element signature="e#1705#1706#0" expanded="true" />
-            <element signature="e#2721#2731#0" expanded="true" />
-            <element signature="e#2867#2868#0" expanded="true" />
-            <element signature="e#2926#2927#0" expanded="true" />
-            <element signature="e#3427#3428#0" expanded="true" />
-            <element signature="e#3469#3470#0" expanded="true" />
-            <element signature="e#3539#3540#0" expanded="true" />
-            <element signature="e#3601#3602#0" expanded="true" />
-            <element signature="e#3648#3649#0" expanded="true" />
-            <element signature="e#3691#3692#0" expanded="true" />
-            <element signature="e#3875#3876#0" expanded="true" />
-            <element signature="e#3919#3920#0" expanded="true" />
-            <element signature="e#4096#4097#0" expanded="true" />
-            <element signature="e#4132#4133#0" expanded="true" />
-            <element signature="e#4187#4188#0" expanded="true" />
-            <element signature="e#4232#4233#0" expanded="true" />
-            <element signature="e#4263#4264#0" expanded="true" />
-            <element signature="e#4293#4294#0" expanded="true" />
-            <element signature="e#4336#4337#0" expanded="true" />
-            <element signature="e#4369#4370#0" expanded="true" />
-            <element signature="e#4412#4413#0" expanded="true" />
-            <element signature="e#4454#4455#0" expanded="true" />
-            <element signature="e#4521#4522#0" expanded="true" />
-            <element signature="e#4578#4579#0" expanded="true" />
-            <element signature="e#4621#4622#0" expanded="true" />
-            <element signature="e#4660#4661#0" expanded="true" />
-            <element signature="e#4725#4726#0" expanded="true" />
-            <element signature="e#4776#4777#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Boid.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="2255" max-vertical-offset="3791">
-          <caret line="155" column="46" selection-start-line="151" selection-start-column="12" selection-end-line="155" selection-end-column="46" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#9195#9201#0" expanded="true" />
-            <element signature="method#Update#0;class#Boid#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/simulation_manager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="299" max-vertical-offset="1241">
-          <caret line="21" column="18" selection-start-line="21" selection-start-column="18" selection-end-line="21" selection-end-column="18" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#385#395#0" expanded="true" />
-            <element signature="e#1664#1665#0" expanded="true" />
-            <element signature="e#1696#1697#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Simulation_Panel.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="318" max-vertical-offset="1071">
@@ -1413,10 +1360,24 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Boid.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="570" max-vertical-offset="1989">
+          <caret line="60" column="34" selection-start-line="49" selection-start-column="8" selection-end-line="60" selection-end-column="34" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#calculate_seperation#0;class#Boid#0" expanded="false" />
+            <element signature="method#Draw#0;class#Boid#0" expanded="false" />
+            <element signature="e#9195#9201#0" expanded="true" />
+            <element signature="method#Update#0;class#Boid#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/BetterBoid.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5191919" vertical-offset="3245" max-vertical-offset="3740">
-          <caret line="382" column="0" selection-start-line="382" selection-start-column="0" selection-end-line="382" selection-end-column="0" />
+        <state vertical-scroll-proportion="-11.379311" vertical-offset="503" max-vertical-offset="3995">
+          <caret line="156" column="5" selection-start-line="156" selection-start-column="5" selection-end-line="156" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="n#!!doc;n#boid_position#0;n#BetterBoid#0" expanded="false" />
@@ -1432,33 +1393,92 @@
             <element signature="n#!!doc;n#boid_cohesion_Vector#0;n#BetterBoid#0" expanded="false" />
             <element signature="e#2126#2127#0" expanded="true" />
             <element signature="e#2188#2189#0" expanded="true" />
+            <element signature="n#!!doc;n#boid_alignment_Vector#0;n#BetterBoid#0" expanded="false" />
+            <element signature="e#2587#2588#0" expanded="true" />
+            <element signature="e#2650#2651#0" expanded="true" />
             <element signature="n#!!doc;n#boid_separation_Vector#0;n#BetterBoid#0" expanded="false" />
-            <element signature="e#2590#2591#0" expanded="true" />
-            <element signature="e#2654#2655#0" expanded="true" />
+            <element signature="e#3046#3047#0" expanded="true" />
+            <element signature="e#3110#3111#0" expanded="true" />
             <element signature="n#!!doc;n#BoidList#0;n#BetterBoid#0" expanded="false" />
-            <element signature="e#4124#4125#0" expanded="true" />
-            <element signature="e#4164#4165#0" expanded="true" />
-            <element signature="e#4233#4234#0" expanded="true" />
-            <element signature="e#4297#4298#0" expanded="true" />
-            <element signature="e#4337#4338#0" expanded="true" />
-            <element signature="e#4374#4375#0" expanded="true" />
-            <element signature="e#4433#4434#0" expanded="true" />
-            <element signature="e#4485#4486#0" expanded="true" />
-            <element signature="e#4533#4534#0" expanded="true" />
-            <element signature="e#4574#4575#0" expanded="true" />
-            <element signature="e#4751#4752#0" expanded="true" />
+            <element signature="n#!!doc;n#detectionDistance#0;n#BetterBoid#0" expanded="false" />
             <element signature="e#4784#4785#0" expanded="true" />
-            <element signature="e#4839#4840#0" expanded="true" />
-            <element signature="e#4889#4890#0" expanded="true" />
+            <element signature="e#4824#4825#0" expanded="true" />
+            <element signature="e#4893#4894#0" expanded="true" />
+            <element signature="e#4957#4958#0" expanded="true" />
+            <element signature="e#4997#4998#0" expanded="true" />
+            <element signature="e#5034#5035#0" expanded="true" />
+            <element signature="e#5093#5094#0" expanded="true" />
+            <element signature="e#5145#5146#0" expanded="true" />
+            <element signature="e#5193#5194#0" expanded="true" />
+            <element signature="e#5234#5235#0" expanded="true" />
+            <element signature="e#5411#5412#0" expanded="true" />
+            <element signature="e#5444#5445#0" expanded="true" />
+            <element signature="e#5499#5500#0" expanded="true" />
+            <element signature="e#5549#5550#0" expanded="true" />
             <element signature="n#!!doc;n#SimSettings#0;n#BetterBoid#0" expanded="false" />
-            <element signature="e#5370#5412#0" expanded="false" />
-            <element signature="method#calculateCohesionVector#0;class#BetterBoid#0" expanded="false" />
             <element signature="method#UpdatePositionAndVector#0;class#BetterBoid#0" expanded="false" />
-            <element signature="method#calculateFlocking#0;class#BetterBoid#0" expanded="false" />
+            <element signature="method#updateLists#0;class#BetterBoid#0" expanded="false" />
+            <element signature="docComment;method#calculateFlocking#0;class#BetterBoid#0" expanded="false" />
             <element signature="method#worldWrapAround#0;class#BetterBoid#0" expanded="false" />
             <element signature="method#calculateNew_Boid_Position#0;class#BetterBoid#0" expanded="false" />
-            <element signature="method#calculateCollision#0;class#BetterBoid#0" expanded="false" />
             <element signature="method#CalculateNearestBorderPoints#0;class#BetterBoid#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/simulation_manager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1241">
+          <caret line="21" column="17" selection-start-line="21" selection-start-column="17" selection-end-line="21" selection-end-column="17" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#385#395#0" expanded="true" />
+            <element signature="e#1664#1665#0" expanded="true" />
+            <element signature="e#1696#1697#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Settings.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.4455645" vertical-offset="459" max-vertical-offset="2465">
+          <caret line="50" column="45" selection-start-line="50" selection-start-column="45" selection-end-line="50" selection-end-column="45" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="n#!!doc;n#ScreenDimension#0;n#Settings#0" expanded="false" />
+            <element signature="e#1055#1056#0" expanded="true" />
+            <element signature="e#1096#1097#0" expanded="true" />
+            <element signature="e#1160#1161#0" expanded="true" />
+            <element signature="e#1215#1216#0" expanded="true" />
+            <element signature="e#1657#1658#0" expanded="true" />
+            <element signature="e#1705#1706#0" expanded="true" />
+            <element signature="e#2723#2733#0" expanded="true" />
+            <element signature="e#2869#2870#0" expanded="true" />
+            <element signature="e#2928#2929#0" expanded="true" />
+            <element signature="e#3429#3430#0" expanded="true" />
+            <element signature="e#3471#3472#0" expanded="true" />
+            <element signature="e#3541#3542#0" expanded="true" />
+            <element signature="e#3603#3604#0" expanded="true" />
+            <element signature="e#3650#3651#0" expanded="true" />
+            <element signature="e#3693#3694#0" expanded="true" />
+            <element signature="e#3877#3878#0" expanded="true" />
+            <element signature="e#3921#3922#0" expanded="true" />
+            <element signature="e#4098#4099#0" expanded="true" />
+            <element signature="e#4134#4135#0" expanded="true" />
+            <element signature="e#4189#4190#0" expanded="true" />
+            <element signature="e#4234#4235#0" expanded="true" />
+            <element signature="e#4265#4266#0" expanded="true" />
+            <element signature="e#4295#4296#0" expanded="true" />
+            <element signature="e#4338#4339#0" expanded="true" />
+            <element signature="e#4371#4372#0" expanded="true" />
+            <element signature="e#4414#4415#0" expanded="true" />
+            <element signature="e#4456#4457#0" expanded="true" />
+            <element signature="e#4523#4524#0" expanded="true" />
+            <element signature="e#4580#4581#0" expanded="true" />
+            <element signature="e#4623#4624#0" expanded="true" />
+            <element signature="e#4662#4663#0" expanded="true" />
+            <element signature="e#4727#4728#0" expanded="true" />
+            <element signature="e#4778#4779#0" expanded="true" />
           </folding>
         </state>
       </provider>
