@@ -2,24 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="eb6d6b00-8b60-4cbe-9c50-7c6cd21b4eda" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/dictionaries/pc.xml" />
-      <change type="DELETED" beforePath="C:\Users\pc\Documents\GitHub\BoidSim\out\production\BoidSim\Boid.class" afterPath="" />
-      <change type="MOVED" beforePath="C:\Users\pc\Documents\GitHub\BoidSim\src\Boid.java" afterPath="$PROJECT_DIR$/Boid.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/BoidSim/Boid_Maths.class" afterPath="$PROJECT_DIR$/out/production/BoidSim/Boid_Maths.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/BoidSim/Settings.class" afterPath="$PROJECT_DIR$/out/production/BoidSim/Settings.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/BoidSim/Simulation_Panel$1.class" afterPath="$PROJECT_DIR$/out/production/BoidSim/Simulation_Panel$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/BoidSim/Simulation_Panel.class" afterPath="$PROJECT_DIR$/out/production/BoidSim/Simulation_Panel.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/BoidSim/cartesian_point.class" afterPath="$PROJECT_DIR$/out/production/BoidSim/cartesian_point.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/BoidSim/polar_vector.class" afterPath="$PROJECT_DIR$/out/production/BoidSim/polar_vector.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/BoidSim/simulation_manager.class" afterPath="$PROJECT_DIR$/out/production/BoidSim/simulation_manager.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/BoidSim/GUI$1.class" afterPath="$PROJECT_DIR$/out/production/BoidSim/GUI$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/BoidSim/GUI$SimulationMenu$SimulationMenuActionListener.class" afterPath="$PROJECT_DIR$/out/production/BoidSim/GUI$SimulationMenu$SimulationMenuActionListener.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/BoidSim/GUI$SimulationMenu$SimulationMenuChangeListener.class" afterPath="$PROJECT_DIR$/out/production/BoidSim/GUI$SimulationMenu$SimulationMenuChangeListener.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/BoidSim/GUI$SimulationMenu.class" afterPath="$PROJECT_DIR$/out/production/BoidSim/GUI$SimulationMenu.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/BoidSim/GUI.class" afterPath="$PROJECT_DIR$/out/production/BoidSim/GUI.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/BetterBoid.java" afterPath="$PROJECT_DIR$/src/BetterBoid.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Boid_Maths.java" afterPath="$PROJECT_DIR$/src/Boid_Maths.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/GUI.java" afterPath="$PROJECT_DIR$/src/GUI.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Settings.java" afterPath="$PROJECT_DIR$/src/Settings.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Simulation_Panel.java" afterPath="$PROJECT_DIR$/src/Simulation_Panel.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cartesian_point.java" afterPath="$PROJECT_DIR$/src/cartesian_point.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/polar_vector.java" afterPath="$PROJECT_DIR$/src/polar_vector.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/simulation_manager.java" afterPath="$PROJECT_DIR$/src/simulation_manager.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Boid Simulator.iws" />
@@ -187,8 +175,8 @@
       <file leaf-file-name="BetterBoid.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/BetterBoid.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.48190477" vertical-offset="1515" max-vertical-offset="2040">
-              <caret line="375" column="0" selection-start-line="375" selection-start-column="0" selection-end-line="375" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.5191919" vertical-offset="3245" max-vertical-offset="3740">
+              <caret line="382" column="0" selection-start-line="382" selection-start-column="0" selection-end-line="382" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="n#!!doc;n#boid_position#0;n#BetterBoid#0" expanded="false" />
@@ -225,7 +213,6 @@
                 <element signature="n#!!doc;n#SimSettings#0;n#BetterBoid#0" expanded="false" />
                 <element signature="e#5370#5412#0" expanded="false" />
                 <element signature="method#calculateCohesionVector#0;class#BetterBoid#0" expanded="false" />
-                <element signature="n#!!doc;n#Update#0;n#BetterBoid#0" expanded="false" />
                 <element signature="method#UpdatePositionAndVector#0;class#BetterBoid#0" expanded="false" />
                 <element signature="method#calculateFlocking#0;class#BetterBoid#0" expanded="false" />
                 <element signature="method#worldWrapAround#0;class#BetterBoid#0" expanded="false" />
@@ -649,7 +636,13 @@
       <option name="project" value="LOCAL" />
       <updated>1427473813669</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="MANAGED TO MAKE THE SIMMANAGER ON A SEPARATE THREAD !!!!!!! YES FUCKING YES ! ( also did other stuff )">
+      <created>1427588058199</created>
+      <option name="number" value="00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1427588058199</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -674,7 +667,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="1272" y="-8" width="1296" height="1000" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -686,7 +679,7 @@
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.36547086" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" x="338" y="200" width="872" height="772" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.36547086" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" x="338" y="200" width="872" height="772" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.14921875" sideWeight="0.4993046" order="0" side_tool="false" content_ui="combo" x="-31" y="88" width="291" height="769" />
@@ -695,7 +688,7 @@
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.13203125" sideWeight="0.5006954" order="3" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" weight="0.39910313" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" x="1288" y="1" width="1268" height="974" />
+      <window_info id="Debug" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.39910313" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" x="5" y="19" width="1268" height="974" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -723,7 +716,8 @@
     <MESSAGE value="yay !!!!" />
     <MESSAGE value="redo some classes ?" />
     <MESSAGE value="Threaded simmanager with improved update function" />
-    <option name="LAST_COMMIT_MESSAGE" value="Threaded simmanager with improved update function" />
+    <MESSAGE value="MANAGED TO MAKE THE SIMMANAGER ON A SEPARATE THREAD !!!!!!! YES FUCKING YES ! ( also did other stuff )" />
+    <option name="LAST_COMMIT_MESSAGE" value="MANAGED TO MAKE THE SIMMANAGER ON A SEPARATE THREAD !!!!!!! YES FUCKING YES ! ( also did other stuff )" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -742,21 +736,15 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/BetterBoid.java</url>
-          <line>356</line>
+          <line>382</line>
           <properties />
-          <option name="timeStamp" value="86" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/BetterBoid.java</url>
-          <line>151</line>
-          <properties />
-          <option name="timeStamp" value="87" />
+          <option name="timeStamp" value="88" />
         </line-breakpoint>
       </breakpoints>
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="88" />
+      <option name="time" value="89" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1330,19 +1318,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/simulation_manager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="299" max-vertical-offset="1241">
-          <caret line="21" column="18" selection-start-line="21" selection-start-column="18" selection-end-line="21" selection-end-column="18" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#385#395#0" expanded="true" />
-            <element signature="e#1664#1665#0" expanded="true" />
-            <element signature="e#1696#1697#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/GUI.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="2447" max-vertical-offset="6324">
@@ -1412,6 +1387,19 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/simulation_manager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="299" max-vertical-offset="1241">
+          <caret line="21" column="18" selection-start-line="21" selection-start-column="18" selection-end-line="21" selection-end-column="18" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#385#395#0" expanded="true" />
+            <element signature="e#1664#1665#0" expanded="true" />
+            <element signature="e#1696#1697#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Simulation_Panel.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="318" max-vertical-offset="1071">
@@ -1427,8 +1415,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/BetterBoid.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.48190477" vertical-offset="1515" max-vertical-offset="2040">
-          <caret line="375" column="0" selection-start-line="375" selection-start-column="0" selection-end-line="375" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.5191919" vertical-offset="3245" max-vertical-offset="3740">
+          <caret line="382" column="0" selection-start-line="382" selection-start-column="0" selection-end-line="382" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="n#!!doc;n#boid_position#0;n#BetterBoid#0" expanded="false" />
@@ -1465,7 +1453,6 @@
             <element signature="n#!!doc;n#SimSettings#0;n#BetterBoid#0" expanded="false" />
             <element signature="e#5370#5412#0" expanded="false" />
             <element signature="method#calculateCohesionVector#0;class#BetterBoid#0" expanded="false" />
-            <element signature="n#!!doc;n#Update#0;n#BetterBoid#0" expanded="false" />
             <element signature="method#UpdatePositionAndVector#0;class#BetterBoid#0" expanded="false" />
             <element signature="method#calculateFlocking#0;class#BetterBoid#0" expanded="false" />
             <element signature="method#worldWrapAround#0;class#BetterBoid#0" expanded="false" />

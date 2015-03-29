@@ -372,11 +372,16 @@ public class BetterBoid implements Drawable {
             g.drawLine(Xpos,Ypos,bvecX,bvecY);
         }
         if(SimSettings.Show_Boids_nearby){
-            for(BetterBoid boid:Boid_Maths.cloneList(this.DetectedBoidsList)){
-                int boidx = boid.getBoid_position().Get_X_int();
-                int boidy = boid.getBoid_position().Get_Y_int();
-                g.setColor(Color.orange);
-                g.drawLine(Xpos,Ypos,boidx,boidy);
+            List<BetterBoid> TempDetectedBoidList = Boid_Maths.cloneList(this.DetectedBoidsList);
+            for(BetterBoid boid:TempDetectedBoidList){
+                try {
+                    int boidx = boid.getBoid_position().Get_X_int();
+                    int boidy = boid.getBoid_position().Get_Y_int();
+                    g.setColor(Color.green);
+                    g.drawLine(Xpos,Ypos,boidx,boidy);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
             }
         }
 
