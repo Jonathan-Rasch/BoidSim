@@ -11,7 +11,7 @@ public class simulation_manager
 
 
     //list containing all boids
-    private List<Boid> Boid_List = new ArrayList<Boid>();
+    private List<BetterBoid> Boid_List = new ArrayList<>();
 
     private List<Drawable> Draw_List = new ArrayList<Drawable>();//list of stuff that has the Draw() function
 
@@ -19,11 +19,14 @@ public class simulation_manager
     {
         SimSettings = setting;
         //TODO remove this test code
-        int i = 200;
+        int i = 500;
         while(i > 0)
         {
             i--;
-            Boid_List.add(new Boid(100,this.SimSettings));
+            cartesian_point randomposition = Boid_Maths.RandomPosition(SimSettings.getScreenDimension().width,SimSettings.getScreenDimension().height);
+            polar_vector randomvector = Boid_Maths.RandomVector(100);
+            BetterBoid boid = new BetterBoid(this.SimSettings,randomposition,randomvector);
+            Boid_List.add(boid);
         }
 
     }
@@ -35,14 +38,14 @@ public class simulation_manager
             Draw_List = new ArrayList<Drawable>();
             Draw_List.addAll(Boid_List);
             SimSettings.SetDrawList(Draw_List);
-
-            for(Boid boid:Boid_List)
+            for(BetterBoid boid:Boid_List)
             {
                 boid.Update(10*Math.pow(10,-4),Boid_List);
             }
-            for(Boid boid:Boid_List)
+            for(BetterBoid boid:Boid_List)
             {
-                boid.UpdateComplete();
+                boid.UpdatePositionAndVector();
+
             }
             try {
                 Thread.sleep(0,1);

@@ -4,7 +4,6 @@ import javax.swing.event.ChangeListener;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.EventListener;
 
 public class GUI extends JFrame implements Runnable
 {
@@ -14,7 +13,7 @@ public class GUI extends JFrame implements Runnable
     Timer Draw_Timer;//the timer responsible for triggering the simulation panel draw.lower delay means more fps
     Timer Update_Timer;//how often the boids are updated, lower delay means more accurate simulation
     private int simulation_deltaT = 1; //simulation update step. default is 1ms
-    private int draw_deltaT = 50;//simulation draw step. default is 16ms for 60 fps
+    private int draw_deltaT = 16;//simulation draw step. default is 16ms for 60 fps
 
     protected simulation_manager simM ;
     private JTabbedPane Tabs;
@@ -63,15 +62,11 @@ public class GUI extends JFrame implements Runnable
         //<editor-fold desc="setting up timers">
         //initial timer setup
         Draw_Timer = new Timer(draw_deltaT,SimPanel);
-
-            //make timers repeat
+         //make timers repeat
         Draw_Timer.setRepeats(true);
-
-            //start timers
+        //start timers
         Draw_Timer.setActionCommand(""+draw_deltaT);
-
         Draw_Timer.start();
-
         //
         //</editor-fold>
     }
@@ -183,8 +178,8 @@ public class GUI extends JFrame implements Runnable
             this.DetectionDistance_Slider_BoidOptions.setPaintLabels(true);
             this.BoidOptions.add(DetectionDistance_Slider_BoidOptions);
             //boid DetectionAngle_Slider_BoidOptions
-            this.DetectionAngle_Slider_BoidOptions = new JSlider(JSlider.HORIZONTAL,0,100,SimSettings.getDetectionAngle());
-            DetectionAngle_Slider_Label = new JLabel("Detection Angle in rad: " + String.format("%.2f",(double)2*Math.PI*((double)SimSettings.getDetectionAngle()/100)),JLabel.LEFT);
+            this.DetectionAngle_Slider_BoidOptions = new JSlider(JSlider.HORIZONTAL,0,100,SimSettings.getDetectionAngle_percentage());
+            DetectionAngle_Slider_Label = new JLabel("Detection Angle in rad: " + String.format("%.2f",(double)2*Math.PI*((double)SimSettings.getDetectionAngle_percentage()/100)),JLabel.LEFT);
             this.BoidOptions.add(DetectionAngle_Slider_Label);
             this.BoidOptions.add(DetectionAngle_Slider_BoidOptions);
             this.DetectionAngle_Slider_BoidOptions.addChangeListener(Change_Listener);
@@ -369,8 +364,8 @@ public class GUI extends JFrame implements Runnable
                         }
                         case "DetectionAngleSlider":
                         {
-                            DetectionAngle_Slider_Label.setText("Detection Angle in rad: " + String.format("%.2f",(double)2*Math.PI*((double)SimSettings.getDetectionAngle()/100)));
-                            SimSettings.setDetectionAngle(source.getValue());
+                            DetectionAngle_Slider_Label.setText("Detection Angle in rad: " + String.format("%.2f",(double)2*Math.PI*((double)SimSettings.getDetectionAngle_percentage()/100)));
+                            SimSettings.setDetectionAngle_percentage(source.getValue());
                             break;
                         }
 

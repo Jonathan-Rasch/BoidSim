@@ -140,4 +140,14 @@ public class polar_vector<T extends Number,T2 extends Number>
         this.magnitude = Boid_Maths.calculate_magnitude(this.getXcomponent(),this.getYcomponent());
         this.angle_rad = Boid_Maths.calculate_Vector_angle(this.getXcomponent(),this.getYcomponent());
     }
+
+    /**
+     * returns a polar vector that is exactly the same as this vector, but a different object. this is needed in the
+     * getters and setters when no refrence to this vector should be passed.
+     * @return cloned vector
+     */
+    public polar_vector cloneVector(){
+        polar_vector clonedVector = new polar_vector(this.getXcomponent(),this.getYcomponent(),false);
+        return  clonedVector;
+    }
 }

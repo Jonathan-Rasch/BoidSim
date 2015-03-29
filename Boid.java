@@ -1,4 +1,5 @@
-import java.awt.*;
+
+
 import java.awt.geom.Ellipse2D;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -186,7 +187,7 @@ public class Boid implements Drawable{
             TempList.addAll(Detected_List);
             for(Boid Boidnearby: TempList)
             {
-               g.drawLine(xposition,yposition,Boidnearby.getBoid_position().Get_X_int(),Boidnearby.getBoid_position().Get_Y_int());
+                g.drawLine(xposition,yposition,Boidnearby.getBoid_position().Get_X_int(),Boidnearby.getBoid_position().Get_Y_int());
             }
         }
         if(SimSettings.Show_Detection_circle){
@@ -306,3 +307,4 @@ public class Boid implements Drawable{
         boid_vector = Boid_Maths.RandomVector(maxVector_magnitude);
     }
 }
+

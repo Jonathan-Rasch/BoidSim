@@ -1,4 +1,5 @@
 import java.lang.Math;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
@@ -186,10 +187,10 @@ public final class Boid_Maths
     /*
     these methods find the average position of the provided positions.
      */
-    public static cartesian_point Calculate_average_boid_position(List<Boid> Boid_List)
+    public static cartesian_point Calculate_average_boid_position(List<BetterBoid> Boid_List)
     {
         cartesian_point average_point = new cartesian_point(0,0);
-        for (Boid boid:Boid_List)
+        for (BetterBoid boid:Boid_List)
         {
             average_point = point_addition(boid.getBoid_position(),average_point);
         }
@@ -239,5 +240,38 @@ public final class Boid_Maths
         Random R = new Random(System.nanoTime());
 
         return R.nextDouble();
+    }
+
+    /**
+     * clones and returns the provided list. this is used to prevent ConcurrentModificationException
+     * @param list
+     * @param <T>
+     * @return
+     */
+    public static<T> List<T> cloneList(List<T> list){
+        List<T> clonedList = new ArrayList<>();
+        clonedList.addAll(list);
+        return clonedList;
+    }
+
+    /**
+     * finds the angle between 2 boids
+     * @param Refrence_boid the boid that is used as refrence to calculate the angle
+     * @param other_boid
+     * @return
+     */
+    public static double angleBetweenPoints(cartesian_point Ref_point,cartesian_point other_point){
+        //get the other_boid position with respect to Refrence_boid position
+        cartesian_point refPoint = calculatePositionRelativeToPoint(Ref_point,other_point);
+        //create a vector
+        polar_vector vector_between_Points = new polar_vector(refPoint.Get_X_double(),refPoint.Get_Y_double(),false);
+        return vector_between_Points.getAngle_rad();
+    }
+
+    public static cartesian_point calculatePositionRelativeToPoint(cartesian_point RefrencePoint,cartesian_point otherPoint){
+        double Xcomponent = otherPoint.Get_X_double() - RefrencePoint.Get_X_double();
+        double Ycomponent = otherPoint.Get_Y_double() - RefrencePoint.Get_Y_double();
+        cartesian_point RelativePosition = new cartesian_point(Xcomponent,Ycomponent);
+        return RelativePosition;
     }
 }

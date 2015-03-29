@@ -14,6 +14,11 @@ public class cartesian_point<T extends Number,T2 extends Number>
         this.Y_coordinate = y.doubleValue();
     }
 
+    public cartesian_point clonePoint(){
+        cartesian_point clonedPoint = new cartesian_point(this.Get_X_double(),this.Get_Y_double());
+        return  clonedPoint;
+    }
+
     public int Get_X_int()
     {
         return ((int) this.X_coordinate);
@@ -26,8 +31,7 @@ public class cartesian_point<T extends Number,T2 extends Number>
     {
         return ((int) this.Y_coordinate);
     }
-    public double Get_Y_double()
-    {
+    public double Get_Y_double() {
         return this.Y_coordinate;
     }
 

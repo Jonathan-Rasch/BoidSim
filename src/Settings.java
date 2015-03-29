@@ -4,21 +4,20 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.*;
 import java.util.List;
-import java.util.concurrent.CopyOnWriteArrayList;
 
 public class Settings implements ActionListener {
 
+    //<editor-fold desc="ScreenDimension getter and setter">
     //setting values with default values
     private Dimension ScreenDimension;
-
-
-
-
-
-    public Dimension getScreenDimension() {
-        ScreenDimension = Toolkit.getDefaultToolkit().getScreenSize();
-        return ScreenDimension;
+    public void setScreenDimension(Dimension screenDimension) {
+        //clone the dimension
+        this.ScreenDimension = new Dimension(screenDimension.width,screenDimension.height);
     }
+    public Dimension getScreenDimension() {
+        return new Dimension(this.ScreenDimension.width,this.ScreenDimension.height);
+    }
+    //</editor-fold>
 
     private int Simulation_timestep = 1; //how long in ms until the simulation is updated 1ms = 1000 updates/sec
     private int Max_FPS = 30;//used to calculate draw delay ( draw_timestep = (1/Max_FPS )*1000
@@ -33,21 +32,24 @@ public class Settings implements ActionListener {
     }
 
 
-    private double cohesion_multiplier = 1;//by what value the cohesion vector is multiplied
-    private double alignment_multiplier = 1;//by what value the alignment vector is multiplied
-    private double separation_multiplier = 1;//by what value the alignment vector is multiplied
+    private double cohesion_multiplier = 100;//by what value the cohesion vector is multiplied
+    private double alignment_multiplier = 100;//by what value the alignment vector is multiplied
+    private double separation_multiplier = 100;//by what value the alignment vector is multiplied
 
-    private int DetectionAngle = 50;//percentage of 2PI : 2PI*1/DetectionAngle
-    public int getDetectionAngle() {
-        return DetectionAngle;
+    private int DetectionAngle_percentage = 50;//percentage of 2PI : 2PI*1/DetectionAngle_percentage
+    public int getDetectionAngle_percentage() {
+        return DetectionAngle_percentage;
+    }
+    public void setDetectionAngle_percentage(int detectionAngle_percentage) {
+        DetectionAngle_percentage = detectionAngle_percentage;
+    }
+    public double getDetectionAngle_rad(){
+        double Angle = ((double)getDetectionAngle_percentage()/100) * 2 * Math.PI;
+        return Angle;
     }
 
-    public void setDetectionAngle(int detectionAngle) {
-        DetectionAngle = detectionAngle;
-    }
-
-    public boolean Boid_Avoid_Simulation_Border = true;
-    public boolean Flocking_Enabled = false;
+    public boolean BorderedSimulation = true;
+    public boolean Flocking_Enabled = true;
     public boolean Enforce_Minimum_Speed = true;
     public boolean Show_Boid_vector = true;
     public boolean Show_cohesion_vector = false;
@@ -65,8 +67,7 @@ public class Settings implements ActionListener {
         return returnList;
     }
     public synchronized void SetDrawList(List<Drawable> List){
-        this.Draw_List.clear();
-        this.Draw_List.addAll(List);
+        this.Draw_List = Boid_Maths.cloneList(List);
     }
 
     public Settings()
@@ -143,5 +144,6 @@ public class Settings implements ActionListener {
     public void actionPerformed(ActionEvent e) {
 
     }
+
 
 }
