@@ -4,22 +4,20 @@ import javax.swing.event.ChangeListener;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.WindowEvent;
 
 public class GUI extends JFrame implements Runnable
 {
     //<editor-fold desc="variable instantiation">
     Settings SimSettings;
+    simulation_manager simM ;
 
     Timer Draw_Timer;//the timer responsible for triggering the simulation panel draw.lower delay means more fps
     Timer Update_Timer;//how often the boids are updated, lower delay means more accurate simulation
     private int simulation_deltaT = 1; //simulation update step. default is 1ms
     private int draw_deltaT = 16;//simulation draw step. default is 16ms for 60 fps
 
-    protected simulation_manager simM ;
-    private JTabbedPane Tabs;
-    private JPanel SimOptionsTab;
-    private JPanel BoidOptionTab;
-    private JPanel DrawOptionTab;
+
     private Simulation_Panel SimPanel;
     //</editor-fold>
 
@@ -34,6 +32,7 @@ public class GUI extends JFrame implements Runnable
             public void run()
             {
                 this.simM = simmanager;
+
                 CreateGUI(SimSetting);
             }
         });
@@ -41,9 +40,15 @@ public class GUI extends JFrame implements Runnable
         simmanager.Update();
     }
 
+    //closes this window
+    public void EXIT(){
+        this.dispatchEvent(new WindowEvent(this, WindowEvent.WINDOW_CLOSING));
+    }
+
     public void CreateGUI(Settings sett)
     {
         this.SimSettings = sett;
+
         this.setSize((int)SimSettings.getScreenDimension().getWidth(),(int)SimSettings.getScreenDimension().getHeight());//TODO get universal settings working to save this stuff
         this.setVisible(true);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -65,7 +70,7 @@ public class GUI extends JFrame implements Runnable
          //make timers repeat
         Draw_Timer.setRepeats(true);
         //start timers
-        Draw_Timer.setActionCommand(""+draw_deltaT);
+        Draw_Timer.setActionCommand("" + draw_deltaT);
         Draw_Timer.start();
         //
         //</editor-fold>
@@ -75,21 +80,36 @@ public class GUI extends JFrame implements Runnable
     {
 
         //<editor-fold desc="variable instantiation">
-        JPanel BoidOptions;
         JFrame Frame;
         JTabbedPane TabPane;
+
+        //<editor-fold desc="BoidOptions">
+        JPanel BoidOptions;
         JButton EnableFlocking_BoidOptions;
         JButton ShowBoidVector_BoidOptions;
-        JButton ShowCohesionVector_BoidOptions;
-        JButton ShowSeparationVector_BoidOptions;
-        JButton ShowAlignmentVector_BoidOptions;
-        JButton ShowDetectionCircle_BoidOptions;
         JButton ShowDetectedBoids_BoidOptions;
         JButton ShowBoids_BoidOptions;
         JSlider DetectionDistance_Slider_BoidOptions;
         JSlider DetectionAngle_Slider_BoidOptions;
         JLabel DetectionAngle_Slider_Label;
         JLabel DetectionDistance_Slider_Label;
+        //</editor-fold>
+
+        JPanel SimulationOptions;
+        JButton StartPause;
+        JButton Save;//file explorer
+        JButton Load;
+        JButton Clear;//show warning
+        JButton SimulationBorder;
+        JButton EXIT;//display warning before exit
+        JSlider SimulationAccuracy;
+
+
+
+        JRadioButton ScaryMouse = new JRadioButton("Scary Mouse");
+        JRadioButton FriendlyMouse = new JRadioButton("Friendly Mouse");
+        JRadioButton IgnoreMouse = new JRadioButton("Ignore Mouse");
+
         SimulationMenuActionListener Action_Listener = new SimulationMenuActionListener();
         SimulationMenuChangeListener Change_Listener = new SimulationMenuChangeListener();
         //</editor-fold>
@@ -106,8 +126,8 @@ public class GUI extends JFrame implements Runnable
             this.Frame.setResizable(false);
             this.TabPane = new JTabbedPane();
             this.Frame.add(TabPane);
-
             Dimension ButtonDimension = new Dimension(200,25);
+
             //<editor-fold desc="Boid Options Tab">
             this.BoidOptions = new JPanel();
             this.TabPane.add("Boid Options",BoidOptions);
@@ -132,40 +152,13 @@ public class GUI extends JFrame implements Runnable
             this.ShowBoidVector_BoidOptions.setActionCommand("ShowBoidVector_BoidOptions");
             this.ShowBoidVector_BoidOptions.setPreferredSize(ButtonDimension);
             this.ShowBoidVector_BoidOptions.setBackground(Color.green);
-            //enable Show_cohesion_vector
-            this.ShowCohesionVector_BoidOptions = new JButton("Show Cohesion Vector");
-            this.BoidOptions.add(ShowCohesionVector_BoidOptions);
-            this.ShowCohesionVector_BoidOptions.addActionListener(Action_Listener);
-            this.ShowCohesionVector_BoidOptions.setActionCommand("ShowCohesionVector_BoidOptions");
-            this.ShowCohesionVector_BoidOptions.setPreferredSize(ButtonDimension);
-            this.ShowCohesionVector_BoidOptions.setBackground(Color.red);
-            //enable ShowSeparationVector_BoidOptions
-            this.ShowSeparationVector_BoidOptions = new JButton("Show Separation Vector");
-            this.BoidOptions.add(ShowSeparationVector_BoidOptions);
-            this.ShowSeparationVector_BoidOptions.addActionListener(Action_Listener);
-            this.ShowSeparationVector_BoidOptions.setActionCommand("ShowSeparationVector_BoidOptions");
-            this.ShowSeparationVector_BoidOptions.setPreferredSize(ButtonDimension);
-            this.ShowSeparationVector_BoidOptions.setBackground(Color.red);
-             //enable ShowAlignmentVector_BoidOptions
-            this.ShowAlignmentVector_BoidOptions = new JButton("Show Alignment Vector");
-            this.BoidOptions.add(ShowAlignmentVector_BoidOptions);
-            this.ShowAlignmentVector_BoidOptions.addActionListener(Action_Listener);
-            this.ShowAlignmentVector_BoidOptions.setActionCommand("ShowAlignmentVector_BoidOptions");
-            this.ShowAlignmentVector_BoidOptions.setPreferredSize(ButtonDimension);
-            this.ShowAlignmentVector_BoidOptions.setBackground(Color.red);
 
             //Adding label for this section:
             JLabel DetectionRegionLabel = new JLabel();
             DetectionRegionLabel.setFont(new Font(DetectionRegionLabel.getFont().toString(),Font.BOLD,14));//make label font bold
             DetectionRegionLabel.setText("Boid Detection Settings:");
             this.BoidOptions.add(DetectionRegionLabel);
-            //enable ShowDetectionCircle_BoidOptions
-            this.ShowDetectionCircle_BoidOptions = new JButton("Show Detection Circle");
-            this.BoidOptions.add(ShowDetectionCircle_BoidOptions);
-            this.ShowDetectionCircle_BoidOptions.addActionListener(Action_Listener);
-            this.ShowDetectionCircle_BoidOptions.setActionCommand("ShowDetectionCircle_BoidOptions");
-            this.ShowDetectionCircle_BoidOptions.setPreferredSize(ButtonDimension);
-            this.ShowDetectionCircle_BoidOptions.setBackground(Color.red);
+
             //boid detection distance slider
             DetectionDistance_Slider_Label = new JLabel("Detection Distance (in pixel): " + SimSettings.getDetection_Distance(),JLabel.LEFT);
             this.BoidOptions.add(DetectionDistance_Slider_Label);
@@ -177,6 +170,7 @@ public class GUI extends JFrame implements Runnable
             this.DetectionDistance_Slider_BoidOptions.setPaintTicks(true);
             this.DetectionDistance_Slider_BoidOptions.setPaintLabels(true);
             this.BoidOptions.add(DetectionDistance_Slider_BoidOptions);
+
             //boid DetectionAngle_Slider_BoidOptions
             this.DetectionAngle_Slider_BoidOptions = new JSlider(JSlider.HORIZONTAL,0,100,SimSettings.getDetectionAngle_percentage());
             DetectionAngle_Slider_Label = new JLabel("Detection Angle in rad: " + String.format("%.2f",(double)2*Math.PI*((double)SimSettings.getDetectionAngle_percentage()/100)),JLabel.LEFT);
@@ -195,8 +189,44 @@ public class GUI extends JFrame implements Runnable
 
             //</editor-fold>
 
+            this.SimulationOptions = new JPanel();
+            this.TabPane.add("Simulation",SimulationOptions);
 
+            //create buttons
+            this.StartPause = new JButton("Start");
+            this.Save = new JButton("Save Simulation");
+            this.Load = new JButton("Load Simulation");
+            this.Clear = new JButton("Clear Simulation");
+            this.EXIT = new JButton("EXIT");
+            this.SimulationBorder = new JButton("Disable Simulation Border");
+            //add buttons to panel
+            this.SimulationOptions.add(StartPause);
+            this.SimulationOptions.add(Save);
+            this.SimulationOptions.add(Load);
+            this.SimulationOptions.add(Clear);
+            this.SimulationOptions.add(EXIT);
+            this.SimulationOptions.add(SimulationBorder);
+            //set button dimensions
+            this.StartPause.setPreferredSize(ButtonDimension);
+            this.Save.setPreferredSize(ButtonDimension);
+            this.Load.setPreferredSize(ButtonDimension);
+            this.Clear.setPreferredSize(ButtonDimension);
+            this.EXIT.setPreferredSize(ButtonDimension);
+            this.SimulationBorder.setPreferredSize(ButtonDimension);
+            //add action lisener to buttons and setting action commands
+            this.StartPause.addActionListener(Action_Listener);
+            this.Save.addActionListener(Action_Listener);
+            this.Load.addActionListener(Action_Listener);
+            this.Clear.addActionListener(Action_Listener);
+            this.EXIT.addActionListener(Action_Listener);
+            this.SimulationBorder.addActionListener(Action_Listener);
 
+            this.StartPause.setActionCommand("StartPause");
+            this.Save.setActionCommand("Save");
+            this.Load.setActionCommand("Load");
+            this.Clear.setActionCommand("Clear");
+            this.EXIT.setActionCommand("EXIT");
+            this.SimulationBorder.setActionCommand("SimulationBorder");
             //</editor-fold>
 
         }
@@ -205,11 +235,10 @@ public class GUI extends JFrame implements Runnable
         {
             @Override
             public void actionPerformed(ActionEvent e) {
-                if(e.getActionCommand().contains("BoidOptions"))
-                {
                     //<editor-fold desc="BoidOptions components switch">
                     switch (e.getActionCommand())
                     {
+                        //<editor-fold desc="Boid Options Action events">
                         case "ShowBoids_BoidOptions":
                         {
                             if(SimSettings.Show_Boid)
@@ -241,21 +270,7 @@ public class GUI extends JFrame implements Runnable
                             }
                             break;
                         }
-                        case "ShowDetectionCircle_BoidOptions":{
-                            if(SimSettings.Show_Detection_circle)
-                            {
-                                SimSettings.Show_Detection_circle = false;
-                                ShowDetectionCircle_BoidOptions.setText("Show Detection Circle");
-                                ShowDetectionCircle_BoidOptions.setBackground(Color.red);
-                            }
-                            else
-                            {
-                                SimSettings.Show_Detection_circle = true;
-                                ShowDetectionCircle_BoidOptions.setText("Hide Detection Circle");
-                                ShowDetectionCircle_BoidOptions.setBackground(Color.green);
-                            }
-                            break;
-                        }
+
                         case "EnableFlocking_BoidOptions": {
                             if(SimSettings.Flocking_Enabled)
                             {
@@ -286,62 +301,51 @@ public class GUI extends JFrame implements Runnable
                             }
                             break;
                         }
+                        //</editor-fold>
 
-                        case "ShowCohesionVector_BoidOptions": {
-                            if(SimSettings.Show_cohesion_vector)
-                            {
-                                SimSettings.Show_cohesion_vector = false;
-                                ShowCohesionVector_BoidOptions.setText("Show Cohesion Vector");
-                                ShowCohesionVector_BoidOptions.setBackground(Color.red);
+                        case "StartPause" :{
+                            if(SimSettings.SimulationRunning){
+                                SimSettings.SimulationRunning = false;
+                                StartPause.setText("Start Simulation");
                             }
-                            else
-                            {
-                                SimSettings.Show_cohesion_vector = true;
-                                ShowCohesionVector_BoidOptions.setText("Hide Cohesion Vector");
-                                ShowCohesionVector_BoidOptions.setBackground(Color.green);
+                            else {
+                                SimSettings.SimulationRunning = true;
+                                StartPause.setText("Pause Simulation");
                             }
                             break;
                         }
-
-                        case "ShowSeparationVector_BoidOptions":{
-                            if(SimSettings.Show_seperation_vector)
-                            {
-                                SimSettings.Show_seperation_vector = false;
-                                ShowSeparationVector_BoidOptions.setText("Show Separation Vector");
-                                ShowSeparationVector_BoidOptions.setBackground(Color.red);
+                        case "Save" :{
+                            SimSettings.SaveSimulation = true;
+                            break;
+                        }
+                        case "Load" :{
+                            SimSettings.LoadSimulation = true;
+                            break;
+                        }
+                        case "Clear" :{
+                            SimSettings.ClearSimulation = true;;//remove all boids
+                            break;
+                        }
+                        case "EXIT" :{
+                            //closes simulation manager
+                            simM.EXIT();
+                            //closes this window
+                            EXIT();
+                            break;
+                        }
+                        case "SimulationBorder" :{
+                            if(SimSettings.BorderedSimulation){
+                                SimSettings.BorderedSimulation = false;
+                                SimulationBorder.setText("Enable Simulation Border");
                             }
-                            else
-                            {
-                                SimSettings.Show_seperation_vector = true;
-                                ShowSeparationVector_BoidOptions.setText("Hide Separation Vector");
-                                ShowSeparationVector_BoidOptions.setBackground(Color.green);
+                            else {
+                                SimSettings.BorderedSimulation = true;
+                                SimulationBorder.setText("Disable Simulation Border");
                             }
                             break;
                         }
-
-                        case "ShowAlignmentVector_BoidOptions":{
-                            if(SimSettings.Show_allignment_vector)
-                            {
-                                SimSettings.Show_allignment_vector = false;
-                                ShowAlignmentVector_BoidOptions.setText("Show Alignment Vector");
-                                ShowAlignmentVector_BoidOptions.setBackground(Color.red);
-                            }
-                            else
-                            {
-                                SimSettings.Show_allignment_vector = true;
-                                ShowAlignmentVector_BoidOptions.setText("Hide Alignment Vector");
-                                ShowAlignmentVector_BoidOptions.setBackground(Color.green);
-                            }
-                            break;
-                        }
-
                     }
                     //</editor-fold>
-                }
-                else if (true)
-                {
-
-                }
             }
         }
 
@@ -373,6 +377,8 @@ public class GUI extends JFrame implements Runnable
                 }
             }
         }
+
+
 
     }
 

@@ -10,6 +10,10 @@ public class Settings implements ActionListener {
     //<editor-fold desc="ScreenDimension getter and setter">
     //setting values with default values
     private Dimension ScreenDimension;
+    public boolean SaveSimulation;
+    public boolean LoadSimulation;
+    public boolean ClearSimulation;
+
     public void setScreenDimension(Dimension screenDimension) {
         //clone the dimension
         this.ScreenDimension = new Dimension(screenDimension.width,screenDimension.height);
@@ -48,15 +52,11 @@ public class Settings implements ActionListener {
         return Angle;
     }
 
-    public boolean BorderedSimulation = false;
+    public boolean BorderedSimulation = true;
     public boolean Flocking_Enabled = false;
     public boolean Enforce_Minimum_Speed = true;
     public boolean Show_Boid_vector = true;
-    public boolean Show_cohesion_vector = false;
-    public boolean Show_allignment_vector = false;
-    public boolean Show_seperation_vector = false;
     public boolean Show_Boids_nearby = true ;
-    public boolean Show_Detection_circle = false;
     public boolean Show_Boid = true;
     public boolean SimulationRunning = true;
 
@@ -72,14 +72,38 @@ public class Settings implements ActionListener {
 
     public Settings()
     {
-        int choice = JOptionPane.showConfirmDialog(null,"would you like to use the whole screen for the simulation ?","Sim Window Size",JOptionPane.YES_NO_CANCEL_OPTION);
+        int choice = JOptionPane.showConfirmDialog(null,"would you like to use the whole screen for the simulation ?","Sim Window Size",JOptionPane.YES_NO_OPTION);
+
         if(choice == JOptionPane.YES_OPTION)
         {
             ScreenDimension = Toolkit.getDefaultToolkit().getScreenSize();
         }
         else if (choice == JOptionPane.NO_OPTION)
         {
-            //TODO finish start stuff
+            int tempScreenWidth = Toolkit.getDefaultToolkit().getScreenSize().width;
+            int tempScreenHeight = Toolkit.getDefaultToolkit().getScreenSize().height;
+
+            try {
+                int Xdimension = Integer.parseInt(JOptionPane.showInputDialog("set width (minimum 200)"));
+                if (Xdimension > tempScreenWidth || Xdimension < 200){
+                    JOptionPane.showMessageDialog(null,"Invalid Input, setting width to " + tempScreenWidth );
+                    Xdimension = tempScreenWidth;
+                }
+
+                int Ydimension = Integer.parseInt(JOptionPane.showInputDialog("set height (minimum 200)"));
+                if (Ydimension > tempScreenHeight || Ydimension < 200){
+                    JOptionPane.showMessageDialog(null,"Invalid Input, setting height to " + tempScreenHeight );
+                    Ydimension = tempScreenHeight;
+                }
+
+                ScreenDimension = new Dimension(Xdimension,Ydimension);
+            } catch (NumberFormatException e) {
+                JOptionPane.showMessageDialog(null,"Invalid Input, setting size to " + tempScreenWidth + "x" + tempScreenHeight );
+                ScreenDimension = new Dimension(tempScreenWidth,tempScreenHeight);
+            }
+        }
+        else{
+            ScreenDimension = Toolkit.getDefaultToolkit().getScreenSize();
         }
 
     }

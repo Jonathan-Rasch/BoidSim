@@ -4,20 +4,16 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.ComponentEvent;
 import java.awt.event.ComponentListener;
-import java.util.*;
 import java.util.List;
 
 
 public class Simulation_Panel implements ActionListener
 {
     private JPanel panel;
-
-
     public JPanel GetJPanel()
     {
         return panel;
     }
-
 
     private Settings SimSettings;
     public Simulation_Panel(Settings set)
