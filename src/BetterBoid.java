@@ -138,8 +138,7 @@ public class BetterBoid implements Drawable {
 
     //<editor-fold desc="Vector calculations">
     /**
-     * This method calculates the cohesion vector of this boid depending on the boids that are around it.id does this by calculating a vector which points towards
-     * the average position of nearby boids
+     * Calculates the cohesion vector based on the boids in the nearby area
      */
     private void calculateCohesionVector(){
         //finding average position of nearby boids
@@ -150,7 +149,7 @@ public class BetterBoid implements Drawable {
         //now apply the multiplier to the vector
         temp_cohesion_vector.setMagnitude(temp_cohesion_vector.getMagnitude()*SimSettings.getCohesion_multiplier());
         //decrease the effect of cohesion as the flock gets bigger to prevent it from getting too dense //TODO adjust
-        temp_cohesion_vector.setMagnitude(temp_cohesion_vector.getMagnitude()/this.NearbyBoidsList.size());
+        //temp_cohesion_vector.setMagnitude(temp_cohesion_vector.getMagnitude()/this.NearbyBoidsList.size());//TODO Delete ?
         //set cohesion vector
         this.setBoid_cohesion_Vector(temp_cohesion_vector);
 
